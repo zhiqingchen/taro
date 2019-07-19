@@ -938,7 +938,7 @@ class Transformer {
       components.push(name)
       this.result.components.push({
         path: pathResolver(component.sourcePath, this.sourcePath),
-        name: component.imported ? kebabCase(name) + '|' + kebabCase(component.imported) : kebabCase(name),
+        name: component.imported ? kebabCase(name) + '|' + component.imported : kebabCase(name),
         type: component.type
       })
     })

@@ -987,6 +987,7 @@ export function parseAst (
 }
 
 export function parseComponentExportAst (ast: t.File, componentName: string, componentPath: string, componentType: string): string | null {
+  console.log(componentName)
   const {
     constantsReplaceList
   } = getBuildData()

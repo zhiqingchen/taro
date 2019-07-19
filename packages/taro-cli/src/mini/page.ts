@@ -137,6 +137,7 @@ export async function buildSinglePage (page: string) {
       alias
     })
     const pageDepComponents = transformResult.components
+    console.log(pageDepComponents)
     const pageWXMLContent = isProduction ? transformResult.compressedTemplate : transformResult.template
     const res = parseAst(PARSE_AST_TYPE.PAGE, transformResult.ast, pageDepComponents, pageJs, outputPageJSPath)
     let resCode = res.code

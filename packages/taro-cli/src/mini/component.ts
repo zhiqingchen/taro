@@ -125,16 +125,21 @@ export async function buildSingleComponent (
     alias
   } = getBuildData()
   const isQuickApp = buildAdapter === BUILD_TYPES.QUICKAPP
-
+  let usedComponentName
+  let defaultComponentName
+  if (componentObj.name) {
+    usedComponentName = componentObj.name.split('|')[0]
+    defaultComponentName = componentObj.name.split('|')[1]
+  }
   if (componentObj.path) {
     componentsNamedMap.set(componentObj.path, {
-      name: componentObj.name,
+      name: usedComponentName,
       type: componentObj.type
     })
   }
   const component = componentObj.path
   if (!component) {
-    printLog(processTypeEnum.ERROR, '组件错误', `组件${_.upperFirst(_.camelCase(componentObj.name))}路径错误，请检查！（可能原因是导出的组件名不正确）`)
+    printLog(processTypeEnum.ERROR, '组件错误', `组件${_.upperFirst(_.camelCase(usedComponentName))}路径错误，请检查！（可能原因是导出的组件名不正确）`)
     return {
       js: '',
       wxss: '',
@@ -165,8 +170,10 @@ export async function buildSingleComponent (
     const isTaroComponentRes = isFileToBeTaroComponent(componentContent, component, outputComponentJSPath)
     const componentExportsMap = getComponentExportsMap()
     if (!isTaroComponentRes.isTaroComponent) {
+      console.log(componentObj)
       const transformResult = isTaroComponentRes.transformResult
-      const componentRealPath = parseComponentExportAst(transformResult.ast, componentObj.name as string, component, componentObj.type as string)
+      const componentRealPath = parseComponentExportAst(transformResult.ast, (defaultComponentName || usedComponentName) as string, component, componentObj.type as string)
+      console.log(componentRealPath)
       const realComponentObj: IComponentObj = {
         path: componentRealPath,
         name: componentObj.name,
@@ -262,7 +269,7 @@ export async function buildSingleComponent (
         template: componentWXMLContent
       })
       fs.writeFileSync(outputComponentWXMLPath, uxTxt)
-      printLog(processTypeEnum.GENERATE, '组件文件', `${outputDirName}/${componentObj.name}${outputFilesTypes.TEMPL}`)
+      printLog(processTypeEnum.GENERATE, '组件文件', `${outputDirName}/${usedComponentName}${outputFilesTypes.TEMPL}`)
     }
 
     const dependencyTree = getDependencyTree()
@@ -293,7 +300,7 @@ export async function buildSingleComponent (
           const componentMap = componentExportsMap.get(componentObj.path as string)
           componentMap && componentMap.forEach(componentObj => {
             componentDepComponents.forEach(depComponent => {
-              if (depComponent.name === componentObj.name) {
+              if (depComponent.name === usedComponentName) {
                 let componentPath = componentObj.path
                 let realPath
                 if (NODE_MODULES_REG.test(componentPath as string)) {
