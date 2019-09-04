@@ -34,6 +34,12 @@ import { downloadGithubRepoLatestRelease } from '../util/dowload'
 
 function buildProjectConfig () {
   const { buildAdapter, sourceDir, outputDir, outputDirName, appPath } = getBuildData()
+
+  if (buildAdapter === BUILD_TYPES.JD) {
+    // 京东小程序暂不支持 project.config.json
+    return
+  }
+
   let projectConfigFileName = `project.${buildAdapter}.json`
   if (buildAdapter === BUILD_TYPES.WEAPP || buildAdapter === BUILD_TYPES.QQ) {
     projectConfigFileName = 'project.config.json'

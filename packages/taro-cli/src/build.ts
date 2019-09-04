@@ -42,6 +42,9 @@ export default function build (appPath, buildConfig: IBuildConfig) {
     case BUILD_TYPES.QQ:
       buildForQQ(appPath, { watch })
       break
+    case BUILD_TYPES.JD:
+      buildForJD(appPath, { watch })
+      break
     case BUILD_TYPES.UI:
       buildForUILibrary(appPath, { watch })
       break
@@ -105,6 +108,13 @@ function buildForQQ (appPath: string, { watch }: IBuildConfig) {
   require('./mini').build(appPath, {
     watch,
     adapter: BUILD_TYPES.QQ
+  })
+}
+
+function buildForJD (appPath: string, { watch }: IBuildConfig) {
+  require('./mini').build(appPath, {
+    watch,
+    adapter: BUILD_TYPES.JD
   })
 }
 
