@@ -124,7 +124,6 @@ declare namespace Taro {
    *     res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
    *   }
    * })
-   * ```
    * @see https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateTo.html
    */
   function navigateTo(option: navigateTo.Option): Promise<General.CallbackResult>
