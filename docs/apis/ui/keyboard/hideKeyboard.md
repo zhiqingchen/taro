@@ -1,14 +1,14 @@
 ---
-title: Taro.hideTabBarRedDot(option)
-sidebar_label: hideTabBarRedDot
+title: Taro.hideKeyboard(option)
+sidebar_label: hideKeyboard
 ---
 
-隐藏 tabBar 某一项的右上角的红点
+在input、textarea等focus拉起键盘之后，手动调用此接口收起键盘
 
 ## 类型
 
 ```tsx
-(option: Option) => Promise<CallbackResult>
+(option?: Option) => void
 ```
 
 ## 参数
@@ -17,15 +17,24 @@ sidebar_label: hideTabBarRedDot
 
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
-| index | `number` | 是 | tabBar 的哪一项，从左边算起 |
 | complete | `(res: CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(res: CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
 | success | `(res: CallbackResult) => void` | 否 | 接口调用成功的回调函数 |
+
+## 示例代码
+
+```tsx
+Taro.hideKeyboard({
+  complete: res => {
+    console.log('hideKeyboard res', res)
+  }
+})
+```
 
 ## API 支持度
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.hideTabBarRedDot | ✔️ |  |  |  |  | ✔️ |  |  |
+| Taro.hideKeyboard | ✔️ |  |  |  |  |  |  |  |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/tab-bar/wx.hideTabBarRedDot.html)
+> [参考文档](https://developers.weixin.qq.com/minigame/dev/api/ui/keyboard/wx.hideKeyboard.html)

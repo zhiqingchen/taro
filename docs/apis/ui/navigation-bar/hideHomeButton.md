@@ -1,14 +1,14 @@
 ---
-title: Taro.hideTabBarRedDot(option)
-sidebar_label: hideTabBarRedDot
+title: Taro.hideHomeButton(option)
+sidebar_label: hideHomeButton
 ---
 
-隐藏 tabBar 某一项的右上角的红点
+隐藏返回首页按钮。微信7.0.7版本起，当用户打开的小程序最底层页面是非首页时，默认展示“返回首页”按钮，开发者可在页面 onShow 中调用 hideHomeButton 进行隐藏。
 
 ## 类型
 
 ```tsx
-(option: Option) => Promise<CallbackResult>
+(option?: Option) => Promise<CallbackResult>
 ```
 
 ## 参数
@@ -17,7 +17,6 @@ sidebar_label: hideTabBarRedDot
 
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
-| index | `number` | 是 | tabBar 的哪一项，从左边算起 |
 | complete | `(res: CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(res: CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
 | success | `(res: CallbackResult) => void` | 否 | 接口调用成功的回调函数 |
@@ -26,6 +25,6 @@ sidebar_label: hideTabBarRedDot
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.hideTabBarRedDot | ✔️ |  |  |  |  | ✔️ |  |  |
+| Taro.hideHomeButton | ✔️ |  |  |  |  |  |  |  |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/tab-bar/wx.hideTabBarRedDot.html)
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.hideHomeButton.html)
