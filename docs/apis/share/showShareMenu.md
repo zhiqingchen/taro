@@ -21,7 +21,7 @@ sidebar_label: showShareMenu
 | fail | `(res: CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
 | success | `(res: CallbackResult) => void` | 否 | 接口调用成功的回调函数 |
 | withShareTicket | `boolean` | 否 | 是否使用带 shareTicket 的转发[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html) |
-| showShareItems | `string[]` | 否 | QQ小程序分享功能，支持分享到QQ、QQ空间、微信好友、微信朋友圈<br />支持的值： ['qq', 'qzone', 'wechatFriends', 'wechatMoment'] |
+| showShareItems | `string[]` | 否 | QQ小程序分享功能，支持分享到QQ、QQ空间、微信好友、微信朋友圈<br />支持的值： ['qq', 'qzone', 'wechatFriends', 'wechatMoment']<br />API 支持度: qq |
 
 ## 示例代码
 

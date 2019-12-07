@@ -27,8 +27,7 @@ const isntTaroMethod = [
   ts.SymbolFlags.TypeAlias,
 ]
 const descTags = [
-  'abnormal', 'reason', 'solution',
-  ...envMap.map(e => e.name),
+  'default', 'supported', 'abnormal', 'reason', 'solution',
 ]
 const isntShowType = [
   'any', 'InterfaceDeclaration',
@@ -145,6 +144,7 @@ const get = {
         `| ${hasName ? '参数 |' : ''}${hasType? ' 类型 |' :''}${hasDef? ' 默认值 |' :''}${hasOptional? ' 必填 |' :''}${hasAbnormal? ' 异常情况 |' :''}${hasReason? ' 理由 |' :''}${hasSolution? ' 解决方案 |' :''}${hasDes? ' 说明 |' :''}`,
         `|${hasName? ' --- |' :''}${hasType? ' --- |' :''}${hasDef? ' :---: |' :''}${hasOptional? ' :---: |' :''}${hasAbnormal? ' :---: |' :''}${hasReason? ' :---: |' :''}${hasSolution? ' :---: |' :''}${hasDes? ' --- |' :''}`,
         ...paramTabs.map(v => {
+          const isMethod = TaroMethod.includes(v.flags || -1)
           const vtags = v.jsTags || [];
           const def = vtags.find(tag => tag.name === 'default') || { text: '' }
           const abnormal = vtags.find(tag => tag.name === 'abnormal') || { text: '' }
@@ -159,14 +159,15 @@ const get = {
             hasSolution? ` ${solution.text ? `\`${solution.text}\`` : ''} |` :''}${
             hasDes? ` ${parseLineFeed(v.documentation)}${
               vtags.length > 0 ? `${vtags
-                .filter(arrs => !['default', 'supported'].includes(arrs.name))
+                .filter(arrs => !descTags.includes(arrs.name) || !isMethod && arrs.name === 'supported')
                 .map(arrs => {
                   if (arrs.name === 'see') {
                     return `<br />[参考地址](${arrs.text})`
-                  } else if (!descTags.includes(arrs.name)) {
+                  } else if (arrs.name === 'supported') {
+                    return `<br />API 支持度: ${arrs.text}`
+                  } else {
                     return `<br />${arrs.name}: ${parseLineFeed(arrs.text)}`
                   }
-                  return undefined
                 }).join('')
             }` : ''
           } |` :''}`
