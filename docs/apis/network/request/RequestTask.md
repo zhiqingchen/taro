@@ -3,6 +3,8 @@ title: RequestTask
 sidebar_label: RequestTask
 ---
 
+网络请求任务对象
+
 ## 方法
 
 ### abort

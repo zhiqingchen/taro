@@ -1,12 +1,12 @@
 declare namespace Taro {
   namespace request {
-    interface Option < T extends string | General.IAnyObject | ArrayBuffer = any | any > {
+    interface Option < U extends string | General.IAnyObject | ArrayBuffer = any | any > {
       /** 开发者服务器接口地址 */
       url: string
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: General.CallbackResult) => void
       /** 请求的参数 */
-      data?: T
+      data?: U
       /** 返回的数据格式 */
       dataType?: keyof dataType
       /** 接口调用失败的回调函数 */
@@ -179,7 +179,7 @@ declare namespace Taro {
    */
   function request<T = any, U = any>(option: request.Option<U>): RequestTask<T>
 
-  /**
+  /** 网络请求任务对象
    * @example
    * 回调函数(Callback)用法：
    * 
@@ -260,4 +260,38 @@ declare namespace Taro {
       header: General.IAnyObject
     }
   }
+
+  /** 可以使用拦截器在请求发出前或发出后做一些额外操作。
+   * 
+   * 在调用 `Taro.request` 发起请求之前，调用 `Taro.addInterceptor` 方法为请求添加拦截器，拦截器的调用顺序遵循洋葱模型。
+   * 拦截器是一个函数，接受 chain 对象作为参数。chain 对象中含有 **requestParmas** 属性，代表请求参数。拦截器内最后需要调用 `chain.proceed(requestParams)` 以调用下一个拦截器或发起请求。
+   * 
+   * Taro 提供了两个内置拦截器 `logInterceptor` 与 `timeoutInterceptor`，分别用于打印请求的相关信息和在请求超时时抛出错误。
+   * @supported weapp, h5, alipay, swan, tt, qq
+   * @example
+   * ```tsx
+   * const interceptor = function (chain) {
+   *   const requestParams = chain.requestParams
+   *   const { method, data, url } = requestParams
+   * 
+   *   console.log(`http ${method || 'GET'} --> ${url} data: `, data)
+   * 
+   *   return chain.proceed(requestParams)
+   *     .then(res => {
+   *       console.log(`http <-- ${url} result:`, res)
+   *       return res
+   *     })
+   *   }
+   * Taro.addInterceptor(interceptor)
+   * Taro.request({ url })
+   * ```
+   * @example
+   * ```tsx
+   * Taro.addInterceptor(Taro.interceptors.logInterceptor)
+   * Taro.addInterceptor(Taro.interceptors.timeoutInterceptor)
+   * Taro.request({ url })
+   * ```
+   * @since 1.2.16
+   */
+  function addInterceptor (callback: Function): void
 }

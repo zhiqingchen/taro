@@ -25,7 +25,7 @@ sidebar_label: request
 | --- | --- | :---: | :---: | --- |
 | url | `string` |  | 是 | 开发者服务器接口地址 |
 | complete | `(res: CallbackResult) => void` |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
-| data | `T` |  | 否 | 请求的参数 |
+| data | `U` |  | 否 | 请求的参数 |
 | dataType | `"json" | "其他"` |  | 否 | 返回的数据格式 |
 | fail | `(res: CallbackResult) => void` |  | 否 | 接口调用失败的回调函数 |
 | header | `Record<string, any>` |  | 否 | 设置请求的 header，header 中不能设置 Referer。<br /><br />`content-type` 默认为 `application/json` |

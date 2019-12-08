@@ -44,4 +44,14 @@ declare namespace Taro {
    * @see https://developers.weixin.qq.com/miniprogram/dev/api/open-api/payment/wx.requestPayment.html
    */
   function requestPayment(option: requestPayment.Option): Promise<General.CallbackResult>
+
+  /** 支付各个安全场景验证人脸
+   * @supported weapp
+   * @example
+   * ```tsx
+   * Taro.faceVerifyForPay(params).then(...)
+   * ```
+   * @see https://developers.weixin.qq.com/miniprogram/dev/api/open-api/payment/wx.faceVerifyForPay.html
+   */
+  function faceVerifyForPay(option: any): Promise<any>
 }
