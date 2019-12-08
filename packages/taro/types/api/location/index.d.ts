@@ -25,11 +25,11 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.getLocation({
-   *  type: 'gcj02', //返回可以用于wx.openLocation的经纬度
-   *  success (res) {
+   *  type: 'gcj02', //返回可以用于 Taro.openLocation的经纬度
+   *  success: function (res) {
    *    const latitude = res.latitude
    *    const longitude = res.longitude
-   *    wx.openLocation({
+   *    Taro.openLocation({
    *      latitude,
    *      longitude,
    *      scale: 18
@@ -55,7 +55,7 @@ declare namespace Taro {
       isHighAccuracy?: boolean
       /** 接口调用成功的回调函数 */
       success?: (result: SuccessCallbackResult) => void
-      /** wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标 */
+      /** wgs84 返回 gps 坐标，gcj02 返回可用于 Taro.openLocation 的坐标 */
       type?: string
     }
     interface SuccessCallbackResult extends General.CallbackResult {
@@ -88,7 +88,7 @@ declare namespace Taro {
    *  ```tsx
    * Taro.getLocation({
    *  type: 'wgs84',
-   *  success (res) {
+   *  success: function (res) {
    *    const latitude = res.latitude
    *    const longitude = res.longitude
    *    const speed = res.speed
@@ -238,7 +238,7 @@ declare namespace Taro {
    * @supported weapp
    * @example
    * ```tsx
-   * const _locationChangeFn = function(res) {
+   * const _locationChangeFn = function (res) {
    *  console.log('location change', res)
    * }
    * Taro.onLocationChange(_locationChangeFn)

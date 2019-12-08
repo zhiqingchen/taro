@@ -34,7 +34,7 @@ sidebar_label: getStorage
 ```tsx
 Taro.getStorage({
   key: 'key',
-  success (res) {
+  success: function (res) {
     console.log(res.data)
   }
 })

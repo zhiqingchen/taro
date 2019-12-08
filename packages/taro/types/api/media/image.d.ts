@@ -18,8 +18,7 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.saveImageToPhotosAlbum({
-   *     success(res) {
-   *     }
+   *   success: function (res) {}
    * })
    * ```
    * @see https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.saveImageToPhotosAlbum.html

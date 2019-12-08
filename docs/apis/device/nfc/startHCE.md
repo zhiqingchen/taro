@@ -27,7 +27,7 @@ sidebar_label: startHCE
 ```tsx
 Taro.startHCE({
   aid_list: ['F222222222']
-  success: function(res) {
+  success: function (res) {
     console.log(res.errMsg)
   }
 })

@@ -27,7 +27,7 @@ const isntTaroMethod = [
   ts.SymbolFlags.TypeAlias,
 ]
 const descTags = [
-  'default', 'supported', 'abnormal', 'reason', 'solution',
+  'name', 'type', 'default', 'supported', 'abnormal', 'reason', 'solution',
 ]
 const isntShowType = [
   'any', 'InterfaceDeclaration',
@@ -129,7 +129,7 @@ const get = {
 
     if (paramTabs.length > 0) {
       const hasName = paramTabs.some(v => !!v.name)
-      const hasType = paramTabs.some(v => !!v.type && !isntShowType.includes(v.type))
+      const hasType = paramTabs.some(v => !!v.type && !isntShowType.includes(v.type) || needLessDeclarationsName.includes(v.name || ''))
       const hasDef = paramTabs.some(v => !!v.jsTags && v.jsTags.some(vv => vv.name === 'default'))
       const hasOptional = paramTabs.some(v => isOptional(v.flags))
       const hasAbnormal = paramTabs.some(v => !!v.jsTags && v.jsTags.some(vv => vv.name === 'abnormal'))
@@ -144,14 +144,22 @@ const get = {
         `| ${hasName ? '参数 |' : ''}${hasType? ' 类型 |' :''}${hasDef? ' 默认值 |' :''}${hasOptional? ' 必填 |' :''}${hasAbnormal? ' 异常情况 |' :''}${hasReason? ' 理由 |' :''}${hasSolution? ' 解决方案 |' :''}${hasDes? ' 说明 |' :''}`,
         `|${hasName? ' --- |' :''}${hasType? ' --- |' :''}${hasDef? ' :---: |' :''}${hasOptional? ' :---: |' :''}${hasAbnormal? ' :---: |' :''}${hasReason? ' :---: |' :''}${hasSolution? ' :---: |' :''}${hasDes? ' --- |' :''}`,
         ...paramTabs.map(v => {
+          let name = v.name || ''
+          let type = v.type || ''
           const isMethod = TaroMethod.includes(v.flags || -1)
           const vtags = v.jsTags || [];
           const def = vtags.find(tag => tag.name === 'default') || { text: '' }
           const abnormal = vtags.find(tag => tag.name === 'abnormal') || { text: '' }
           const reason = vtags.find(tag => tag.name === 'reason') || { text: '' }
           const solution = vtags.find(tag => tag.name === 'solution') || { text: '' }
-          return `| ${v.name} |${
-            hasType? ` ${v.type ? `\`${v.type}\`` : ''} |` :''}${
+          if (needLessDeclarationsName.includes(name)) {
+            const tag_name = vtags.find(tag => tag.name === 'name') || { text: '' }
+            const tag_type = vtags.find(tag => tag.name === 'type') || { text: '' }
+            name = tag_name.text || name
+            type = tag_type.text ? tag_type.text.trim() : type === 'any' && v.name || ''
+          }
+          return `| ${name} |${
+            hasType? ` ${type ? `\`${type}\`` : ''} |` :''}${
             hasDef? ` ${def.text ? `\`${def.text}\`` : ''} |` :''}${
             hasOptional? ` ${!isOptional(v.flags) ? '是' : '否'} |` :''}${
             hasAbnormal? ` ${abnormal.text ? `\`${abnormal.text}\`` : ''} |` :''}${
@@ -207,7 +215,7 @@ const get = {
           get.type(param.type),
           get.members(param.members, '方法', level + (level === 2 ? 2 : 1)),
           get.members(declaration.parameters, '参数', level + (level === 2 ? 2 : 1)),
-          get.example(tags),
+          get.example(tags, level + (level === 2 ? 2 : 1)),
           get.see(tags.find(tag => tag.name === 'see')),
         ])
       }/*  else if (!isShowAPI(param.flags) && !isNotAPI(param.flags) && param.flags !== 1) {

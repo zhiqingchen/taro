@@ -20,7 +20,7 @@ sidebar_label: onUserCaptureScreen
 ## 示例代码
 
 ```tsx
-Taro.onUserCaptureScreen(function(res) {
+Taro.onUserCaptureScreen(function (res) {
     console.log('用户截屏了')
 })
 ```

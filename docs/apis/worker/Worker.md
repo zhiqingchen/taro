@@ -31,7 +31,7 @@ sidebar_label: Worker
 | --- | --- | --- |
 | message | `Record<string, any>` | 需要发送的消息，必须是一个可序列化的 JavaScript key-value 形式的对象。 |
 
-## 示例代码
+#### 示例代码
 
 worker 线程中
 ```tsx
@@ -42,7 +42,7 @@ msg: 'hello from worker'
 
 主线程中
 ```tsx
-const worker = wx.createWorker('workers/request/index.js')
+const worker = Taro.createWorker('workers/request/index.js')
 worker.postMessage({
 msg: 'hello from main'
 })

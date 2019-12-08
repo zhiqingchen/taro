@@ -34,11 +34,11 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.chooseImage({
-   *   success: function(res) {
+   *   success: function (res) {
    *     var tempFilePaths = res.tempFilePaths
    *     Taro.saveFile({
    *       tempFilePath: tempFilePaths[0],
-   *       success: function(res) {
+   *       success: function (res) {
    *         var savedFilePath = res.savedFilePath
    *       }
    *     })
@@ -73,11 +73,11 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.getSavedFileList({
-   *   success: function(res) {
+   *   success: function (res) {
    *     if (res.fileList.length > 0){
    *       Taro.removeSavedFile({
    *         filePath: res.fileList[0].filePath,
-   *         complete: function(res) {
+   *         complete: function (res) {
    *           console.log(res)
    *         }
    *       })
@@ -171,7 +171,7 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.getSavedFileList({
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res.fileList)
    *   }
    * })
@@ -206,7 +206,7 @@ declare namespace Taro {
    * ```tsx
    * Taro.getSavedFileInfo({
    *   filePath: 'wxfile://somefile', //仅做示例用，非真正的文件路径
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res.size)
    *     console.log(res.createTime)
    *   }
@@ -247,7 +247,7 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.getFileInfo({
-   *     success(res) {
+   *     success: function (res) {
    *         console.log(res.size)
    *         console.log(res.digest)
    *     }

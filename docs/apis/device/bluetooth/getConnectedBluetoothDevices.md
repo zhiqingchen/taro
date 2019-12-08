@@ -42,7 +42,7 @@ sidebar_label: getConnectedBluetoothDevices
 
 ```tsx
 Taro.getConnectedBluetoothDevices({
-  success: function(res) {
+  success: function (res) {
     console.log(res)
   }
 })

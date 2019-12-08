@@ -62,7 +62,7 @@ function ab2hex(buffer) {
   )
   return hexArr.join('');
 }
-Taro.onBluetoothDeviceFound(function(res) {
+Taro.onBluetoothDeviceFound(function (res) {
   var devices = res.devices;
   console.log('new device list has founded')
   console.dir(devices)

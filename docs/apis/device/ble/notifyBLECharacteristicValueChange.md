@@ -48,7 +48,7 @@ Taro.notifyBLECharacteristicValueChange({
   serviceId,
   // 这里的 characteristicId 需要在 getBLEDeviceCharacteristics 接口中获取
   characteristicId,
-  success: function(res) {
+  success: function (res) {
     console.log('notifyBLECharacteristicValueChange success', res.errMsg)
   }
 })

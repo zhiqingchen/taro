@@ -27,7 +27,7 @@ sidebar_label: getLocation
 | highAccuracyExpireTime | `number` | 否 | 高精度定位超时时间(ms)，指定时间内返回最高精度，该值3000ms以上高精度定位才有效果 |
 | isHighAccuracy | `boolean` | 否 | 开启高精度定位 |
 | success | `(result: SuccessCallbackResult) => void` | 否 | 接口调用成功的回调函数 |
-| type | `string` | 否 | wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标 |
+| type | `string` | 否 | wgs84 返回 gps 坐标，gcj02 返回可用于 Taro.openLocation 的坐标 |
 
 ### SuccessCallbackResult
 
@@ -47,7 +47,7 @@ sidebar_label: getLocation
  ```tsx
 Taro.getLocation({
  type: 'wgs84',
- success (res) {
+ success: function (res) {
    const latitude = res.latitude
    const longitude = res.longitude
    const speed = res.speed

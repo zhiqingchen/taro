@@ -47,7 +47,7 @@ function ab2hex(buffer) {
   )
   return hexArr.join('');
 }
-Taro.onBLECharacteristicValueChange(function(res) {
+Taro.onBLECharacteristicValueChange(function (res) {
   console.log(`characteristic ${res.characteristicId} has changed, now is ${res.value}`)
   console.log(ab2hex(res.value))
 })

@@ -25,7 +25,7 @@ declare namespace Taro {
    *   },
    *   getCenterLocation: function () {
    *     this.mapCtx.getCenterLocation({
-   *       success: function(res){
+   *       success: function (res){
    *         console.log(res.longitude)
    *         console.log(res.latitude)
    *       }

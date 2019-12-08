@@ -25,7 +25,7 @@ sidebar_label: stopHCE
 
 ```tsx
 Taro.stopHCE({
-  success: function(res) {
+  success: function (res) {
     console.log(res.errMsg)
   }
 })

@@ -35,7 +35,7 @@ try {
 ```tsx
 Taro.removeStorage({
   key: 'key',
-  success (res) {
+  success: function (res) {
     console.log(res)
   }
 })

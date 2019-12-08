@@ -25,7 +25,7 @@ sidebar_label: stopWifi
 
 ```tsx
 Taro.stopWifi({
-  success: function(res) {
+  success: function (res) {
     console.log(res.errMsg)
   }
 })

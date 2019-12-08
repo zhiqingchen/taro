@@ -24,7 +24,7 @@ sidebar_label: stopPullDownRefresh
 ## 示例代码
 
 ```tsx
-onPullDownRefresh: function(){
+onPullDownRefresh: function (){
   Taro.stopPullDownRefresh()
 }
 ```

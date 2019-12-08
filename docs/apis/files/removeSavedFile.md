@@ -32,11 +32,11 @@ sidebar_label: removeSavedFile
 
 ```tsx
 Taro.getSavedFileList({
-  success: function(res) {
+  success: function (res) {
     if (res.fileList.length > 0){
       Taro.removeSavedFile({
         filePath: res.fileList[0].filePath,
-        complete: function(res) {
+        complete: function (res) {
           console.log(res)
         }
       })

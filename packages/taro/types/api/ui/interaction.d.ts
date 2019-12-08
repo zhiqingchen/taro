@@ -87,7 +87,7 @@ declare namespace Taro {
    * Taro.showModal({
    *   title: '提示',
    *   content: '这是一个模态弹窗',
-   *   success: function(res) {
+   *   success: function (res) {
    *     if (res.confirm) {
    *       console.log('用户点击确定')
    *     } else if (res.cancel) {
@@ -165,10 +165,10 @@ declare namespace Taro {
    * ```tsx
    * Taro.showActionSheet({
    *   itemList: ['A', 'B', 'C'],
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res.tapIndex)
    *   },
-   *   fail: function(res) {
+   *   fail: function (res) {
    *     console.log(res.errMsg)
    *   }
    * })
@@ -212,7 +212,7 @@ declare namespace Taro {
    * Taro.showLoading({
    *   title: '加载中',
    * })
-   *       setTimeout(function(){
+   * setTimeout(function (){
    *   Taro.hideLoading()
    * },2000)
    * ```

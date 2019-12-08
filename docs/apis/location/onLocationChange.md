@@ -40,7 +40,7 @@ sidebar_label: onLocationChange
 ## 示例代码
 
 ```tsx
-const _locationChangeFn = function(res) {
+const _locationChangeFn = function (res) {
  console.log('location change', res)
 }
 Taro.onLocationChange(_locationChangeFn)

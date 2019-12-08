@@ -34,7 +34,7 @@ declare namespace Taro {
    *   serviceId,
    *   // 这里的 characteristicId 需要在 getBLEDeviceCharacteristics 接口中获取
    *   characteristicId,
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log('readBLECharacteristicValue:', res.errCode)
    *   }
    * })
@@ -61,7 +61,7 @@ declare namespace Taro {
    * @supported weapp
    * @example
    * ```tsx
-   * Taro.onBLEConnectionStateChange(function(res) {
+   * Taro.onBLEConnectionStateChange(function (res) {
    *   // 该方法回调中可以用于处理连接意外断开等异常情况
    *   console.log(`device ${res.deviceId} state has changed, connected: ${res.connected}`)
    * })
@@ -103,7 +103,7 @@ declare namespace Taro {
    *   )
    *   return hexArr.join('');
    * }
-   * Taro.onBLECharacteristicValueChange(function(res) {
+   * Taro.onBLECharacteristicValueChange(function (res) {
    *   console.log(`characteristic ${res.characteristicId} has changed, now is ${res.value}`)
    *   console.log(ab2hex(res.value))
    * })
@@ -155,7 +155,7 @@ declare namespace Taro {
    *   serviceId,
    *   // 这里的 characteristicId 需要在 getBLEDeviceCharacteristics 接口中获取
    *   characteristicId,
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log('notifyBLECharacteristicValueChange success', res.errMsg)
    *   }
    * })
@@ -200,7 +200,7 @@ declare namespace Taro {
    * Taro.getBLEDeviceServices({
    *   // 这里的 deviceId 需要已经通过 createBLEConnection 与对应设备建立链接
    *   deviceId,
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log('device services:', res.services)
    *   }
    * })
@@ -258,7 +258,7 @@ declare namespace Taro {
    *   deviceId,
    *   // 这里的 serviceId 需要在 getBLEDeviceServices 接口中获取
    *   serviceId,
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log('device getBLEDeviceCharacteristics:', res.characteristics)
    *   }
    * })
@@ -301,7 +301,7 @@ declare namespace Taro {
    * Taro.createBLEConnection({
    *   // 这里的 deviceId 需要已经通过 createBLEConnection 与对应设备建立链接
    *   deviceId,
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res)
    *   }
    * })
@@ -332,7 +332,7 @@ declare namespace Taro {
    * ```tsx
    * Taro.closeBLEConnection({
    *   deviceId,
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res)
    *   }
    * })
@@ -386,7 +386,7 @@ declare namespace Taro {
    *   characteristicId,
    *   // 这里的value是ArrayBuffer类型
    *   value: buffer,
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log('writeBLECharacteristicValue success', res.errMsg)
    *   }
    * })

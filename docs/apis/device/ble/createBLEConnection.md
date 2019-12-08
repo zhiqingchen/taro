@@ -42,7 +42,7 @@ sidebar_label: createBLEConnection
 Taro.createBLEConnection({
   // 这里的 deviceId 需要已经通过 createBLEConnection 与对应设备建立链接
   deviceId,
-  success: function(res) {
+  success: function (res) {
     console.log(res)
   }
 })

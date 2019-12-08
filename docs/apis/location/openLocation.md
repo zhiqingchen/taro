@@ -30,11 +30,11 @@ sidebar_label: openLocation
 
 ```tsx
 Taro.getLocation({
- type: 'gcj02', //返回可以用于wx.openLocation的经纬度
- success (res) {
+ type: 'gcj02', //返回可以用于 Taro.openLocation的经纬度
+ success: function (res) {
    const latitude = res.latitude
    const longitude = res.longitude
-   wx.openLocation({
+   Taro.openLocation({
      latitude,
      longitude,
      scale: 18

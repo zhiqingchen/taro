@@ -33,7 +33,7 @@ sidebar_label: closeBLEConnection
 ```tsx
 Taro.closeBLEConnection({
   deviceId,
-  success: function(res) {
+  success: function (res) {
     console.log(res)
   }
 })

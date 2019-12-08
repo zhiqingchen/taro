@@ -39,7 +39,7 @@ sidebar_label: getFileInfo
 
 ```tsx
 Taro.getFileInfo({
-    success(res) {
+    success: function (res) {
         console.log(res.size)
         console.log(res.digest)
     }

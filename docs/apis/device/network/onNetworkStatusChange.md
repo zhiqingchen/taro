@@ -35,7 +35,7 @@ sidebar_label: onNetworkStatusChange
 ## 示例代码
 
 ```tsx
-Taro.onNetworkStatusChange(function(res) {
+Taro.onNetworkStatusChange(function (res) {
   console.log(res.isConnected)
   console.log(res.networkType)
 })

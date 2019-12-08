@@ -36,7 +36,7 @@ sidebar_label: startBluetoothDevicesDiscovery
 // 以微信硬件平台的蓝牙智能灯为例，主服务的 UUID 是 FEE7。传入这个参数，只搜索主服务 UUID 为 FEE7 的设备
 Taro.startBluetoothDevicesDiscovery({
   services: ['FEE7'],
-  success: function(res) {
+  success: function (res) {
     console.log(res)
   }
 })

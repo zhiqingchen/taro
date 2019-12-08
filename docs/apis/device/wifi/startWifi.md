@@ -25,7 +25,7 @@ sidebar_label: startWifi
 
 ```tsx
 Taro.startWifi({
-  success: function(res) {
+  success: function (res) {
     console.log(res.errMsg)
   }
 })

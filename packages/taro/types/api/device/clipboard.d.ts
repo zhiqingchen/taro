@@ -25,9 +25,9 @@ declare namespace Taro {
    * ```tsx
    * Taro.setClipboardData({
    *   data: 'data',
-   *   success: function(res) {
+   *   success: function (res) {
    *     Taro.getClipboardData({
-   *       success: function(res) {
+   *       success: function (res) {
    *         console.log(res.data) // data
    *       }
    *     })
@@ -65,7 +65,7 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.getClipboardData({
-   *   success: function(res){
+   *   success: function (res){
    *     console.log(res.data)
    *   }
    * })

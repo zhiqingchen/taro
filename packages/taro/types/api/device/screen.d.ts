@@ -56,7 +56,7 @@ declare namespace Taro {
    * @supported weapp
    * @example
    * ```tsx
-   * Taro.onUserCaptureScreen(function(res) {
+   * Taro.onUserCaptureScreen(function (res) {
    *     console.log('用户截屏了')
    * })
    * ```

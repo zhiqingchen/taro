@@ -22,7 +22,7 @@ Taro.getStorage 的同步版本
 ```tsx
 Taro.getStorage({
   key: 'key',
-  success (res) {
+  success: function (res) {
     console.log(res.data)
   }
 })

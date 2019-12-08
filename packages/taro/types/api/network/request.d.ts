@@ -174,7 +174,7 @@ declare namespace Taro {
    *   header: {
    *     'content-type': 'application/json' // 默认值
    *   },
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res.data)
    *   }
    * })
@@ -190,7 +190,7 @@ declare namespace Taro {
    *   header: {
    *     'content-type': 'application/json' // 默认值
    *   },
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res.data)
    *   }
    * })

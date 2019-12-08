@@ -75,7 +75,7 @@ declare namespace Taro {
    * ```tsx
    * Taro.removeStorage({
    *   key: 'key',
-   *   success (res) {
+   *   success: function (res) {
    *     console.log(res)
    *   }
    * })
@@ -113,7 +113,7 @@ declare namespace Taro {
    * ```tsx
    * Taro.removeStorage({
    *   key: 'key',
-   *   success (res) {
+   *   success: function (res) {
    *     console.log(res)
    *   }
    * })
@@ -136,7 +136,7 @@ declare namespace Taro {
    * ```tsx
    * Taro.getStorage({
    *   key: 'key',
-   *   success (res) {
+   *   success: function (res) {
    *     console.log(res.data)
    *   }
    * })
@@ -175,7 +175,7 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.getStorageInfo({
-   *   success (res) {
+   *   success: function (res) {
    *     console.log(res.keys)
    *     console.log(res.currentSize)
    *     console.log(res.limitSize)
@@ -222,7 +222,7 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.getStorageInfo({
-   *   success (res) {
+   *   success: function (res) {
    *     console.log(res.keys)
    *     console.log(res.currentSize)
    *     console.log(res.limitSize)
@@ -269,7 +269,7 @@ declare namespace Taro {
    * ```tsx
    * Taro.getStorage({
    *   key: 'key',
-   *   success (res) {
+   *   success: function (res) {
    *     console.log(res.data)
    *   }
    * })

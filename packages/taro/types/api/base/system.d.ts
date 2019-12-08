@@ -167,7 +167,7 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.getSystemInfo({
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res.model)
    *     console.log(res.pixelRatio)
    *     console.log(res.windowWidth)

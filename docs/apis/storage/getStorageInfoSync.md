@@ -25,7 +25,7 @@ Taro.getStorageInfo 的同步版本
 
 ```tsx
 Taro.getStorageInfo({
-  success (res) {
+  success: function (res) {
     console.log(res.keys)
     console.log(res.currentSize)
     console.log(res.limitSize)

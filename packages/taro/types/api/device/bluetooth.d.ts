@@ -18,7 +18,7 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.stopBluetoothDevicesDiscovery({
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res)
    *   }
    * })
@@ -56,7 +56,7 @@ declare namespace Taro {
    * // 以微信硬件平台的蓝牙智能灯为例，主服务的 UUID 是 FEE7。传入这个参数，只搜索主服务 UUID 为 FEE7 的设备
    * Taro.startBluetoothDevicesDiscovery({
    *   services: ['FEE7'],
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res)
    *   }
    * })
@@ -154,7 +154,7 @@ declare namespace Taro {
    *   )
    *   return hexArr.join('');
    * }
-   * Taro.onBluetoothDeviceFound(function(res) {
+   * Taro.onBluetoothDeviceFound(function (res) {
    *   var devices = res.devices;
    *   console.log('new device list has founded')
    *   console.dir(devices)
@@ -225,7 +225,7 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.getConnectedBluetoothDevices({
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res)
    *   }
    * })
@@ -350,7 +350,7 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.closeBluetoothAdapter({
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res)
    *   }
    * })

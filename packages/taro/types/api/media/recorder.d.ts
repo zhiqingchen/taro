@@ -4,10 +4,10 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.startRecord({
-   *   success: function(res) {
+   *   success: function (res) {
    *     var tempFilePath = res.tempFilePath
    *   },
-   *   fail: function(res) {
+   *   fail: function (res) {
    *      //录音失败
    *   }
    * })

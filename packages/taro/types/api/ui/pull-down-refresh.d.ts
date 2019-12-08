@@ -14,7 +14,7 @@ declare namespace Taro {
    * @supported weapp, h5, rn
    * @example
    * ```tsx
-   * onPullDownRefresh: function(){
+   * onPullDownRefresh: function (){
    *   Taro.stopPullDownRefresh()
    * }
    * ```

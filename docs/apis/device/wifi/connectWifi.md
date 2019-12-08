@@ -30,7 +30,7 @@ sidebar_label: connectWifi
 Taro.connectWifi({
   SSID: '',
   BSSID: '',
-  success: function(res) {
+  success: function (res) {
     console.log(res.errMsg)
   }
 })

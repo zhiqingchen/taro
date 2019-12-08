@@ -31,7 +31,7 @@ sidebar_label: stopBluetoothDevicesDiscovery
 
 ```tsx
 Taro.stopBluetoothDevicesDiscovery({
-  success: function(res) {
+  success: function (res) {
     console.log(res)
   }
 })

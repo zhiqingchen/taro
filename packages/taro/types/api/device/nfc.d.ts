@@ -15,7 +15,7 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.stopHCE({
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res.errMsg)
    *   }
    * })
@@ -43,7 +43,7 @@ declare namespace Taro {
    * ```tsx
    * Taro.startHCE({
    *   aid_list: ['F222222222']
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res.errMsg)
    *   }
    * })
@@ -73,8 +73,8 @@ declare namespace Taro {
    * const dataView = new DataView(buffer)
    * dataView.setUint8(0, 0)
    *       Taro.startHCE({
-   *   success: function(res) {
-   *     Taro.onHCEMessage(function(res) {
+   *   success: function (res) {
+   *     Taro.onHCEMessage(function (res) {
    *       if (res.messageType === 1) {
    *         Taro.sendHCEMessage({data: buffer})
    *       }
@@ -133,7 +133,7 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.getHCEState({
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res.errCode)
    *   }
    * })

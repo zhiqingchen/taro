@@ -40,7 +40,7 @@ sidebar_label: setWifiList
 ## 示例代码
 
 ```tsx
-Taro.onGetWifiList(function(res) {
+Taro.onGetWifiList(function (res) {
   if (res.wifiList.length) {
     Taro.setWifiList({
       wifiList: [{

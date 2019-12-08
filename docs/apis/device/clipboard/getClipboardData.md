@@ -38,7 +38,7 @@ sidebar_label: getClipboardData
 
 ```tsx
 Taro.getClipboardData({
-  success: function(res){
+  success: function (res){
     console.log(res.data)
   }
 })

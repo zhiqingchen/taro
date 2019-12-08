@@ -35,7 +35,7 @@ sidebar_label: onBLEConnectionStateChange
 ## 示例代码
 
 ```tsx
-Taro.onBLEConnectionStateChange(function(res) {
+Taro.onBLEConnectionStateChange(function (res) {
   // 该方法回调中可以用于处理连接意外断开等异常情况
   console.log(`device ${res.deviceId} state has changed, connected: ${res.connected}`)
 })

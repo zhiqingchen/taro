@@ -29,8 +29,8 @@ const buffer = new ArrayBuffer(1)
 const dataView = new DataView(buffer)
 dataView.setUint8(0, 0)
       Taro.startHCE({
-  success: function(res) {
-    Taro.onHCEMessage(function(res) {
+  success: function (res) {
+    Taro.onHCEMessage(function (res) {
       if (res.messageType === 1) {
         Taro.sendHCEMessage({data: buffer})
       }

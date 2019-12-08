@@ -27,7 +27,7 @@ sidebar_label: hideLoading
 Taro.showLoading({
   title: '加载中',
 })
-      setTimeout(function(){
+setTimeout(function (){
   Taro.hideLoading()
 },2000)
 ```

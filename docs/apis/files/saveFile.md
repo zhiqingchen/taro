@@ -40,11 +40,11 @@ sidebar_label: saveFile
 
 ```tsx
 Taro.chooseImage({
-  success: function(res) {
+  success: function (res) {
     var tempFilePaths = res.tempFilePaths
     Taro.saveFile({
       tempFilePath: tempFilePaths[0],
-      success: function(res) {
+      success: function (res) {
         var savedFilePath = res.savedFilePath
       }
     })

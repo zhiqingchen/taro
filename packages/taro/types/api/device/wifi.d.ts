@@ -14,7 +14,7 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.stopWifi({
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res.errMsg)
    *   }
    * })
@@ -38,7 +38,7 @@ declare namespace Taro {
    * @example
    * ```tsx
    * Taro.startWifi({
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res.errMsg)
    *   }
    * })
@@ -78,7 +78,7 @@ declare namespace Taro {
    * @supported weapp
    * @example
    * ```tsx
-   * Taro.onGetWifiList(function(res) {
+   * Taro.onGetWifiList(function (res) {
    *   if (res.wifiList.length) {
    *     Taro.setWifiList({
    *       wifiList: [{
@@ -219,7 +219,7 @@ declare namespace Taro {
    * Taro.connectWifi({
    *   SSID: '',
    *   BSSID: '',
-   *   success: function(res) {
+   *   success: function (res) {
    *     console.log(res.errMsg)
    *   }
    * })

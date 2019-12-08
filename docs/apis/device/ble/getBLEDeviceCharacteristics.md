@@ -58,7 +58,7 @@ Taro.getBLEDeviceCharacteristics({
   deviceId,
   // 这里的 serviceId 需要在 getBLEDeviceServices 接口中获取
   serviceId,
-  success: function(res) {
+  success: function (res) {
     console.log('device getBLEDeviceCharacteristics:', res.characteristics)
   }
 })

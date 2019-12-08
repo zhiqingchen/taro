@@ -49,7 +49,7 @@ declare namespace Taro {
      *
      * 主线程中
      * ```tsx
-     * const worker = wx.createWorker('workers/request/index.js')
+     * const worker = Taro.createWorker('workers/request/index.js')
      * worker.postMessage({
      * msg: 'hello from main'
      * })

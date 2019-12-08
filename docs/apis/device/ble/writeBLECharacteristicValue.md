@@ -53,7 +53,7 @@ Taro.writeBLECharacteristicValue({
   characteristicId,
   // 这里的value是ArrayBuffer类型
   value: buffer,
-  success: function(res) {
+  success: function (res) {
     console.log('writeBLECharacteristicValue success', res.errMsg)
   }
 })

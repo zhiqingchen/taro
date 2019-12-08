@@ -35,7 +35,7 @@ sidebar_label: getSavedFileInfo
 ```tsx
 Taro.getSavedFileInfo({
   filePath: 'wxfile://somefile', //仅做示例用，非真正的文件路径
-  success: function(res) {
+  success: function (res) {
     console.log(res.size)
     console.log(res.createTime)
   }

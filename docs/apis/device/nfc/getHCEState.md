@@ -25,7 +25,7 @@ sidebar_label: getHCEState
 
 ```tsx
 Taro.getHCEState({
-  success: function(res) {
+  success: function (res) {
     console.log(res.errCode)
   }
 })

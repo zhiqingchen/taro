@@ -42,7 +42,7 @@ sidebar_label: getSavedFileList
 
 ```tsx
 Taro.getSavedFileList({
-  success: function(res) {
+  success: function (res) {
     console.log(res.fileList)
   }
 })

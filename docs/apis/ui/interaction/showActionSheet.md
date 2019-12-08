@@ -39,10 +39,10 @@ sidebar_label: showActionSheet
 ```tsx
 Taro.showActionSheet({
   itemList: ['A', 'B', 'C'],
-  success: function(res) {
+  success: function (res) {
     console.log(res.tapIndex)
   },
-  fail: function(res) {
+  fail: function (res) {
     console.log(res.errMsg)
   }
 })

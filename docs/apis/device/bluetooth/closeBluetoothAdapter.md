@@ -25,7 +25,7 @@ sidebar_label: closeBluetoothAdapter
 
 ```tsx
 Taro.closeBluetoothAdapter({
-  success: function(res) {
+  success: function (res) {
     console.log(res)
   }
 })
