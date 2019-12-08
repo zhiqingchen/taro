@@ -124,7 +124,10 @@ const get = {
     const methods: (string | undefined)[] = [level === 2 ? `## ${title}\n` : undefined]
     const paramTabs: DocEntry[] = []
     data.forEach(v => {
-      v.name !== ts.InternalSymbolName.Call && !isShowMembers(v.flags) && paramTabs.push(v)
+      v.name !== ts.InternalSymbolName.Call &&
+      v.flags !== ts.SymbolFlags.TypeParameter &&
+      !isShowMembers(v.flags) &&
+      paramTabs.push(v)
     })
 
     if (paramTabs.length > 0) {
@@ -354,6 +357,7 @@ function isNotAPI (flags?: ts.SymbolFlags) {
   return [
     -1,
     ts.SymbolFlags.Signature,
+    ts.SymbolFlags.TypeParameter,
   ].includes(flags || -1)
 }
 

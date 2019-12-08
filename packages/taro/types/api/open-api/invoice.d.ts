@@ -28,6 +28,7 @@ declare namespace Taro {
       type: keyof invoice_type
     }
 
+    /** 抬头类型 */
     interface invoice_type {
       0: '单位'
       1: '个人'

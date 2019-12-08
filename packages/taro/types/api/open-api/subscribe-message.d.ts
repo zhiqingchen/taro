@@ -39,6 +39,7 @@ declare namespace Taro {
       errMsg: string
     }
 
+    /** 模版消息订阅类型 */
     interface template_reflex {
       /** 表示用户同意订阅该条id对应的模板消息 */
       accept

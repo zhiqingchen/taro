@@ -51,6 +51,8 @@ sidebar_label: requestSubscribeMessage
 
 ### template_reflex
 
+模版消息订阅类型
+
 | 参数 | 说明 |
 | --- | --- |
 | accept | 表示用户同意订阅该条id对应的模板消息 |

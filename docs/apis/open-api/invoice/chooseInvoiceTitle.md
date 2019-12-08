@@ -36,6 +36,8 @@ sidebar_label: chooseInvoiceTitle
 
 ### invoice_type
 
+抬头类型
+
 | 参数 | 类型 |
 | --- | --- |
 | 0 | `"单位"` |
