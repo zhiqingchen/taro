@@ -49,7 +49,8 @@ class Textarea extends Nerv.Component {
       placeholder = '',
       disabled,
       maxlength = 140,
-      autoFocus = false
+      autoFocus = false,
+      showConfirmBar = false
     } = this.props
     return (
       <textarea
@@ -62,13 +63,15 @@ class Textarea extends Nerv.Component {
           'onInput',
           'onFocus',
           'onBlur',
-          'autofocus'
+          'autofocus',
+          'showConfirmBar'
         ])}
         className={className}
         placeholder={placeholder}
         disabled={disabled}
         maxlength={maxlength}
-        autofocus={autoFocus}
+        autofocus={autoFocus ? 'autofocus' : false}
+        showConfirmBar={showConfirmBar}
         onChange={this.onChange}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
