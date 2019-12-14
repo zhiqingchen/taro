@@ -21,13 +21,13 @@ sidebar_label: createWorker
 
 ```tsx
 const worker = Taro.createWorker('workers/request/index.js') // 文件名指定 worker 的入口文件路径，绝对路径
-      worker.onMessage(function (res) {
+  worker.onMessage(function (res) {
   console.log(res)
 })
-      worker.postMessage({
+worker.postMessage({
   msg: 'hello worker'
 })
-      worker.terminate()
+worker.terminate()
 ```
 
 ## API 支持度

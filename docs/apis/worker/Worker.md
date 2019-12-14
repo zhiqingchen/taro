@@ -34,17 +34,19 @@ sidebar_label: Worker
 #### 示例代码
 
 worker 线程中
+
 ```tsx
 worker.postMessage({
-msg: 'hello from worker'
+  msg: 'hello from worker'
 })
 ```
 
 主线程中
+
 ```tsx
 const worker = Taro.createWorker('workers/request/index.js')
 worker.postMessage({
-msg: 'hello from main'
+  msg: 'hello from main'
 })
 ```
 
