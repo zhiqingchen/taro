@@ -1,4 +1,5 @@
 import * as path from "path"
+import { spawn } from "child_process"
 import * as ts from "typescript"
 import compile, { DocEntry, envMap } from "./parser"
 import writeFile from "./write"
@@ -36,26 +37,55 @@ const needLessDeclarationsName = [
   '__@unscopables', '__@iterator',
   ...InternalSymbolName
 ]
-const generalParh = path.resolve(__dirname, '../', 'types/api/index.d.ts')
+const generalParh = path.resolve(__dirname, '../packages/taro', 'types/api/index.d.ts')
 
 export default function docsAPI (
   base: string = '.',
   out: string,
   files: string[],
   callback: TCallback = () => {},
-  withLog = false,
+  withLog = true,
+  diif = true,
 ) {
   const cwd: string = process.cwd();
-  files.forEach(s => {
-    compile(cwd, s, [generalParh], (route, doc) => {
-      const output = route
-        .replace(path.resolve(cwd, base), path.resolve(cwd, out))
-        .replace(/(.[a-z]+)$|(.d.ts)$/ig, '')
-      withLog && console.log(route)
-      if (doc.length < 1) return
-      callback(output, doc, route === generalParh)
+
+  if (diif) {
+    const canges = spawn('git', ['status', '-z'])
+  
+    canges.stdout.on('data', (data) => {
+      const ss = data.toString().trim().split(/\u0000|\s+/ig)
+      ss.forEach(s => {
+        const route = path.resolve(cwd, s)
+        const output = route
+          .replace(path.resolve(cwd, base), path.resolve(cwd, out))
+          .replace(/(.[a-z]+)$|(.d.ts)$/ig, '')
+        files.forEach(e => {
+          const pe = path.resolve(cwd, e)
+          if (route.indexOf(pe) > -1) {
+            compile(cwd, s, [generalParh], (route, doc) => {
+              withLog && console.log(route)
+              if (doc.length < 1) return
+              callback(output, doc, route === generalParh)
+            })
+          }
+        })
+      })
     })
-  })
+    canges.stderr.on('data', (data) => {
+      console.error(`stderr: ${data}`)
+    })
+  } else {
+    files.forEach(s => {
+      compile(cwd, s, [generalParh], (route, doc) => {
+        const output = route
+          .replace(path.resolve(cwd, base), path.resolve(cwd, out))
+          .replace(/(.[a-z]+)$|(.d.ts)$/ig, '')
+        withLog && console.log(route)
+        if (doc.length < 1) return
+        callback(output, doc, route === generalParh)
+      })
+    })
+  }
 }
 
 export function childrenMerge (d: DocEntry[] = [], o: DocEntry[] = []) {
@@ -316,9 +346,11 @@ export function writeDoc (routepath: string, doc: DocEntry[], withGeneral = fals
   })
 }
 
-// docsAPI('./types/api', './apis', ['./types/api'], writeJson)
-// docsAPI('./types/api', './apis', ['./types/api'], writeDoc)
-docsAPI('./types/api', '../../docs/apis', ['./types/api'], writeDoc)
+// docsAPI('packages/taro/types/api', 'docs/apis', ['packages/taro/types/api'], writeJson)
+// docsAPI('packages/taro/types/api', 'docs/apis', ['packages/taro/types/api'], writeDoc)
+docsAPI('packages/taro/types/api', 'docs/apis', ['packages/taro/types/api'], writeDoc,
+  process.argv.findIndex(e => /^[-]{2}verbose/ig.test(e)) > -1,
+  process.argv.findIndex(e => /^[-]{2}force/ig.test(e)) === -1)
 
 function splicing (arr: (string | undefined)[] = []) {
   return arr.filter(e => typeof e === 'string').join('\n')
