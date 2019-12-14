@@ -1,25 +1,31 @@
 ---
-title: Taro.getCurrentPages(OBJECT)
+title: Taro.getCurrentPages()
 sidebar_label: getCurrentPages
 ---
 
+获取当前页面栈。数组中第一个元素为首页，最后一个元素为当前页面。
+__注意：__
+- __不要尝试修改页面栈，会导致路由以及页面状态错误。__
+- 不要在 `App.onLaunch` 的时候调用 `getCurrentPages()`，此时 `page` 还没有生成。
 
-使用方式同 [`getCurrentPages`](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/route.html#getcurrentpages)， 获取当前的页面栈，决定需要返回几层。
+## 类型
+
+```tsx
+() => Page[]
+```
+
+## 参数
 
 ## 示例代码
 
-```jsx
-import Taro from '@tarojs/taro'
-
+```tsx
 Taro.getCurrentPages().length
 ```
 
+## API 支持度
 
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.getCurrentPages | ✔️ |  |  |  |  | ✔️ |  |  |
 
-## API支持度
-
-
-| API | 微信小程序 | H5 | React Native |
-| :-: | :-: | :-: | :-: |
-| Taro.getCurrentPages | ✔️ |   | ✔️|
-
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/reference/api/getCurrentPages.html)

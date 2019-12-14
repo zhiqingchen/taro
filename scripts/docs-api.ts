@@ -156,8 +156,7 @@ const get = {
     data.forEach(v => {
       v.name !== ts.InternalSymbolName.Call &&
       v.flags !== ts.SymbolFlags.TypeParameter &&
-      !isShowMembers(v.flags) &&
-      paramTabs.push(v)
+      !isShowMembers(v.flags) && (v.jsTags || []).every(tag => tag.name !== 'ignore') && paramTabs.push(v)
     })
 
     if (paramTabs.length > 0) {
@@ -188,6 +187,7 @@ const get = {
           if (needLessDeclarationsName.includes(name)) {
             const tag_name = vtags.find(tag => tag.name === 'name') || { text: '' }
             const tag_type = vtags.find(tag => tag.name === 'type') || { text: '' }
+            if (vtags.find(tag => tag.name === 'ignore')) return undefined
             name = tag_name.text || name
             type = tag_type.text ? tag_type.text.trim() : type === 'any' && v.name || ''
           }
