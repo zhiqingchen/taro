@@ -28,7 +28,7 @@ const isntTaroMethod = [
   ts.SymbolFlags.TypeAlias,
 ]
 const descTags = [
-  'name', 'type', 'default', 'supported', 'abnormal', 'reason', 'solution',
+  'name', 'type', 'default', 'supported', 'abnormal', 'reason', 'solution', 'codeRate', 'readonly', 'ignore'
 ]
 const isntShowType = [
   'any', 'InterfaceDeclaration',
@@ -163,27 +163,31 @@ const get = {
       const hasName = paramTabs.some(v => !!v.name)
       const hasType = paramTabs.some(v => !!v.type && !isntShowType.includes(v.type) || needLessDeclarationsName.includes(v.name || ''))
       const hasDef = paramTabs.some(v => !!v.jsTags && v.jsTags.some(vv => vv.name === 'default'))
+      const hasReadonly = paramTabs.some(v => !!v.jsTags && v.jsTags.some(vv => vv.name === 'readonly'))
       const hasOptional = paramTabs.some(v => isOptional(v.flags))
       const hasAbnormal = paramTabs.some(v => !!v.jsTags && v.jsTags.some(vv => vv.name === 'abnormal'))
       const hasReason = paramTabs.some(v => !!v.jsTags && v.jsTags.some(vv => vv.name === 'reason'))
       const hasSolution = paramTabs.some(v => !!v.jsTags && v.jsTags.some(vv => vv.name === 'solution'))
       const hasDes = paramTabs.some(v => !!v.documentation)
+      const hasCodeRate = paramTabs.some(v => !!v.jsTags && v.jsTags.some(vv => vv.name === 'codeRate'))
 
-      hasName && [hasType, hasDef, hasAbnormal, hasReason, hasSolution, hasDes].reduce((s, b) => {
+      hasName && [hasType, hasDef, hasAbnormal, hasReason, hasSolution, hasDes, hasCodeRate].reduce((s, b) => {
         b && s++
         return s
       }, 0) > 0 && methods.push(splicing([
-        `| ${hasName ? '参数 |' : ''}${hasType? ' 类型 |' :''}${hasDef? ' 默认值 |' :''}${hasOptional? ' 必填 |' :''}${hasAbnormal? ' 异常情况 |' :''}${hasReason? ' 理由 |' :''}${hasSolution? ' 解决方案 |' :''}${hasDes? ' 说明 |' :''}`,
-        `|${hasName? ' --- |' :''}${hasType? ' --- |' :''}${hasDef? ' :---: |' :''}${hasOptional? ' :---: |' :''}${hasAbnormal? ' :---: |' :''}${hasReason? ' :---: |' :''}${hasSolution? ' :---: |' :''}${hasDes? ' --- |' :''}`,
+        `| ${hasName ? '参数 |' : ''}${hasType? ' 类型 |' :''}${hasDef? ' 默认值 |' :''}${hasReadonly? ' 只读 |' :''}${hasOptional? ' 必填 |' :''}${hasAbnormal? ' 异常情况 |' :''}${hasReason? ' 理由 |' :''}${hasSolution? ' 解决方案 |' :''}${hasDes? ' 说明 |' :''}${hasCodeRate? ' hasCodeRate |' :''}`,
+        `|${hasName? ' --- |' :''}${hasType? ' --- |' :''}${hasDef? ' :---: |' :''}${hasReadonly? ' :---: |' :''}${hasOptional? ' :---: |' :''}${hasAbnormal? ' :---: |' :''}${hasReason? ' :---: |' :''}${hasSolution? ' :---: |' :''}${hasDes? ' --- |' :''}${hasCodeRate? ' --- |' :''}`,
         ...paramTabs.map(v => {
           let name = v.name || ''
           let type = v.type || ''
           const isMethod = TaroMethod.includes(v.flags || -1)
           const vtags = v.jsTags || [];
           const def = vtags.find(tag => tag.name === 'default') || { text: '' }
+          const readonly = vtags.find(tag => tag.name === 'readonly')
           const abnormal = vtags.find(tag => tag.name === 'abnormal') || { text: '' }
           const reason = vtags.find(tag => tag.name === 'reason') || { text: '' }
           const solution = vtags.find(tag => tag.name === 'solution') || { text: '' }
+          const codeRate = vtags.find(tag => tag.name === 'codeRate') || { text: '' }
           if (needLessDeclarationsName.includes(name)) {
             const tag_name = vtags.find(tag => tag.name === 'name') || { text: '' }
             const tag_type = vtags.find(tag => tag.name === 'type') || { text: '' }
@@ -194,6 +198,7 @@ const get = {
           return `| ${name} |${
             hasType? ` ${type ? `\`${type}\`` : ''} |` :''}${
             hasDef? ` ${def.text ? `\`${def.text}\`` : ''} |` :''}${
+            hasReadonly? ` ${readonly ? '是' : '否'} |` :''}${
             hasOptional? ` ${!isOptional(v.flags) ? '是' : '否'} |` :''}${
             hasAbnormal? ` ${abnormal.text ? `\`${abnormal.text}\`` : ''} |` :''}${
             hasReason? ` ${reason.text ? `\`${reason.text}\`` : ''} |` :''}${
@@ -211,7 +216,9 @@ const get = {
                   }
                 }).join('')
             }` : ''
-          } |` :''}`
+          } |` :''}${
+            hasCodeRate? ` ${codeRate.text ? `\`${codeRate.text}\`` : ''} |` :''
+          }`
         }),
       '']))
     }
@@ -351,6 +358,12 @@ export function writeDoc (routepath: string, doc: DocEntry[], withGeneral = fals
 docsAPI('packages/taro/types/api', 'docs/apis', ['packages/taro/types/api'], writeDoc,
   process.argv.findIndex(e => /^[-]{2}verbose/ig.test(e)) > -1,
   process.argv.findIndex(e => /^[-]{2}force/ig.test(e)) === -1)
+// docsAPI('packages/taro-components/types', 'docs/components', ['packages/taro-components/types'], writeJson,
+//   process.argv.findIndex(e => /^[-]{2}verbose/ig.test(e)) > -1,
+//   process.argv.findIndex(e => /^[-]{2}force/ig.test(e)) === -1)
+// docsAPI('packages/taro-components/types', 'docs/components', ['packages/taro-components/types'], writeDoc,
+//   process.argv.findIndex(e => /^[-]{2}verbose/ig.test(e)) > -1,
+//   process.argv.findIndex(e => /^[-]{2}force/ig.test(e)) === -1)
 
 function splicing (arr: (string | undefined)[] = []) {
   return arr.filter(e => typeof e === 'string').join('\n')
