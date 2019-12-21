@@ -52,7 +52,7 @@ canvas 组件的绘图上下文
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 // Draw coordinates
 ctx.arc(100, 75, 50, 0, 2 * Math.PI)
@@ -125,7 +125,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 // begin path
 ctx.rect(10, 10, 100, 30)
@@ -171,7 +171,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 // Draw points
 ctx.beginPath()
@@ -231,7 +231,7 @@ clearRect 并非画一个白色的矩形在地址区域，而是清空，为了�
 ```html
 <canvas canvas-id="myCanvas" style="border: 1px solid; background: #123456;"/>
 ```
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.setFillStyle('red')
 ctx.fillRect(0, 0, 150, 200)
@@ -253,7 +253,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 Taro.downloadFile({
   url: 'http://is5.mzstatic.com/image/thumb/Purple128/v4/75/3b/90/753b907c-b7fb-5877-215a-759bd73691a4/source/50x50bb.jpg',
@@ -283,7 +283,7 @@ Taro.downloadFile({
 
 ##### 示例 1
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.moveTo(10, 10)
 ctx.lineTo(100, 10)
@@ -295,7 +295,7 @@ ctx.draw()
 
 ##### 示例 2
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 // begin path
 ctx.rect(10, 10, 100, 30)
@@ -326,7 +326,7 @@ ctx.draw()
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
 | image | `string` | 重复的图像源，仅支持包内路径和临时路径 |
-| repetition | `"repeat" | "repeat-x" | "repeat-y" | "no-repeat"` | 如何重复图像<br /><br />参数 repetition 可选值：<br />- 'repeat': 水平竖直方向都重复;<br />- 'repeat-x': 水平方向重复;<br />- 'repeat-y': 竖直方向重复;<br />- 'no-repeat': 不重复; |
+| repetition | `"repeat" | "repeat-x" | "repeat-y" | "no-repeat"` | 如何重复图像 |
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.createPattern.html)
 
@@ -349,7 +349,7 @@ ctx.draw()
 
 第二次 draw() reserve 为 true。所以保留了上一次的绘制结果，在上下文设置的 fillStyle 'red' 也变成了默认的 'black'。
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.setFillStyle('red')
 ctx.fillRect(10, 10, 150, 100)
@@ -362,7 +362,7 @@ ctx.draw(true)
 
 第二次 draw() reserve 为 false。所以没有保留了上一次的绘制结果和在上下文设置的 fillStyle 'red'。
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.setFillStyle('red')
 ctx.fillRect(10, 10, 150, 100)
@@ -405,7 +405,7 @@ ctx.draw()
 - drawImage(imageResource, dx, dy, dWidth, dHeight)
 - drawImage(imageResource, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight) 从 1.9.0 起支持
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 Taro.chooseImage({
   success: function(res){
@@ -423,7 +423,7 @@ Taro.chooseImage({
 - drawImage(imageResource, dx, dy, dWidth, dHeight)
 - drawImage(imageResource, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight) 从 1.9.0 起支持
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 Taro.chooseImage({
   success: function(res){
@@ -441,7 +441,7 @@ Taro.chooseImage({
 - drawImage(imageResource, dx, dy, dWidth, dHeight)
 - drawImage(imageResource, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight) 从 1.9.0 起支持
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 Taro.chooseImage({
   success: function(res){
@@ -467,7 +467,7 @@ Taro.chooseImage({
 
 如果当前路径没有闭合，fill() 方法会将起点和终点进行连接，然后填充。
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.moveTo(10, 10)
 ctx.lineTo(100, 10)
@@ -480,7 +480,7 @@ ctx.draw()
 
 fill() 填充的的路径是从 beginPath() 开始计算，但是不会将 fillRect() 包含进去。
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 // begin path
 ctx.rect(10, 10, 100, 30)
@@ -518,7 +518,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.setFillStyle('red')
 ctx.fillRect(10, 10, 150, 75)
@@ -544,7 +544,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.setFontSize(20)
 ctx.fillText('Hello', 20, 20)
@@ -569,7 +569,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.moveTo(10, 10)
 ctx.rect(10, 10, 100, 50)
@@ -595,7 +595,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.moveTo(10, 10)
 ctx.lineTo(100, 10)
@@ -630,7 +630,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 // Draw points
 ctx.beginPath()
@@ -682,7 +682,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.rect(10, 10, 150, 75)
 ctx.setFillStyle('red')
@@ -702,7 +702,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 // save the default fill style
 ctx.save()
@@ -730,7 +730,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.strokeRect(100, 10, 150, 100)
 ctx.rotate(20 * Math.PI / 180)
@@ -752,7 +752,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 // save the default fill style
 ctx.save()
@@ -781,7 +781,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.strokeRect(10, 10, 25, 15)
 ctx.scale(2, 2)
@@ -807,7 +807,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.setFillStyle('red')
 ctx.fillRect(10, 10, 150, 75)
@@ -830,7 +830,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.setFontSize(20)
 ctx.fillText('20', 20, 20)
@@ -859,7 +859,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.setFillStyle('red')
 ctx.fillRect(10, 10, 150, 100)
@@ -883,11 +883,11 @@ ctx.draw()
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| lineCap | `"butt" | "round" | "square"` | 线条的结束端点样式<br /><br />参数 lineCap 可选值：<br />- 'butt': 向线条的每个末端添加平直的边缘。;<br />- 'round': 向线条的每个末端添加圆形线帽。;<br />- 'square': 向线条的每个末端添加正方形线帽。; |
+| lineCap | `"butt" | "round" | "square"` | 线条的结束端点样式 |
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.beginPath()
 ctx.moveTo(10, 10)
@@ -931,7 +931,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.setLineDash([10, 20], 5);
 ctx.beginPath();
@@ -953,11 +953,11 @@ ctx.draw()
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| lineJoin | `"round" | "bevel" | "miter"` | 线条的结束交点样式<br /><br />参数 lineJoin 可选值：<br />- 'bevel': 斜角;<br />- 'round': 圆角;<br />- 'miter': 尖角; |
+| lineJoin | `"round" | "bevel" | "miter"` | 线条的结束交点样式 |
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.beginPath()
 ctx.moveTo(10, 10)
@@ -1004,7 +1004,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.beginPath()
 ctx.moveTo(10, 10)
@@ -1044,7 +1044,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.beginPath()
 ctx.setLineWidth(10)
@@ -1100,7 +1100,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.setFillStyle('red')
 ctx.setShadow(10, 50, 50, 'blue')
@@ -1124,7 +1124,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.setStrokeStyle('red')
 ctx.strokeRect(10, 10, 150, 75)
@@ -1143,11 +1143,11 @@ ctx.draw()
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| align | `"left" | "center" | "right"` | 文字的对齐方式<br /><br />参数 align 可选值：<br />- 'left': 左对齐;<br />- 'center': 居中对齐;<br />- 'right': 右对齐; |
+| align | `"left" | "center" | "right"` | 文字的对齐方式 |
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.setStrokeStyle('red')
 ctx.moveTo(150, 20)
@@ -1175,11 +1175,11 @@ ctx.draw()
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| textBaseline | `"top" | "bottom" | "middle" | "normal"` | 文字的竖直对齐方式<br /><br />参数 textBaseline 可选值：<br />- 'top': 顶部对齐;<br />- 'bottom': 底部对齐;<br />- 'middle': 居中对齐;<br />- 'normal': ; |
+| textBaseline | `"top" | "bottom" | "middle" | "normal"` | 文字的竖直对齐方式 |
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.setStrokeStyle('red')
 ctx.moveTo(5, 75)
@@ -1230,7 +1230,7 @@ ctx.draw()
 
 ##### 示例 1
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.moveTo(10, 10)
 ctx.lineTo(100, 10)
@@ -1243,7 +1243,7 @@ ctx.draw()
 
 stroke() 描绘的的路径是从 beginPath() 开始计算，但是不会将 strokeRect() 包含进去。
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 // begin path
 ctx.rect(10, 10, 100, 30)
@@ -1281,7 +1281,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.setStrokeStyle('red')
 ctx.strokeRect(10, 10, 150, 75)
@@ -1341,7 +1341,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 ctx.strokeRect(10, 10, 150, 100)
 ctx.translate(20, 20)
@@ -1383,7 +1383,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 // Create circular gradient
 const grd = ctx.createCircularGradient(75, 50, 50)
@@ -1414,7 +1414,7 @@ ctx.draw()
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 // Create linear gradient
 const grd = ctx.createLinearGradient(0, 0, 200, 0)
@@ -1427,6 +1427,60 @@ ctx.draw()
 ```
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.createLinearGradient.html)
+
+## 参数
+
+### repetition
+
+参数 repetition 可选值
+
+| 参数 | 说明 |
+| --- | --- |
+| repeat | 水平竖直方向都重复 |
+| repeat-x | 水平方向重复 |
+| repeat-y | 竖直方向重复 |
+| no-repeat | 不重复 |
+
+### lineCap
+
+参数 lineCap 可选值
+
+| 参数 | 说明 |
+| --- | --- |
+| butt | 向线条的每个末端添加平直的边缘。 |
+| round | 向线条的每个末端添加圆形线帽。 |
+| square | 向线条的每个末端添加正方形线帽。 |
+
+### lineJoin
+
+参数 lineJoin 可选值
+
+| 参数 | 说明 |
+| --- | --- |
+| bevel | 斜角 |
+| round | 圆角 |
+| miter | 尖角 |
+
+### align
+
+参数 align 可选值
+
+| 参数 | 说明 |
+| --- | --- |
+| left | 左对齐 |
+| center | 居中对齐 |
+| right | 右对齐 |
+
+### textBaseline
+
+参数 textBaseline 可选值
+
+| 参数 | 说明 |
+| --- | --- |
+| top | 顶部对齐 |
+| bottom | 底部对齐 |
+| middle | 居中对齐 |
+| normal |  |
 
 ## API 支持度
 

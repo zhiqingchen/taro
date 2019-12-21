@@ -37,7 +37,7 @@ sidebar_label: canvasGetImageData
 
 ## 示例代码
 
-```typescript
+```tsx
 Taro.canvasGetImageData({
   canvasId: 'myCanvas',
   x: 0,

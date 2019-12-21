@@ -22,7 +22,7 @@ sidebar_label: CanvasGradient
 
 #### 示例代码
 
-```typescript
+```tsx
 const ctx = Taro.createCanvasContext('myCanvas')
 // Create circular gradient
 const grd = ctx.createLinearGradient(30, 10, 120, 10)

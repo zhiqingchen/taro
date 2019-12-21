@@ -20,6 +20,7 @@ const isntTaroMethod = [
   ts.SymbolFlags.Interface,
   ts.SymbolFlags.ConstEnum,
   ts.SymbolFlags.RegularEnum,
+  ts.SymbolFlags.ValueModule + ts.SymbolFlags.Interface,
   ts.SymbolFlags.ValueModule + ts.SymbolFlags.Class,
   ts.SymbolFlags.NamespaceModule,
   ts.SymbolFlags.NamespaceModule + ts.SymbolFlags.Class,
@@ -254,8 +255,9 @@ const get = {
           get.since(tags.find(tag => tag.name === 'since')),
           get.type(param.type),
           get.members(param.members, '方法', level + (level === 2 ? 2 : 1)),
-          get.members(declaration.parameters, '参数', level + (level === 2 ? 2 : 1)),
+          get.members(declaration.parameters || param.exports, '参数', level + (level === 2 ? 2 : 1)),
           get.example(tags, level + (level === 2 ? 2 : 1)),
+          // TODO: 新增更多 API 支持度 get.api(apis),
           get.see(tags.find(tag => tag.name === 'see')),
         ])
       }/*  else if (!isShowAPI(param.flags) && !isNotAPI(param.flags) && param.flags !== 1) {

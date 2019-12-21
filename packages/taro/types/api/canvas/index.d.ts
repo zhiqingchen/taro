@@ -138,7 +138,7 @@ declare namespace Taro {
   /** 获取 canvas 区域隐含的像素数据。
    * @supported weapp, h5
    * @example
-   * ```typescript
+   * ```tsx
    * Taro.canvasGetImageData({
    *   canvasId: 'myCanvas',
    *   x: 0,
@@ -241,7 +241,7 @@ declare namespace Taro {
      * - 蓝色: 终止弧度 (1.5 * Math.PI)
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * // Draw coordinates
      * ctx.arc(100, 75, 50, 0, 2 * Math.PI)
@@ -318,7 +318,7 @@ declare namespace Taro {
      *   - 同一个路径内的多次 `setFillStyle`、`setStrokeStyle`、`setLineWidth`等设置，以最后一次设置为准。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * // begin path
      * ctx.rect(10, 10, 100, 30)
@@ -348,7 +348,7 @@ declare namespace Taro {
      * - 绿色：终止点(200, 20)
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * // Draw points
      * ctx.beginPath()
@@ -407,7 +407,7 @@ declare namespace Taro {
      * ```html
      * <canvas canvas-id="myCanvas" style="border: 1px solid; background: #123456;"/>
      * ```
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.setFillStyle('red')
      * ctx.fillRect(0, 0, 150, 200)
@@ -431,7 +431,7 @@ declare namespace Taro {
     /** 从原始画布中剪切任意形状和尺寸。一旦剪切了某个区域，则所有之后的绘图都会被限制在被剪切的区域内（不能访问画布上的其他区域）。可以在使用 `clip` 方法前通过使用 `save` 方法对当前画布区域进行保存，并在以后的任意时间通过`restore`方法对其进行恢复。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * Taro.downloadFile({
      *   url: 'http://is5.mzstatic.com/image/thumb/Purple128/v4/75/3b/90/753b907c-b7fb-5877-215a-759bd73691a4/source/50x50bb.jpg',
@@ -452,7 +452,7 @@ declare namespace Taro {
     /** 关闭一个路径。会连接起点和终点。如果关闭路径后没有调用 `fill` 或者 `stroke` 并开启了新的路径，那之前的路径将不会被渲染。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.moveTo(10, 10)
      * ctx.lineTo(100, 10)
@@ -462,7 +462,7 @@ declare namespace Taro {
      * ctx.draw()
      * ```
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * // begin path
      * ctx.rect(10, 10, 100, 30)
@@ -489,21 +489,15 @@ declare namespace Taro {
     createPattern(
       /** 重复的图像源，仅支持包内路径和临时路径 */
       image: string,
-      /** 如何重复图像
-         *
-         * 参数 repetition 可选值：
-         * - 'repeat': 水平竖直方向都重复;
-         * - 'repeat-x': 水平方向重复;
-         * - 'repeat-y': 竖直方向重复;
-         * - 'no-repeat': 不重复; */
-      repetition: 'repeat' | 'repeat-x' | 'repeat-y' | 'no-repeat',
+      /** 如何重复图像 */
+      repetition: keyof CanvasContext.repetition,
     ): void
     /** 将之前在绘图上下文中的描述（路径、变形、样式）画到 canvas 中。
      * @supported weapp
      * @example
      * 第二次 draw() reserve 为 true。所以保留了上一次的绘制结果，在上下文设置的 fillStyle 'red' 也变成了默认的 'black'。
      *
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.setFillStyle('red')
      * ctx.fillRect(10, 10, 150, 100)
@@ -514,7 +508,7 @@ declare namespace Taro {
      * @example
      * 第二次 draw() reserve 为 false。所以没有保留了上一次的绘制结果和在上下文设置的 fillStyle 'red'。
      *
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.setFillStyle('red')
      * ctx.fillRect(10, 10, 150, 100)
@@ -539,7 +533,7 @@ declare namespace Taro {
      * - drawImage(imageResource, dx, dy, dWidth, dHeight)
      * - drawImage(imageResource, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight) 从 1.9.0 起支持
      *
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * Taro.chooseImage({
      *   success: function(res){
@@ -567,7 +561,7 @@ declare namespace Taro {
      * - drawImage(imageResource, dx, dy, dWidth, dHeight)
      * - drawImage(imageResource, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight) 从 1.9.0 起支持
      *
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * Taro.chooseImage({
      *   success: function(res){
@@ -599,7 +593,7 @@ declare namespace Taro {
      * - drawImage(imageResource, dx, dy, dWidth, dHeight)
      * - drawImage(imageResource, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight) 从 1.9.0 起支持
      *
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * Taro.chooseImage({
      *   success: function(res){
@@ -635,7 +629,7 @@ declare namespace Taro {
      * @example
      * 如果当前路径没有闭合，fill() 方法会将起点和终点进行连接，然后填充。
      *
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.moveTo(10, 10)
      * ctx.lineTo(100, 10)
@@ -646,7 +640,7 @@ declare namespace Taro {
      * @example
      * fill() 填充的的路径是从 beginPath() 开始计算，但是不会将 fillRect() 包含进去。
      *
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * // begin path
      * ctx.rect(10, 10, 100, 30)
@@ -670,7 +664,7 @@ declare namespace Taro {
     /** 填充一个矩形。用 [`setFillStyle`](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.setFillStyle.html) 设置矩形的填充色，如果没设置默认是黑色。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.setFillStyle('red')
      * ctx.fillRect(10, 10, 150, 75)
@@ -691,7 +685,7 @@ declare namespace Taro {
     /** 在画布上绘制被填充的文本
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.setFontSize(20)
      * ctx.fillText('Hello', 20, 20)
@@ -713,7 +707,7 @@ declare namespace Taro {
     /** 增加一个新点，然后创建一条从上次指定点到目标点的线。用 `stroke` 方法来画线条
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.moveTo(10, 10)
      * ctx.rect(10, 10, 100, 50)
@@ -732,7 +726,7 @@ declare namespace Taro {
     /** 把路径移动到画布中的指定点，不创建线条。用 `stroke` 方法来画线条
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.moveTo(10, 10)
      * ctx.lineTo(100, 10)
@@ -758,7 +752,7 @@ declare namespace Taro {
      * - 绿色：终止点(200, 20)
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * // Draw points
      * ctx.beginPath()
@@ -805,7 +799,7 @@ declare namespace Taro {
     /** 创建一个矩形路径。需要用 [`fill`](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.fill.html) 或者 [`stroke`](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.stroke.html) 方法将矩形真正的画到 `canvas` 中
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.rect(10, 10, 150, 75)
      * ctx.setFillStyle('red')
@@ -827,7 +821,7 @@ declare namespace Taro {
     /** 恢复之前保存的绘图上下文。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * // save the default fill style
      * ctx.save()
@@ -844,7 +838,7 @@ declare namespace Taro {
     /** 以原点为中心顺时针旋转当前坐标轴。多次调用旋转的角度会叠加。原点可以用 `translate` 方法修改。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.strokeRect(100, 10, 150, 100)
      * ctx.rotate(20 * Math.PI / 180)
@@ -862,7 +856,7 @@ declare namespace Taro {
     /** 保存绘图上下文。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * // save the default fill style
      * ctx.save()
@@ -879,7 +873,7 @@ declare namespace Taro {
     /** 在调用后，之后创建的路径其横纵坐标会被缩放。多次调用倍数会相乘。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.strokeRect(10, 10, 25, 15)
      * ctx.scale(2, 2)
@@ -899,7 +893,7 @@ declare namespace Taro {
     /** 设置填充色。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.setFillStyle('red')
      * ctx.fillRect(10, 10, 150, 75)
@@ -914,7 +908,7 @@ declare namespace Taro {
     /** 设置字体的字号
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.setFontSize(20)
      * ctx.fillText('20', 20, 20)
@@ -935,7 +929,7 @@ declare namespace Taro {
     /** 设置全局画笔透明度。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.setFillStyle('red')
      * ctx.fillRect(10, 10, 150, 100)
@@ -955,7 +949,7 @@ declare namespace Taro {
     /** 设置线条的端点样式
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.beginPath()
      * ctx.moveTo(10, 10)
@@ -984,18 +978,13 @@ declare namespace Taro {
      * @see https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.setLineCap.html
      */
     setLineCap(
-      /** 线条的结束端点样式
-       *
-       * 参数 lineCap 可选值：
-       * - 'butt': 向线条的每个末端添加平直的边缘。;
-       * - 'round': 向线条的每个末端添加圆形线帽。;
-       * - 'square': 向线条的每个末端添加正方形线帽。; */
-      lineCap: 'butt' | 'round' | 'square',
+      /** 线条的结束端点样式 */
+      lineCap: keyof CanvasContext.lineCap,
     ): void
     /** 设置虚线样式。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.setLineDash([10, 20], 5);
      * ctx.beginPath();
@@ -1015,7 +1004,7 @@ declare namespace Taro {
     /** 设置线条的交点样式
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.beginPath()
      * ctx.moveTo(10, 10)
@@ -1048,18 +1037,13 @@ declare namespace Taro {
      * @see https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.setLineJoin.html
      */
     setLineJoin(
-      /** 线条的结束交点样式
-       *
-       * 参数 lineJoin 可选值：
-       * - 'bevel': 斜角;
-       * - 'round': 圆角;
-       * - 'miter': 尖角; */
-      lineJoin: 'bevel' | 'round' | 'miter',
+      /** 线条的结束交点样式 */
+      lineJoin: keyof CanvasContext.lineJoin,
     ): void
     /** 设置线条的宽度
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.beginPath()
      * ctx.moveTo(10, 10)
@@ -1091,7 +1075,7 @@ declare namespace Taro {
     /** 设置最大斜接长度。斜接长度指的是在两条线交汇处内角和外角之间的距离。当 [CanvasContext.setLineJoin()](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.setLineJoin.html) 为 miter 时才有效。超过最大倾斜长度的，连接处将以 lineJoin 为 bevel 来显示。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.beginPath()
      * ctx.setLineWidth(10)
@@ -1136,7 +1120,7 @@ declare namespace Taro {
     /** 设定阴影样式。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.setFillStyle('red')
      * ctx.setShadow(10, 50, 50, 'blue')
@@ -1158,7 +1142,7 @@ declare namespace Taro {
     /** 设置描边颜色。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.setStrokeStyle('red')
      * ctx.strokeRect(10, 10, 150, 75)
@@ -1173,7 +1157,7 @@ declare namespace Taro {
     /** 设置文字的对齐
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.setStrokeStyle('red')
      * ctx.moveTo(150, 20)
@@ -1191,18 +1175,13 @@ declare namespace Taro {
      * @see https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.setTextAlign.html
      */
     setTextAlign(
-      /** 文字的对齐方式
-       *
-       * 参数 align 可选值：
-       * - 'left': 左对齐;
-       * - 'center': 居中对齐;
-       * - 'right': 右对齐; */
-      align: 'left' | 'center' | 'right',
+      /** 文字的对齐方式 */
+      align: keyof CanvasContext.align,
     ): void
     /** 设置文字的竖直对齐
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.setStrokeStyle('red')
      * ctx.moveTo(5, 75)
@@ -1222,14 +1201,8 @@ declare namespace Taro {
      * @see https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.setTextBaseline.html
      */
     setTextBaseline(
-      /** 文字的竖直对齐方式
-       *
-       * 参数 textBaseline 可选值：
-       * - 'top': 顶部对齐;
-       * - 'bottom': 底部对齐;
-       * - 'middle': 居中对齐;
-       * - 'normal': ; */
-      textBaseline: 'top' | 'bottom' | 'middle' | 'normal',
+      /** 文字的竖直对齐方式 */
+      textBaseline: keyof CanvasContext.textBaseline,
     ): void
     /** 使用矩阵重新设置（覆盖）当前变换的方法
      * @supported weapp
@@ -1252,7 +1225,7 @@ declare namespace Taro {
     /** 画出当前路径的边框。默认颜色色为黑色。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.moveTo(10, 10)
      * ctx.lineTo(100, 10)
@@ -1263,7 +1236,7 @@ declare namespace Taro {
      * @example
      * stroke() 描绘的的路径是从 beginPath() 开始计算，但是不会将 strokeRect() 包含进去。
      *
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * // begin path
      * ctx.rect(10, 10, 100, 30)
@@ -1287,7 +1260,7 @@ declare namespace Taro {
     /** 画一个矩形(非填充)。 用 [`setStrokeStyle`](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.setStrokeStyle.html) 设置矩形线条的颜色，如果没设置默认是黑色。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.setStrokeStyle('red')
      * ctx.strokeRect(10, 10, 150, 75)
@@ -1340,7 +1313,7 @@ declare namespace Taro {
     /** 对当前坐标系的原点 (0, 0) 进行变换。默认的坐标系原点为页面左上角。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * ctx.strokeRect(10, 10, 150, 100)
      * ctx.translate(20, 20)
@@ -1368,7 +1341,7 @@ declare namespace Taro {
     /** 创建一个圆形的渐变颜色。起点在圆心，终点在圆环。返回的`CanvasGradient`对象需要使用 [CanvasGradient.addColorStop()](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasGradient.addColorStop.html) 来指定渐变点，至少要两个。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * // Create circular gradient
      * const grd = ctx.createCircularGradient(75, 50, 50)
@@ -1392,7 +1365,7 @@ declare namespace Taro {
     /** 创建一个线性的渐变颜色。返回的`CanvasGradient`对象需要使用 [CanvasGradient.addColorStop()](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasGradient.addColorStop.html) 来指定渐变点，至少要两个。
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * // Create linear gradient
      * const grd = ctx.createLinearGradient(0, 0, 200, 0)
@@ -1448,6 +1421,57 @@ declare namespace Taro {
     /** 边框颜色。用法同 [CanvasContext.setFillStyle()]。 */
     strokeStyle: string
   }
+  namespace CanvasContext {
+    /** 参数 repetition 可选值 */
+    interface repetition {
+      /** 水平竖直方向都重复 */
+      'repeat'
+      /** 水平方向重复 */
+      'repeat-x'
+      /** 竖直方向重复 */
+      'repeat-y'
+      /** 不重复 */
+      'no-repeat'
+    }
+
+    /** 参数 lineCap 可选值 */
+    interface lineCap {
+      /** 向线条的每个末端添加平直的边缘。 */
+      butt
+      /** 向线条的每个末端添加圆形线帽。 */
+      round
+      /** 向线条的每个末端添加正方形线帽。 */
+      square
+    }
+    /** 参数 lineJoin 可选值 */
+    interface lineJoin {
+      /** 斜角 */
+      bevel
+      /** 圆角 */
+      round
+      /** 尖角 */
+      miter
+    }
+    /** 参数 align 可选值 */
+    interface align {
+      /** 左对齐 */
+      left
+      /** 居中对齐 */
+      center
+      /** 右对齐 */
+      right
+    }
+      /** 参数 textBaseline 可选值 */
+    interface textBaseline {
+      /** 顶部对齐 */
+      top
+      /** 底部对齐 */
+      bottom
+      /** 居中对齐 */
+      middle
+      normal
+    }
+  }
 
   /** 创建 canvas 的绘图上下文 CanvasContext 对象
    * @see https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasGradient.html
@@ -1456,7 +1480,7 @@ declare namespace Taro {
     /** 添加颜色的渐变点。小于最小 stop 的部分会按最小 stop 的 color 来渲染，大于最大 stop 的部分会按最大 stop 的 color 来渲染
      * @supported weapp
      * @example
-     * ```typescript
+     * ```tsx
      * const ctx = Taro.createCanvasContext('myCanvas')
      * // Create circular gradient
      * const grd = ctx.createLinearGradient(30, 10, 120, 10)
