@@ -393,7 +393,9 @@ declare namespace Taro {
   }
 
   namespace DB {
-    /** 云开发 SDK 数据库实例 */
+    /** 云开发 SDK 数据库实例
+     * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/Database.html
+     */
     interface Database {
       /** 数据库配置 */
       readonly config: cloud.IConfig
@@ -488,18 +490,14 @@ declare namespace Taro {
         readonly options: string
       }
   
-      namespace IRegExp {
-        interface Constructor {
-          new (options: IRegExpOptions): IRegExp
-          (options: IRegExpOptions): IRegExp
-        }
-    
+      namespace IRegExp {    
         interface IRegExpOptions {
           regexp: string
           options?: string
         }
       }
 
+      /** 内部符号 */
       interface InternalSymbol {}
     }
 
@@ -575,7 +573,7 @@ declare namespace Taro {
        * ```
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.where.html
        */
-      where(condition: General.IAnyObject): Collection
+      where(condition: Query.IQueryCondition): Collection
 
       /** 指定查询结果集数量上限
        * @supported weapp
@@ -1135,21 +1133,161 @@ declare namespace Taro {
       }
     }
 
-    // TODO:
-
+    /** 数据库 Query 引用
+     * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/Query.html
+     */
     interface Query {
+      /** 指定查询条件，返回带新查询条件的新的集合引用
+       * @supported weapp
+       * @example
+       * ```tsx
+       * const _ = db.command
+       * const result = await db.collection('todos').where({
+       *   price: _.lt(100)
+       * }).get()
+       * ```
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.where.html
+       */
       where(condition: Query.IQueryCondition): Query
 
+      /** 指定查询排序条件
+       * @supported weapp
+       * @example
+       * 按一个字段排序：按进度排升序取待办事项
+       * 
+       * ```tsx
+       * db.collection('todos').orderBy('progress', 'asc')
+       *   .get()
+       *   .then(console.log)
+       *   .catch(console.error)
+       * ```
+       * 
+       * 按多个字段排序：先按 progress 排降序（progress 越大越靠前）、再按 description 排升序（字母序越前越靠前）取待办事项
+       * 
+       * ```tsx
+       * db.collection('todos')
+       *   .orderBy('progress', 'desc')
+       *   .orderBy('description', 'asc')
+       *   .get()
+       *   .then(console.log)
+       *   .catch(console.error)
+       * ```
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.orderBy.html
+       */
       orderBy(fieldPath: string, order: string): Query
 
+      /** 指定查询结果集数量上限
+       * @supported weapp
+       * @example
+       * ```tsx
+       * db.collection('todos').limit(10)
+       *   .get()
+       *   .then(console.log)
+       *   .catch(console.error)
+       * ```
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.limit.html
+       */
       limit(max: number): Query
 
+      /** 指定查询返回结果时从指定序列后的结果开始返回，常用于分页
+       * @supported weapp
+       * @example
+       * ```tsx
+       * db.collection('todos').skip(10)
+       *   .get()
+       *   .then(console.log)
+       *   .catch(console.error)
+       * ```
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.skip.html
+       */
       skip(offset: number): Query
 
+      /** 指定返回结果中记录需返回的字段
+       * 
+       * **说明**
+       * 
+       * 方法接受一个必填对象用于指定需返回的字段，对象的各个 key 表示要返回或不要返回的字段，value 传入 true|false（或 1|-1）表示要返回还是不要返回。
+       * 如果指定的字段是数组字段，还可以用以下方法只返回数组的第一个元素：在该字段 key 后面拼接上 `.$` 成为 `字段.$` 的形式。
+       * 如果指定的字段是数组字段，还可以用 `db.command.project.slice` 方法返回数组的子数组：
+       * 方法既可以接收一个正数表示返回前 n 个元素，也可以接收一个负数表示返回后 n 个元素；还可以接收一个包含两个数字 `[ skip, limit ]` 的数组，如果 `skip` 是正数，表示跳过 `skip` 个元素后再返回接下来的 `limit` 个元素，如果 `skip` 是负数，表示从倒数第 `skip` 个元素开始，返回往后数的 `limit` 个元素
+       * 
+       * - 返回数组的前 5 个元素：`{ tags: db.command.project.slice(5) }`
+       * - 返回数组的后 5 个元素：`{ tags: db.command.project.slice(-5) }`
+       * - 跳过前 5 个元素，返回接下来 10 个元素：`{ tags: db.command.project.slice(5, 10) }`
+       * - 从倒数第 5 个元素开始，返回接下来正方向数的 10 个元素：`{ tags: db.command.project.slice(-5, 10) }`
+       * @supported weapp
+       * @example
+       * 返回 description, done 和 progress 三个字段：
+       * 
+       * ```tsx
+       * db.collection('todos').field({
+       *   description: true,
+       *   done: true,
+       *   progress: true,
+       *   // 只返回 tags 数组前 3 个元素
+       *   tags: db.command.project.slice(3),
+       * })
+       *   .get()
+       *   .then(console.log)
+       *   .catch(console.error)
+       * ```
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.field.html
+       */
       field(object: General.IAnyObject): Query
 
+      /** 获取集合数据，或获取根据查询条件筛选后的集合数据。
+       * 
+       * **使用说明**
+       * 
+       * 统计集合记录数或统计查询语句对应的结果记录数
+       * 
+       * 小程序端与云函数端的表现会有如下差异：
+       * 
+       * - 小程序端：如果没有指定 limit，则默认且最多取 20 条记录。
+       * - 云函数端：如果没有指定 limit，则默认且最多取 100 条记录。
+       * 
+       * 如果没有指定 skip，则默认从第 0 条记录开始取，skip 常用于分页。
+       * 
+       * 如果需要取集合中所有的数据，仅在数据量不大且在云函数中时
+       * @supported weapp
+       * @example
+       * ```tsx
+       * const db = Taro.cloud.database()
+       * db.collection('todos').where({
+       *   _openid: 'xxx' // 填入当前用户 openid
+       * }).get().then(res => {
+       *   console.log(res.data)
+       * })
+       * ```
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.get.html
+       */
       get(options: Document.IGetDocumentOptions): Promise<Query.IQueryResult> | void
 
+      /** 统计匹配查询条件的记录的条数
+       * @supported weapp
+       * @example
+       * ```tsx
+       * const db = Taro.cloud.database()
+       * db.collection('todos').where({
+       *   _openid: 'xxx' // 填入当前用户 openid
+       * }).count().then(res => {
+       *   console.log(res.total)
+       * })
+       * ```
+       * @example
+       * ```tsx
+       * const db = Taro.cloud.database()
+       * db.collection('todos').where({
+       *   _openid: 'xxx' // 填入当前用户 openid
+       * }).count({
+       *   success: function(res) {
+       *     console.log(res.total)
+       *   },
+       *   fail: console.error
+       * })
+       * ```
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.count.html
+       */
       count(options: Document.ICountDocumentOptions): Promise<Query.ICountResult> | void
     }
 
@@ -1218,263 +1356,868 @@ declare namespace Taro {
      * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/Command.html
      */
     interface Command {
+      /** 查询筛选条件，表示字段等于某个值。eq 指令接受一个字面量 (literal)，可以是 number, boolean, string, object, array, Date。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.eq.html
+       */
       eq(val: any): Command.DatabaseQueryCommand
+      /** 查询筛选条件，表示字段不等于某个值。eq 指令接受一个字面量 (literal)，可以是 number, boolean, string, object, array, Date。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.neq.html
+       */
       neq(val: any): Command.DatabaseQueryCommand
+      /** 查询筛选操作符，表示需大于指定值。可以传入 Date 对象用于进行日期比较。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.gt.html
+       */
       gt(val: any): Command.DatabaseQueryCommand
+      /** 查询筛选操作符，表示需大于或等于指定值。可以传入 Date 对象用于进行日期比较。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.gte.html
+       */
       gte(val: any): Command.DatabaseQueryCommand
+      /** 查询筛选操作符，表示需小于指定值。可以传入 Date 对象用于进行日期比较。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.lt.html
+       */
       lt(val: any): Command.DatabaseQueryCommand
+      /** 查询筛选操作符，表示需小于或等于指定值。可以传入 Date 对象用于进行日期比较。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.lte.html
+       */
       lte(val: any): Command.DatabaseQueryCommand
+      /** 查询筛选操作符，表示要求值在给定的数组内。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.in.html
+       */
       in(val: any[]): Command.DatabaseQueryCommand
+      /** 查询筛选操作符，表示要求值不在给定的数组内。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.nin.html
+       */
       nin(val: any[]): Command.DatabaseQueryCommand
 
-      geoNear(options: IGeo.NearCommandOptions): Command.DatabaseQueryCommand
-      geoWithin(options: IGeo.WithinCommandOptions): Command.DatabaseQueryCommand
+      /** 按从近到远的顺序，找出字段值在给定点的附近的记录。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.geoNear.html
+       */
+      geoNear(options: Command.NearCommandOptions): Command.DatabaseQueryCommand
+      /** 找出字段值在指定区域内的记录，无排序。指定的区域必须是多边形（Polygon）或多边形集合（MultiPolygon）。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.geoWithin.html
+       */
+      geoWithin(options: Command.WithinCommandOptions): Command.DatabaseQueryCommand
+      /** 找出给定的地理位置图形相交的记录
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.geoIntersects.html
+       */
       geoIntersects(
-          options: IGeo.IntersectsCommandOptions,
+          options: Command.IntersectsCommandOptions,
       ): Command.DatabaseQueryCommand
 
+      /** 查询操作符，用于表示逻辑 "与" 的关系，表示需同时满足多个查询筛选条件
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.and.html
+       */
       and(
         ...expressions: Array<Command.DatabaseLogicCommand | Query.IQueryCondition>
       ): Command.DatabaseLogicCommand
+      /** 查询操作符，用于表示逻辑 "或" 的关系，表示需同时满足多个查询筛选条件。或指令有两种用法，一是可以进行字段值的 “或” 操作，二是也可以进行跨字段的 “或” 操作。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.or.html
+       */
       or(
         ...expressions: Array<Command.DatabaseLogicCommand | Query.IQueryCondition>
       ): Command.DatabaseLogicCommand
 
+      /** 查询操作符，用于表示逻辑 "与" 的关系，表示需同时满足多个查询筛选条件
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.set.html
+       */
       set(val: any): Command.DatabaseUpdateCommand
+      /** 更新操作符，用于表示删除某个字段。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.remove.html
+       */
       remove(): Command.DatabaseUpdateCommand
+      /** 更新操作符，原子操作，用于指示字段自增
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.inc.html
+       */
       inc(val: number): Command.DatabaseUpdateCommand
+      /** 更新操作符，原子操作，用于指示字段自乘某个值
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.mul.html
+       */
       mul(val: number): Command.DatabaseUpdateCommand
 
+      /** 数组更新操作符。对一个值为数组的字段，往数组添加一个或多个值。或字段原为空，则创建该字段并设数组为传入值。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.push.html
+       */
       push(...values: any[]): Command.DatabaseUpdateCommand
+      /** 数组更新操作符，对一个值为数组的字段，将数组尾部元素删除
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.pop.html
+       */
       pop(): Command.DatabaseUpdateCommand
+      /** 数组更新操作符，对一个值为数组的字段，将数组头部元素删除。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.shift.html
+       */
       shift(): Command.DatabaseUpdateCommand
+      /** 数组更新操作符，对一个值为数组的字段，往数组头部添加一个或多个值。或字段原为空，则创建该字段并设数组为传入值。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.unshift.html
+       */
       unshift(...values: any[]): Command.DatabaseUpdateCommand
     }
 
     namespace Command {
+      /** 数据库逻辑操作符 */
       interface DatabaseLogicCommand {
+        /** 作用域名称 */
         fieldName: string | Database.InternalSymbol
+        /** 操作符 */
         operator: keyof LOGIC_COMMANDS_LITERAL | string
+        /** 操作数 */
         operands: any[]
-  
-        _setFieldName(fieldName: string): DatabaseLogicCommand
-  
+
+        /** 设置作用域名称 */
+        _setFieldName: (fieldName: string) => DatabaseLogicCommand
+
+        /** 查询操作符，用于表示逻辑 "与" 的关系，表示需同时满足多个查询筛选条件
+         * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.and.html
+         */
         and(
           ...expressions: Array<DatabaseLogicCommand | Query.IQueryCondition>
         ): DatabaseLogicCommand
+        /** 查询操作符，用于表示逻辑 "或" 的关系，表示需同时满足多个查询筛选条件。或指令有两种用法，一是可以进行字段值的 “或” 操作，二是也可以进行跨字段的 “或” 操作。
+         * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.or.html
+         */
         or(
           ...expressions: Array<DatabaseLogicCommand | Query.IQueryCondition>
         ): DatabaseLogicCommand
       }
   
-  
+      /** 数据库查询操作符 */
       interface DatabaseQueryCommand extends DatabaseLogicCommand {
+        /** 操作符 */
         operator: keyof QUERY_COMMANDS_LITERAL | string
+
+        /** 设置作用域名称 */
+        _setFieldName: (fieldName: string) => DatabaseQueryCommand
   
-        _setFieldName(fieldName: string): DatabaseQueryCommand
-  
+        /** 查询筛选条件，表示字段等于某个值。eq 指令接受一个字面量 (literal)，可以是 number, boolean, string, object, array, Date。
+         * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.eq.html
+         */
         eq(val: any): DatabaseLogicCommand
+        /** 查询筛选条件，表示字段不等于某个值。eq 指令接受一个字面量 (literal)，可以是 number, boolean, string, object, array, Date。
+         * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.neq.html
+         */
         neq(val: any): DatabaseLogicCommand
+        /** 查询筛选操作符，表示需大于指定值。可以传入 Date 对象用于进行日期比较。
+         * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.gt.html
+         */
         gt(val: any): DatabaseLogicCommand
+        /** 查询筛选操作符，表示需大于或等于指定值。可以传入 Date 对象用于进行日期比较。
+         * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.gte.html
+         */
         gte(val: any): DatabaseLogicCommand
+        /** 查询筛选操作符，表示需小于指定值。可以传入 Date 对象用于进行日期比较。
+         * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.lt.html
+         */
         lt(val: any): DatabaseLogicCommand
+        /** 查询筛选操作符，表示需小于或等于指定值。可以传入 Date 对象用于进行日期比较。
+         * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.lte.html
+         */
         lte(val: any): DatabaseLogicCommand
+        /** 查询筛选操作符，表示要求值在给定的数组内。
+         * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.in.html
+         */
         in(val: any[]): DatabaseLogicCommand
+        /** 查询筛选操作符，表示要求值不在给定的数组内。
+         * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.nin.html
+         */
         nin(val: any[]): DatabaseLogicCommand
-  
-        geoNear(options: IGeo.NearCommandOptions): DatabaseLogicCommand
-        geoWithin(options: IGeo.WithinCommandOptions): DatabaseLogicCommand
+
+        /** 按从近到远的顺序，找出字段值在给定点的附近的记录。
+         * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.geoNear.html
+         */
+        geoNear(options: NearCommandOptions): DatabaseLogicCommand
+        /** 找出字段值在指定区域内的记录，无排序。指定的区域必须是多边形（Polygon）或多边形集合（MultiPolygon）。
+         * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.geoWithin.html
+         */
+        geoWithin(options: WithinCommandOptions): DatabaseLogicCommand
+        /** 找出给定的地理位置图形相交的记录
+         * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.geoIntersects.html
+         */
         geoIntersects(
-          options: IGeo.IntersectsCommandOptions,
+          options: IntersectsCommandOptions,
         ): DatabaseLogicCommand
       }
 
+      /** 数据库更新操作符 */
       interface DatabaseUpdateCommand {
+        /** 作用域名称 */
         fieldName: string | Database.InternalSymbol
+        /** 操作符 */
         operator: keyof UPDATE_COMMANDS_LITERAL
+        /** 操作数 */
         operands: any[]
   
-        _setFieldName(fieldName: string): DatabaseUpdateCommand
+        /** 设置作用域名称 */
+        _setFieldName: (fieldName: string) => DatabaseUpdateCommand
       }
 
+      /** 逻辑命令字面量 */
       interface LOGIC_COMMANDS_LITERAL {
+        /** 与 */
         and
+        /** 或 */
         or
+        /** 非 */
         not
+        /** 都不 */
         nor
       }
 
+      /** 查询命令字面量 */
       interface QUERY_COMMANDS_LITERAL {
         // normal
+        /** 等于 */
         eq
+        /** 不等于 */
         neq
+        /** 大于 */
         gt
+        /** 大于等于 */
         gte
+        /** 小于 */
         lt
+        /** 小于等于 */
         lte
+        /** 范围内 */
         in
+        /** 范围外 */
         nin
+
         // geo
+        /** 附近排序 */
         geoNear
+        /** 指定区域内 */
         geoWithin
+        /** 相交区域 */
         geoIntersects
       }
 
+      /** 更新命令字面量 */
       interface UPDATE_COMMANDS_LITERAL {
+        /** 等于 */
         set
+        /** 删除 */
         remove
+        /** 自增 */
         inc
+        /** 自乘 */
         mul
+        /** 尾部添加 */
         push
+        /** 尾部删除 */
         pop
+        /** 头部删除 */
         shift
+        /** 头部添加 */
         unshift
+      }
+  
+      /** 按从近到远的顺序，找出字段值在给定点的附近的记录参数 */
+      interface NearCommandOptions {
+        /** 地理位置点 (Point) */
+        geometry: IGeo.GeoPoint
+        /** 最大距离，单位为米 */
+        maxDistance?: number
+        /** 最小距离，单位为米 */
+        minDistance?: number
+      }
+  
+      /** 找出字段值在指定区域内的记录，无排序参数 */
+      interface WithinCommandOptions {
+        /** 地理信息结构，Polygon，MultiPolygon，或 { centerSphere } */
+        geometry: IGeo.GeoPolygon | IGeo.GeoMultiPolygon
+      }
+  
+      /** 找出给定的地理位置图形相交的记录 */
+      interface IntersectsCommandOptions {
+        /** 地理信息结构 */
+        geometry:
+          | IGeo.GeoPoint
+          | IGeo.GeoMultiPoint
+          | IGeo.GeoLineString
+          | IGeo.GeoMultiLineString
+          | IGeo.GeoPolygon
+          | IGeo.GeoMultiPolygon
       }
     }
 
     /** 数据库集合的聚合操作实例
      * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.html
      */
-    interface Aggregate {}
+    interface Aggregate {
+      /** 聚合阶段。添加新字段到输出的记录。经过 addFields 聚合阶段，输出的所有记录中除了输入时带有的字段外，还将带有 addFields 指定的字段。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.addFields.html
+       */
+      addFields(object: Object): Aggregate
 
-    /** 数据库地理位置结构集 */
+      /** 聚合阶段。将输入记录根据给定的条件和边界划分成不同的组，每组即一个 bucket。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.bucket.html
+       */
+      bucket(object: Object): Aggregate
+
+      /** 聚合阶段。将输入记录根据给定的条件划分成不同的组，每组即一个 bucket。与 bucket 的其中一个不同之处在于无需指定 boundaries，bucketAuto 会自动尝试将记录尽可能平均的分散到每组中。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.bucketAuto.html
+       */
+      bucketAuto(object: Object): Aggregate
+
+      /** 聚合阶段。计算上一聚合阶段输入到本阶段的记录数，输出一个记录，其中指定字段的值为记录数。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.count.html
+       */
+      count(fieldName: string): Aggregate
+
+      /** 标志聚合操作定义完成，发起实际聚合操作
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.end.html
+       */
+      end(): Promise<Object>
+
+      /** 聚合阶段。将记录按照离给定点从近到远输出。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.geoNear.html
+       */
+      geoNear(options: Object): Aggregate
+
+      /** 聚合阶段。将输入记录按给定表达式分组，输出时每个记录代表一个分组，每个记录的 _id 是区分不同组的 key。输出记录中也可以包括累计值，将输出字段设为累计值即会从该分组中计算累计值。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.group.html
+       */
+      group(object: Object): Aggregate
+
+      /** 聚合阶段。限制输出到下一阶段的记录数。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.limit.html
+       */
+      limit(value: number): Aggregate
+
+      /** 聚合阶段。聚合阶段。联表查询。与同个数据库下的一个指定的集合做 left outer join(左外连接)。对该阶段的每一个输入记录，lookup 会在该记录中增加一个数组字段，该数组是被联表中满足匹配条件的记录列表。lookup 会将连接后的结果输出给下个阶段。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.lookup.html
+       */
+      lookup(object: Object): Aggregate
+
+      /** 聚合阶段。根据条件过滤文档，并且把符合条件的文档传递给下一个流水线阶段。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.match.html
+       */
+      match(object: Object): Aggregate
+      
+      /** 聚合阶段。把指定的字段传递给下一个流水线，指定的字段可以是某个已经存在的字段，也可以是计算出来的新字段。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.project.html
+       */
+      project(object: Object): Aggregate
+
+      /** 聚合阶段。指定一个已有字段作为输出的根节点，也可以指定一个计算出的新字段作为根节点。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.replaceRoot.html
+       */
+      replaceRoot(object: Object): Aggregate
+
+      /** 聚合阶段。随机从文档中选取指定数量的记录。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.sample.html
+       */
+      sample(size: number): Aggregate
+
+      /** 聚合阶段。指定一个正整数，跳过对应数量的文档，输出剩下的文档。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.skip.html
+       */
+      skip(value: number): Aggregate
+
+      /** 聚合阶段。根据指定的字段，对输入的文档进行排序。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.sort.html
+       */
+      sort(object: Object): Aggregate
+
+      /** 聚合阶段。根据传入的表达式，将传入的集合进行分组（group）。然后计算不同组的数量，并且将这些组按照它们的数量进行排序，返回排序后的结果。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.sortByCount.html
+       */
+      sortByCount(object: Object): Aggregate
+
+      /** 聚合阶段。使用指定的数组字段中的每个元素，对文档进行拆分。拆分后，文档会从一个变为一个或多个，分别对应数组的每个元素。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.unwind.html
+       */
+      unwind(value: string|object): Aggregate
+    }
+
+    /** 数据库地理位置结构集
+     * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/Geo.html
+     */
     interface IGeo {
-      Point: IGeo.PointConstructor
-      MultiPoint: IGeo.MultiPointConstructor
-      LineString: IGeo.LineStringConstructor
-      MultiLineString: IGeo.MultiLineStringConstructor
-      Polygon: IGeo.PolygonConstructor
-      MultiPolygon: IGeo.MultiPolygonConstructor
+      /** 构造一个地理位置 ”点“。方法接受两个必填参数，第一个是经度（longitude），第二个是纬度（latitude），务必注意顺序。
+       * 
+       * 如存储地理位置信息的字段有被查询的需求，务必对字段建立地理位置索引
+       * @supported weapp
+       * @example
+       * ```tsx
+       * db.collection('todos').add({
+       *   data: {
+       *     description: 'eat an apple',
+       *     location: db.Geo.Point(113, 23)
+       *   }
+       * }).then(console.log).catch(console.error)
+       * ```
+       * @example
+       * 除了使用接口构造一个点外，也可以使用等价的 GeoJSON 的 点 (Point) 的 JSON 表示，其格式如下：
+       * 
+       * ```json
+       * {
+       *   "type": "Point",
+       *   "coordinates": [longitude, latitude] // 数字数组：[经度, 纬度]
+       * }
+       * ```
+       * 
+       * ```tsx
+       * db.collection('todos').add({
+       *   data: {
+       *     description: 'eat an apple',
+       *     location: {
+       *       type: 'Point',
+       *       coordinates: [113, 23]
+       *     }
+       *   }
+       * }).then(console.log).catch(console.error)
+       * ```
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/geo/Geo.Point.html
+       */
+      Point(longitude: number, latitide: number): IGeo.GeoPoint
+      // Point(geojson: IGeo.JSONPoint): IGeo.GeoPoint
+
+      /** 构造一个地理位置的 ”线“。一个线由两个或更多的点有序连接组成。
+       * 
+       * 如存储地理位置信息的字段有被查询的需求，务必对字段建立地理位置索引
+       * @supported weapp
+       * @example
+       * ```tsx
+       * db.collection('todos').add({
+       *   data: {
+       *     description: 'eat an apple',
+       *     location: db.Geo.LineString([
+       *       db.Geo.Point(113, 23),
+       *       db.Geo.Point(120, 50),
+       *       // ... 可选更多点
+       *     ])
+       *   }
+       * }).then(console.log).catch(console.error)
+       * ```
+       * @example
+       * 除了使用接口构造一条 LineString 外，也可以使用等价的 GeoJSON 的 线 (LineString) 的 JSON 表示，其格式如下：
+       * 
+       * ```json
+       * {
+       *   "type": "LineString",
+       *   "coordinates": [
+       *     [p1_lng, p1_lat],
+       *     [p2_lng, p2_lng]
+       *     // ... 可选更多点
+       *   ]
+       * }
+       * ```
+       * 
+       * ```tsx
+       * db.collection('todos').add({
+       *   data: {
+       *     description: 'eat an apple',
+       *     location: {
+       *       type: 'LineString',
+       *       coordinates: [
+       *         [113, 23],
+       *         [120, 50]
+       *       ]
+       *     }
+       *   }
+       * }).then(console.log).catch(console.error)
+       * ```
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/geo/Geo.LineString.html
+       */
+      LineString(points: IGeo.GeoPoint[] | IGeo.JSONMultiPoint): IGeo.GeoMultiPoint
+
+      /** 构造一个地理位置 ”多边形“
+       * 
+       * 如存储地理位置信息的字段有被查询的需求，务必对字段建立地理位置索引
+       * 
+       * **说明**
+       * 
+       * 一个多边形由一个或多个线性环（Linear Ring）组成，一个线性环即一个闭合的线段。一个闭合线段至少由四个点组成，其中最后一个点和第一个点的坐标必须相同，以此表示环的起点和终点。如果一个多边形由多个线性环组成，则第一个线性环表示外环（外边界），接下来的所有线性环表示内环（即外环中的洞，不计在此多边形中的区域）。如果一个多边形只有一个线性环组成，则这个环就是外环。
+       * 
+       * 多边形构造规则：
+       * 
+       * 1. 第一个线性环必须是外环
+       * 2. 外环不能自交
+       * 3. 所有内环必须完全在外环内
+       * 4. 各个内环间不能相交或重叠，也不能有共同的边
+       * 5. 外环应为逆时针，内环应为顺时针
+       * @supported weapp
+       * @example
+       * 单环多边形
+       * 
+       * ```tsx
+       * const { Polygon, LineString, Point } = db.Geo
+       * db.collection('todos').add({
+       *   data: {
+       *     description: 'eat an apple',
+       *     location: Polygon([
+       *       LineString([
+       *         Point(0, 0),
+       *         Point(3, 2),
+       *         Point(2, 3),
+       *         Point(0, 0)
+       *       ])
+       *     ])
+       *   }
+       * }).then(console.log).catch(console.error)
+       * ```
+       * @example
+       * 含一个外环和一个内环的多边形
+       * 
+       * ```tsx
+       * const { Polygon, LineString, Point } = db.Geo
+       * db.collection('todos').add({
+       *   data: {
+       *     description: 'eat an apple',
+       *     location: Polygon([
+       *       // 外环
+       *       LineString([ Point(0, 0), Point(30, 20), Point(20, 30), Point(0, 0) ]),
+       *       // 内环
+       *       LineString([ Point(10, 10), Point(16, 14), Point(14, 16), Point(10, 10) ])
+       *     ])
+       *   }
+       * }).then(console.log).catch(console.error)
+       * ```
+       * @example
+       * 除了使用接口构造一个 Polygon 外，也可以使用等价的 GeoJSON 的 多边形 (Polygon) 的 JSON 表示，其格式如下：
+       * 
+       * ```json
+       * {
+       *   "type": "Polygon",
+       *   "coordinates": [
+       *     [ [lng, lat], [lng, lat], [lng, lat], ..., [lng, lat] ], // 外环
+       *     [ [lng, lat], [lng, lat], [lng, lat], ..., [lng, lat] ], // 可选内环 1
+       *     ...
+       *     [ [lng, lat], [lng, lat], [lng, lat], ..., [lng, lat] ], // 可选内环 n
+       *   ]
+       * }
+       * ```
+       * 
+       * ```tsx
+       * db.collection('todos').add({
+       *   data: {
+       *     description: 'eat an apple',
+       *     location: {
+       *       type: 'Polygon',
+       *       coordinates: [
+       *         [ [0, 0], [30, 20], [20, 30], [0, 0] ],
+       *         [ [10, 10], [16, 14], [14, 16], [10, 10]]
+       *       ]
+       *     }
+       *   }
+       * }).then(console.log).catch(console.error)
+       * ```
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/geo/Geo.Polygon.html
+       */
+      Polygon(lineStrings: IGeo.GeoLineString[] | IGeo.JSONPolygon): IGeo.GeoPolygon
+
+      /** 构造一个地理位置的 ”点“ 的集合。一个点集合由一个或更多的点组成。
+       * 
+       * 如存储地理位置信息的字段有被查询的需求，务必对字段建立地理位置索引
+       * @supported weapp
+       * @example
+       * ```tsx
+       * db.collection('todos').add({
+       *   data: {
+       *     description: 'eat an apple',
+       *     location: db.Geo.MultiPoint([
+       *       db.Geo.Point(113, 23),
+       *       db.Geo.Point(120, 50),
+       *       // ... 可选更多点
+       *     ])
+       *   }
+       * }).then(console.log).catch(console.error)
+       * ```
+       * @example
+       * 除了使用接口构造 MultiPoint 外，也可以使用等价的 GeoJSON 的 点集合 (MultiPoint) 的 JSON 表示，其格式如下：
+       * 
+       * ```json
+       * {
+       *   "type": "MultiPoint",
+       *   "coordinates": [
+       *     [p1_lng, p1_lat],
+       *     [p2_lng, p2_lng]
+       *     // ... 可选更多点
+       *   ]
+       * }
+       * ```
+       * 
+       * ```tsx
+       * db.collection('todos').add({
+       *   data: {
+       *     description: 'eat an apple',
+       *     location: {
+       *       type: 'MultiPoint',
+       *       coordinates: [
+       *         [113, 23],
+       *         [120, 50]
+       *       ]
+       *     }
+       *   }
+       * }).then(console.log).catch(console.error)
+       * ```
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/geo/Geo.MultiPoint.html
+       */
+      MultiPoint(polygons: IGeo.GeoPolygon[] | IGeo.JSONMultiPolygon): IGeo.GeoMultiPolygon
+
+      /** 构造一个地理位置 ”线“ 集合。一个线集合由多条线组成。
+       * 
+       * 如存储地理位置信息的字段有被查询的需求，务必对字段建立地理位置索引
+       * @supported weapp
+       * @example
+       * ```tsx
+       * const { LineString, MultiLineString, Point } = db.Geo
+       * db.collection('todos').add({
+       *   data: {
+       *     description: 'eat an apple',
+       *     location: MultiLineString([
+       *       LineString([ Point(0, 0), Point(30, 20), Point(20, 30), Point(0, 0) ]),
+       *       LineString([ Point(10, 10), Point(16, 14), Point(14, 16), Point(10, 10) ])
+       *     ])
+       *   }
+       * }).then(console.log).catch(console.error)
+       * ```
+       * @example
+       * 除了使用接口构造一个 MultiLineString 外，也可以使用等价的 GeoJSON 的 线集合 (MultiLineString) 的 JSON 表示，其格式如下：
+       * 
+       * ```json
+       * {
+       *   "type": "MultiLineString",
+       *   "coordinates": [
+       *     [ [lng, lat], [lng, lat], [lng, lat], ..., [lng, lat] ],
+       *     [ [lng, lat], [lng, lat], [lng, lat], ..., [lng, lat] ],
+       *     ...
+       *     [ [lng, lat], [lng, lat], [lng, lat], ..., [lng, lat] ]
+       *   ]
+       * }
+       * ```
+       * 
+       * ```tsx
+       * db.collection('todos').add({
+       *   data: {
+       *     description: 'eat an apple',
+       *     location: {
+       *       type: 'MultiLineString',
+       *       coordinates: [
+       *         [ [0, 0], [3, 3] ],
+       *         [ [5, 10], [20, 30] ]
+       *       ]
+       *     }
+       *   }
+       * }).then(console.log).catch(console.error)
+       * ```
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/geo/Geo.MultiLineString.html
+       */
+      MultiLineString(
+        lineStrings: IGeo.GeoLineString[] | IGeo.JSONMultiLineString,
+      ): IGeo.GeoMultiLineString
+
+      /** 构造一个地理位置 ”多边形“ 集合。一个多边形集合由多个多边形组成。
+       * 
+       * 如存储地理位置信息的字段有被查询的需求，务必对字段建立地理位置索引
+       * 
+       * **说明**
+       * 
+       * 一个多边形由一个或多个线性环（Linear Ring）组成，一个线性环即一个闭合的线段。一个闭合线段至少由四个点组成，其中最后一个点和第一个点的坐标必须相同，以此表示环的起点和终点。如果一个多边形由多个线性环组成，则第一个线性环表示外环（外边界），接下来的所有线性环表示内环（即外环中的洞，不计在此多边形中的区域）。如果一个多边形只有一个线性环组成，则这个环就是外环。
+       * 
+       * 多边形构造规则：
+       * 
+       * 1. 第一个线性环必须是外环
+       * 2. 外环不能自交
+       * 3. 所有内环必须完全在外环内
+       * 4. 各个内环间不能相交或重叠，也不能有共同的边
+       * 5. 外环应为逆时针，内环应为顺时针
+       * @supported weapp
+       * @example
+       * ```tsx
+       * const { MultiPolygon, Polygon, LineString, Point } = db.Geo
+       * db.collection('todos').add({
+       *   data: {
+       *     description: 'eat an apple',
+       *     location: MultiPolygon([
+       *       Polygon([
+       *         LineString([ Point(50, 50), Point(60, 80), Point(80, 60), Point(50, 50) ]),
+       *       ]),
+       *       Polygon([
+       *         LineString([ Point(0, 0), Point(30, 20), Point(20, 30), Point(0, 0) ]),
+       *         LineString([ Point(10, 10), Point(16, 14), Point(14, 16), Point(10, 10) ])
+       *       ]),
+       *     ])
+       *   }
+       * }).then(console.log).catch(console.error)
+       * ```
+       * @example
+       * 除了使用接口构造一个 MultiPolygon 外，也可以使用等价的 GeoJSON 的 多边形 (MultiPolygon) 的 JSON 表示，其格式如下：
+       * 
+       * ```json
+       * {
+       *   "type": "MultiPolygon",
+       *   "coordinates": [
+       *     // polygon 1
+       *     [
+       *       [ [lng, lat], [lng, lat], [lng, lat], ..., [lng, lat] ],
+       *       [ [lng, lat], [lng, lat], [lng, lat], ..., [lng, lat] ],
+       *       ...
+       *       [ [lng, lat], [lng, lat], [lng, lat], ..., [lng, lat] ]
+       *     ],
+       *     ...
+       *     // polygon n
+       *     [
+       *       [ [lng, lat], [lng, lat], [lng, lat], ..., [lng, lat] ],
+       *       [ [lng, lat], [lng, lat], [lng, lat], ..., [lng, lat] ],
+       *       ...
+       *       [ [lng, lat], [lng, lat], [lng, lat], ..., [lng, lat] ]
+       *     ],
+       *   ]
+       * }
+       * ```
+       * 
+       * ```tsx
+       * db.collection('todos').add({
+       *   data: {
+       *     description: 'eat an apple',
+       *     location: {
+       *       type: 'MultiPolygon',
+       *       coordinates: [
+       *         [
+       *           [ [50, 50], [60, 80], [80, 60], [50, 50] ]
+       *         ],
+       *         [
+       *           [ [0, 0], [30, 20], [20, 30], [0, 0] ],
+       *           [ [10, 10], [16, 14], [14, 16], [10, 10]]
+       *         ]
+       *       ]
+       *     }
+       *   }
+       * }).then(console.log).catch(console.error)
+       * ```
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/geo/Geo.MultiPolygon.html
+       */
+      MultiPolygon(polygons: IGeo.GeoPolygon[] | IGeo.JSONMultiPolygon): IGeo.GeoMultiPolygon
     }
 
     namespace IGeo {
-      interface PointConstructor {
-        new (longitude: number, latitide: number): GeoPoint
-        new (geojson: JSONPoint): GeoPoint
-        (longitude: number, latitide: number): GeoPoint
-        (geojson: JSONPoint): GeoPoint
+      /** 地理位置 “点”
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/geo/GeoPoint.html
+       */
+      interface GeoPoint {
+        /** 经度 */
+        longitude: number
+        /** 纬度 */
+        latitude: number
+  
+        /** 格式化为 JSON 结构 */
+        toJSON(): object
+        /** 格式化为字符串 */
+        toString(): string
       }
   
-      interface MultiPointConstructor {
-        new (points: GeoPoint[] | JSONMultiPoint): GeoMultiPoint
-        (points: GeoPoint[] | JSONMultiPoint): GeoMultiPoint
+      /** 地理位置的 ”线“。一个线由两个或更多的点有序连接组成。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/geo/GeoLineString.html
+       */
+      interface GeoLineString {
+        /** 点集合 */
+        points: GeoPoint[]
+  
+        /** 格式化为 JSON 结构 */
+        toJSON(): JSONLineString
+        /** 格式化为字符串 */
+        toString(): string
       }
   
-      interface LineStringConstructor {
-        new (points: GeoPoint[] | JSONLineString): GeoLineString
-        (points: GeoPoint[] | JSONLineString): GeoLineString
-      }
+      /** 地理位置 ”多边形“
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/geo/GeoPolygon.html
+       */
+      interface GeoPolygon {
+        /** 线集合 */
+        lines: GeoLineString[]
   
-      interface MultiLineStringConstructor {
-        new (
-          lineStrings: GeoLineString[] | JSONMultiLineString,
-        ): GeoMultiLineString
-        (
-          lineStrings: GeoLineString[] | JSONMultiLineString,
-        ): GeoMultiLineString
-      }
-  
-      interface PolygonConstructor {
-        new (lineStrings: GeoLineString[] | JSONPolygon): GeoPolygon
-        (lineStrings: GeoLineString[] | JSONPolygon): GeoPolygon
-      }
-  
-      interface MultiPolygonConstructor {
-        new (polygons: GeoPolygon[] | JSONMultiPolygon): GeoMultiPolygon
-        (polygons: GeoPolygon[] | JSONMultiPolygon): GeoMultiPolygon
+        /** 格式化为 JSON 结构 */
+        toJSON(): JSONPolygon
+        /** 格式化为字符串 */
+        toString(): string
       }
 
+      /** 地理位置的 ”点“ 的集合。一个点集合由一个或更多的点组成。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/geo/GeoMultiPoint.html
+       */
+      interface GeoMultiPoint {
+        /** 点集合 */
+        points: GeoPoint[]
+  
+        /** 格式化为 JSON 结构 */
+        toJSON(): JSONMultiPoint
+        /** 格式化为字符串 */
+        toString(): string
+      }
+  
+      /** 地理位置 ”线“ 集合。一个线集合由多条线组成。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/geo/GeoMultiLineString.html
+       */
+      interface GeoMultiLineString {
+        /** 线集合 */
+        lines: GeoLineString[]
+  
+        /** 格式化为 JSON 结构 */
+        toJSON(): JSONMultiLineString
+        /** 格式化为字符串 */
+        toString(): string
+      }
+  
+      /** 地理位置 ”多边形“ 集合。一个多边形集合由多个多边形组成。
+       * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/geo/GeoMultiPolygon.html
+       */
+      interface GeoMultiPolygon {
+        /** 多边形集合 */
+        polygons: GeoPolygon[]
+  
+        /** 格式化为 JSON 结构 */
+        toJSON(): JSONMultiPolygon
+        /** 格式化为字符串 */
+        toString(): string
+      }
+
+      /** 地理位置 “点” 的 JSON 结构 */
       interface JSONPoint {
+        /** 类型  */
         type: 'Point'
+        /** 坐标 */
         coordinates: [number, number]
       }
   
-      interface JSONMultiPoint {
-        type: 'MultiPoint'
-        coordinates: Array<[number, number]>
-      }
-  
+      /** 地理位置 ”线“ 的 JSON 结构 */
       interface JSONLineString {
+        /** 类型  */
         type: 'LineString'
+        /** 坐标 */
         coordinates: Array<[number, number]>
       }
   
-      interface JSONMultiLineString {
-        type: 'MultiLineString'
-        coordinates: Array<Array<[number, number]>>
-      }
-  
+      /** 地理位置 ”多边形“ 的 JSON 结构 */
       interface JSONPolygon {
+        /** 类型  */
         type: 'Polygon'
+        /** 坐标 */
         coordinates: Array<Array<[number, number]>>
       }
   
+      /** 地理位置的 ”点“ 集合的 JSON 结构 */
+      interface JSONMultiPoint {
+        /** 类型  */
+        type: 'MultiPoint'
+        /** 坐标 */
+        coordinates: Array<[number, number]>
+      }
+  
+      /** 地理位置 ”线“ 集合的 JSON 结构 */
+      interface JSONMultiLineString {
+        /** 类型  */
+        type: 'MultiLineString'
+        /** 坐标 */
+        coordinates: Array<Array<[number, number]>>
+      }
+  
+      /** 地理位置 ”多边形“ 集合的 JSON 结构 */
       interface JSONMultiPolygon {
+        /** 类型  */
         type: 'MultiPolygon'
+        /** 坐标 */
         coordinates: Array<Array<Array<[number, number]>>>
-      }
-
-      interface GeoPoint {
-        longitude: number
-        latitude: number
-  
-        toJSON(): object
-        toString(): string
-      }
-  
-      interface GeoMultiPoint {
-        points: GeoPoint[]
-  
-        toJSON(): JSONMultiPoint
-        toString(): string
-      }
-  
-      interface GeoLineString {
-        points: GeoPoint[]
-  
-        toJSON(): JSONLineString
-        toString(): string
-      }
-  
-      interface GeoMultiLineString {
-        lines: GeoLineString[]
-  
-        toJSON(): JSONMultiLineString
-        toString(): string
-      }
-  
-      interface GeoPolygon {
-        lines: GeoLineString[]
-  
-        toJSON(): JSONPolygon
-        toString(): string
-      }
-  
-      interface GeoMultiPolygon {
-        polygons: GeoPolygon[]
-  
-        toJSON(): JSONMultiPolygon
-        toString(): string
-      }
-  
-      interface NearCommandOptions {
-        geometry: GeoPoint
-        maxDistance?: number
-        minDistance?: number
-      }
-  
-      interface WithinCommandOptions {
-        geometry: GeoPolygon | GeoMultiPolygon
-      }
-  
-      interface IntersectsCommandOptions {
-        geometry:
-          | GeoPoint
-          | GeoMultiPoint
-          | GeoLineString
-          | GeoMultiLineString
-          | GeoPolygon
-          | GeoMultiPolygon
       }
     }
   }

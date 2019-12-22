@@ -14,6 +14,7 @@ const TaroMethod = [
   ts.SymbolFlags.ValueModule,
   ts.SymbolFlags.Function + ts.SymbolFlags.NamespaceModule,
   ts.SymbolFlags.Namespace,
+  ts.SymbolFlags.Method,
 ]
 const isntTaroMethod = [
   -1,
@@ -249,16 +250,32 @@ const get = {
             }
           }
         })
+
+        if (!isFunction(param.flags) && !TaroMethod.includes(param.flags || -1) && !isntTaroMethod.includes(param.flags || -1)) {
+          console.log(param.flags)
+          console.log(`WARN: Symbol flags ${param.flags} is missing parse! Watch symbol name:${param.name}.`)
+        }
+
+        const members = param.members || []
+        const apis = { [`${TaroMethod.includes(param.flags || -1) ? 'Taro.' : ''}${param.name}`]: tags }
+        members.forEach(member => {
+          if (isShowAPI(member.flags)) {
+            if (member.name && member.jsTags) apis[`${param.name}.${member.name}`] = member.jsTags || []
+          } else if (!isNotAPI(member.flags)) {
+            console.warn(`WARN: Symbol flags ${member.flags} for members is missing parse! Watch member name:${member.name}.`)
+          }
+        })
+
         return splicing([
           `${'#'.repeat(level === 2 ? level + 1 : level)} ${param.name}\n`,
-          get.document(param.documentation),
           get.since(tags.find(tag => tag.name === 'since')),
+          get.document(param.documentation),
+          get.see(tags.find(tag => tag.name === 'see')),
           get.type(param.type),
           get.members(param.members, '方法', level + (level === 2 ? 2 : 1)),
           get.members(declaration.parameters || param.exports, '参数', level + (level === 2 ? 2 : 1)),
           get.example(tags, level + (level === 2 ? 2 : 1)),
-          // TODO: 新增更多 API 支持度 get.api(apis),
-          get.see(tags.find(tag => tag.name === 'see')),
+          get.api(apis),
         ])
       }/*  else if (!isShowAPI(param.flags) && !isNotAPI(param.flags) && param.flags !== 1) {
         console.log(param.name, param.flags)
@@ -338,14 +355,14 @@ export function writeDoc (routepath: string, doc: DocEntry[], withGeneral = fals
 
     md.push(
       get.header({ title: get.title(name, params, e.flags), sidebar_label: name }),
-      get.document(e.documentation),
       get.since(tags.find(tag => tag.name === 'since')),
+      get.document(e.documentation),
+      get.see(tags.find(tag => tag.name === 'see')),
       get.type(e.type, 2),
       get.members(e.members),
       get.members(e.exports || e.parameters, '参数', 2),
       get.example(tags),
       get.api(apis),
-      get.see(tags.find(tag => tag.name === 'see')),
     )
 
     writeFile(

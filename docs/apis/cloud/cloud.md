@@ -5,11 +5,15 @@ sidebar_label: cloud
 
 云开发 SDK 实例
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/Cloud.html)
+
 ## 方法
 
 ### init
 
 在调用云开发各 API 前，需先调用初始化方法 init 一次（全局只需一次，多次调用时只有第一次生效）
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/init/client.init.html)
 
 ```tsx
 (config?: IInitConfig) => void
@@ -27,11 +31,11 @@ Taro.cloud.init({
 })
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/init/client.init.html)
-
 ### callFunction
 
 调用云函数
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/functions/Cloud.callFunction.html)
 
 ```tsx
 (param: CallFunctionParam) => void | Promise<CallFunctionResult>
@@ -61,11 +65,11 @@ name: 'add',
 })
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/functions/Cloud.callFunction.html)
-
 ### uploadFile
 
 将本地资源上传至云存储空间，如果上传至同一路径则是覆盖写
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/storage/uploadFile/client.uploadFile.html)
 
 ```tsx
 (param: UploadFileParam) => any
@@ -107,11 +111,11 @@ Taro.cloud.uploadFile({
 })
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/storage/uploadFile/client.uploadFile.html)
-
 ### downloadFile
 
 从云存储空间下载文件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/storage/downloadFile/client.downloadFile.html)
 
 ```tsx
 (param: DownloadFileParam) => any
@@ -151,11 +155,11 @@ Taro.cloud.downloadFile({
 })
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/storage/downloadFile/client.downloadFile.html)
-
 ### getTempFileURL
 
 用云文件 ID 换取真实链接，公有读的文件获取的链接不会过期，私有的文件获取的链接十分钟有效期。一次最多取 50 个。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/storage/Cloud.getTempFileURL.html)
 
 ```tsx
 (param: GetTempFileURLParam) => void | Promise<GetTempFileURLResult>
@@ -198,11 +202,11 @@ Taro.cloud.getTempFileURL({
 })
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/storage/Cloud.getTempFileURL.html)
-
 ### deleteFile
 
 从云存储空间删除文件，一次最多 50 个
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/storage/Cloud.deleteFile.html)
 
 ```tsx
 (param: DeleteFileParam) => void | Promise<DeleteFileResult>
@@ -245,11 +249,11 @@ Taro.cloud.deleteFile({
 })
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/storage/Cloud.deleteFile.html)
-
 ### database
 
 获取数据库实例
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/Cloud.database.html)
 
 ```tsx
 (config?: IConfig) => Database
@@ -278,8 +282,6 @@ const testDB = Taro.cloud.database({
   env: 'test-123'
 })
 ```
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/Cloud.database.html)
 
 ## 参数
 
@@ -465,5 +467,3 @@ const testDB = Taro.cloud.database({
 | cloud.getTempFileURL | ✔️ |  |  |  |  |  |  |  |
 | cloud.deleteFile | ✔️ |  |  |  |  |  |  |  |
 | cloud.database | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/Cloud.html)
