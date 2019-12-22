@@ -5,6 +5,8 @@ sidebar_label: openCard
 
 查看微信卡包中的卡券。只有通过 [认证](https://developers.weixin.qq.com/miniprogram/product/renzheng.html) 的小程序或文化互动类目的小游戏才能使用。更多文档请参考 [微信卡券接口文档](https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&key=1490190158&version=1&lang=zh_CN&platform=2)。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/card/wx.openCard.html)
+
 ## 类型
 
 ```tsx
@@ -51,5 +53,3 @@ Taro.openCard({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.openCard | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/card/wx.openCard.html)

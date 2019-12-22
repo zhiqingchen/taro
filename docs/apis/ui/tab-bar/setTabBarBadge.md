@@ -5,6 +5,8 @@ sidebar_label: setTabBarBadge
 
 为 tabBar 某一项的右上角添加文本
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/tab-bar/wx.setTabBarBadge.html)
+
 ## 类型
 
 ```tsx
@@ -37,5 +39,3 @@ Taro.setTabBarBadge({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.setTabBarBadge | ✔️ |  |  |  |  | ✔️ |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/tab-bar/wx.setTabBarBadge.html)

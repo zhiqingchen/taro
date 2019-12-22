@@ -5,6 +5,8 @@ sidebar_label: reportAnalytics
 
 自定义分析数据上报接口。使用前，需要在小程序管理后台自定义分析中新建事件，配置好事件名与字段。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/data-analysis/wx.reportAnalytics.html)
+
 ## 类型
 
 ```tsx
@@ -32,5 +34,3 @@ Taro.reportAnalytics('purchase', {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.reportAnalytics | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/data-analysis/wx.reportAnalytics.html)

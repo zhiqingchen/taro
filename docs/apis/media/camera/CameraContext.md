@@ -3,11 +3,15 @@ title: CameraContext
 sidebar_label: CameraContext
 ---
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.html)
+
 ## 方法
 
 ### startRecord
 
 开始录像
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.startRecord.html)
 
 ```tsx
 (option: StartRecordOption) => void
@@ -17,11 +21,17 @@ sidebar_label: CameraContext
 | --- | --- |
 | option | `StartRecordOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.startRecord.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.startRecord | ✔️ |  |  |  |  |  |  |  |
 
 ### stopRecord
 
 结束录像
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.stopRecord.html)
 
 ```tsx
 (option?: StopRecordOption) => void
@@ -31,11 +41,17 @@ sidebar_label: CameraContext
 | --- | --- |
 | option | `StopRecordOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.stopRecord.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.stopRecord | ✔️ |  |  |  |  |  |  |  |
 
 ### takePhoto
 
 拍摄照片
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.takePhoto.html)
 
 ```tsx
 (option: TakePhotoOption) => void
@@ -45,7 +61,11 @@ sidebar_label: CameraContext
 | --- | --- |
 | option | `TakePhotoOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.takePhoto.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.takePhoto | ✔️ |  |  |  |  |  |  |  |
 
 ### onCameraFrame
 
@@ -54,6 +74,8 @@ sidebar_label: CameraContext
 ****
 
 注： 使用该接口需同时在 [camera](https://developers.weixin.qq.com/miniprogram/dev/component/camera.html) 组件属性中指定 frame-size。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.onCameraFrame.html)
 
 ```tsx
 (callback: OnCameraFrameCallback) => CameraFrameListener
@@ -73,7 +95,11 @@ const listener = context.onCameraFrame((frame) => {
 listener.start()
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.onCameraFrame.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onCameraFrame | ✔️ |  |  |  |  |  |  |  |
 
 ## 参数
 
@@ -173,5 +199,3 @@ listener.start()
 | CameraContext.stopRecord | ✔️ |  |  |  |  |  |  |  |
 | CameraContext.takePhoto | ✔️ |  |  |  |  |  |  |  |
 | CameraContext.onCameraFrame | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.html)

@@ -5,6 +5,8 @@ sidebar_label: setEnableDebug
 
 设置是否打开调试开关，此开关对正式版也能生效。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/wx.setEnableDebug.html)
+
 ## 类型
 
 ```tsx
@@ -46,5 +48,3 @@ Taro.setEnableDebug({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.setEnableDebug | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/wx.setEnableDebug.html)

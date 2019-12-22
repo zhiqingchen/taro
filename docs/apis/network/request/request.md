@@ -11,6 +11,8 @@ sidebar_label: request
 - 对于 `POST` 方法且 `header['content-type']` 为 `application/json` 的数据，会对数据进行 JSON 序列化
 - 对于 `POST` 方法且 `header['content-type']` 为 `application/x-www-form-urlencoded` 的数据，会将数据转换成 query string `（encodeURIComponent(k)=encodeURIComponent(v)&encodeURIComponent(k)=encodeURIComponent(v)...）`
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/wx.request.html)
+
 ## 类型
 
 ```tsx
@@ -153,5 +155,3 @@ const res = await Taro.request(params)
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.request | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/wx.request.html)

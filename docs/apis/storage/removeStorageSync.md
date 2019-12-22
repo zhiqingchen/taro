@@ -6,6 +6,8 @@ sidebar_label: removeStorageSync
 从本地缓存中同步移除指定 key 。
 Taro.removeStorage 的同步版本
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.removeStorageSync.html)
+
 ## 类型
 
 ```tsx
@@ -54,5 +56,3 @@ try {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.removeStorageSync | ✔️ |  |  |  |  | ✔️ |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.removeStorageSync.html)

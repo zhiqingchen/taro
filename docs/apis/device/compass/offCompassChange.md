@@ -5,6 +5,8 @@ sidebar_label: offCompassChange
 
 取消监听罗盘数据变化事件，参数为空，则取消所有的事件监听。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/compass/wx.offCompassChange.html)
+
 ## 类型
 
 ```tsx
@@ -22,5 +24,3 @@ sidebar_label: offCompassChange
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.offCompassChange | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/compass/wx.offCompassChange.html)

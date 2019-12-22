@@ -5,6 +5,8 @@ sidebar_label: switchTab
 
 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.switchTab.html)
+
 ## 类型
 
 ```tsx
@@ -49,5 +51,3 @@ Taro.switchTab({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.switchTab | ✔️ |  |  |  |  | ✔️ | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.switchTab.html)

@@ -5,6 +5,8 @@ sidebar_label: setBackgroundFetchToken
 
 设置自定义登录态，在周期性拉取数据时带上，便于第三方服务器验证请求合法性
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/background-fetch/wx.setBackgroundFetchToken.html)
+
 ## 类型
 
 ```tsx
@@ -27,5 +29,3 @@ sidebar_label: setBackgroundFetchToken
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.setBackgroundFetchToken | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/background-fetch/wx.setBackgroundFetchToken.html)

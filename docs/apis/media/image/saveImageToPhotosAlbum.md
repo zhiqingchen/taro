@@ -5,6 +5,8 @@ sidebar_label: saveImageToPhotosAlbum
 
 保存图片到系统相册。需要[用户授权](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html) scope.writePhotosAlbum
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.saveImageToPhotosAlbum.html)
+
 ## 类型
 
 ```tsx
@@ -35,5 +37,3 @@ Taro.saveImageToPhotosAlbum({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.saveImageToPhotosAlbum | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.saveImageToPhotosAlbum.html)

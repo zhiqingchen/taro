@@ -5,6 +5,8 @@ sidebar_label: previewImage
 
 在新页面中全屏预览图片。预览的过程中用户可以进行保存图片、发送给朋友等操作。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.previewImage.html)
+
 ## 类型
 
 ```tsx
@@ -37,5 +39,3 @@ Taro.previewImage({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.previewImage | ✔️ | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.previewImage.html)

@@ -5,6 +5,8 @@ sidebar_label: getStorageInfo
 
 异步获取当前storage的相关信息
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageInfo.html)
+
 ## 类型
 
 ```tsx
@@ -57,5 +59,3 @@ try {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getStorageInfo | ✔️ |  |  |  |  | ✔️ | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageInfo.html)

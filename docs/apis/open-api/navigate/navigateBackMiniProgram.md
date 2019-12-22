@@ -7,6 +7,8 @@ sidebar_label: navigateBackMiniProgram
 
 注意：**微信客户端 iOS 6.5.9，Android 6.5.10 及以上版本支持**
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateBackMiniProgram.html)
+
 ## 类型
 
 ```tsx
@@ -42,5 +44,3 @@ Taro.navigateBackMiniProgram({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.navigateBackMiniProgram | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateBackMiniProgram.html)

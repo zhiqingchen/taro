@@ -5,6 +5,8 @@ sidebar_label: getApp
 
 获取到小程序全局唯一的 App 实例。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/reference/api/getApp.html)
+
 ## 类型
 
 ```tsx
@@ -26,5 +28,3 @@ sidebar_label: getApp
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getApp | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/reference/api/getApp.html)

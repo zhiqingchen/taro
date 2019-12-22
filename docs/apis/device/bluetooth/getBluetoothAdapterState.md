@@ -5,6 +5,8 @@ sidebar_label: getBluetoothAdapterState
 
 获取本机蓝牙适配器状态。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth/wx.getBluetoothAdapterState.html)
+
 ## 类型
 
 ```tsx
@@ -44,5 +46,3 @@ Taro.getBluetoothAdapterState({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getBluetoothAdapterState | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth/wx.getBluetoothAdapterState.html)

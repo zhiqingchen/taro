@@ -5,6 +5,8 @@ sidebar_label: OffscreenCanvas
 
 离屏 canvas 实例，可通过 Taro.createOffscreenCanvas 创建。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/OffscreenCanvas.html)
+
 ## 方法
 
 ### getContext
@@ -23,10 +25,14 @@ sidebar_label: OffscreenCanvas
 | --- | --- |
 | contextType | `string` |
 
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.getContext | ✔️ |  |  |  |  |  |  |  |
+
 ## API 支持度
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | OffscreenCanvas.getContext | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/OffscreenCanvas.html)

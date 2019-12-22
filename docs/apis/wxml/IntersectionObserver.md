@@ -5,21 +5,25 @@ sidebar_label: IntersectionObserver
 
 `IntersectionObserver` 对象，用于推断某些节点是否可以被用户看见、有多大比例可以被用户看见。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/IntersectionObserver.html)
+
 ## 方法
 
 ### disconnect
 
 停止监听。回调函数将不再触发
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/IntersectionObserver.disconnect.html)
+
 ```tsx
 () => void
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/IntersectionObserver.disconnect.html)
-
 ### observe
 
 指定目标节点并开始监听相交状态变化情况
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/IntersectionObserver.observe.html)
 
 ```tsx
 (targetSelector: string, callback: ObserveCallback) => void
@@ -30,11 +34,11 @@ sidebar_label: IntersectionObserver
 | targetSelector | `string` | 选择器 |
 | callback | `ObserveCallback` | 监听相交状态变化的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/IntersectionObserver.observe.html)
-
 ### relativeTo
 
 使用选择器指定一个节点，作为参照区域之一。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/IntersectionObserver.relativeTo.html)
 
 ```tsx
 (selector: string, margins?: RelativeToMargins) => IntersectionObserver
@@ -45,11 +49,11 @@ sidebar_label: IntersectionObserver
 | selector | `string` | 选择器 |
 | margins | `RelativeToMargins` | 用来扩展（或收缩）参照节点布局区域的边界 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/IntersectionObserver.relativeTo.html)
-
 ### relativeToViewport
 
 指定页面显示区域作为参照区域之一
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/IntersectionObserver.relativeToViewport.html)
 
 ```tsx
 (margins?: RelativeToViewportMargins) => IntersectionObserver
@@ -72,8 +76,6 @@ Taro.createIntersectionObserver().relativeToViewport({bottom: 100}).observe('.ta
   res.intersectionRect.height // 相交区域的高度
 })
 ```
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/IntersectionObserver.relativeToViewport.html)
 
 ## 参数
 
@@ -157,5 +159,3 @@ Taro.createIntersectionObserver().relativeToViewport({bottom: 100}).observe('.ta
 | left | `number` | 否 | 节点布局区域的左边界 |
 | right | `number` | 否 | 节点布局区域的右边界 |
 | top | `number` | 否 | 节点布局区域的上边界 |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/IntersectionObserver.html)

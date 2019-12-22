@@ -8,6 +8,8 @@ __注意：__
 - __不要尝试修改页面栈，会导致路由以及页面状态错误。__
 - 不要在 `App.onLaunch` 的时候调用 `getCurrentPages()`，此时 `page` 还没有生成。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/reference/api/getCurrentPages.html)
+
 ## 类型
 
 ```tsx
@@ -27,5 +29,3 @@ Taro.getCurrentPages().length
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getCurrentPages | ✔️ |  |  |  |  | ✔️ |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/reference/api/getCurrentPages.html)

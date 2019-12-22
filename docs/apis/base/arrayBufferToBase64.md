@@ -5,6 +5,8 @@ sidebar_label: arrayBufferToBase64
 
 将 ArrayBuffer 数据转成 Base64 字符串。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/wx.arrayBufferToBase64.html)
+
 ## 类型
 
 ```tsx
@@ -23,5 +25,3 @@ sidebar_label: arrayBufferToBase64
 const arrayBuffer = new Uint8Array([11, 22, 33])
 const base64 = Taro.arrayBufferToBase64(arrayBuffer)
 ```
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/wx.arrayBufferToBase64.html)

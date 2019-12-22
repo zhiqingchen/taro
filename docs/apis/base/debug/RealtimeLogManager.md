@@ -15,6 +15,8 @@ sidebar_label: RealtimeLogManager
 
 添加过滤关键字
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.addFilterMsg.html)
+
 ```tsx
 (msg: string) => void
 ```
@@ -23,11 +25,17 @@ sidebar_label: RealtimeLogManager
 | --- | --- | --- |
 | msg | `string` | 是 setFilterMsg 的添加接口。用于设置多个过滤关键字。 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.addFilterMsg.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.addFilterMsg | ✔️ |  |  |  |  |  |  |  |
 
 ### error
 
 写 error 日志
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.error.html)
 
 ```tsx
 (...args: any[]) => void
@@ -37,11 +45,17 @@ sidebar_label: RealtimeLogManager
 | --- | --- | --- |
 | args | `any[]` | 日志内容，可以有任意多个。每次调用的参数的总大小不超过5Kb |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.error.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.error | ✔️ |  |  |  |  |  |  |  |
 
 ### in
 
 设置实时日志page参数所在的页面
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.in.html)
 
 ```tsx
 (pageInstance: any) => void
@@ -51,11 +65,17 @@ sidebar_label: RealtimeLogManager
 | --- | --- |
 | pageInstance | page 实例 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.in.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.in | ✔️ |  |  |  |  |  |  |  |
 
 ### info
 
 写 info 日志
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.info.html)
 
 ```tsx
 (...args: any[]) => void
@@ -65,11 +85,17 @@ sidebar_label: RealtimeLogManager
 | --- | --- | --- |
 | args | `any[]` | 日志内容，可以有任意多个。每次调用的参数的总大小不超过5Kb |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.info.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.info | ✔️ |  |  |  |  |  |  |  |
 
 ### setFilterMsg
 
 设置过滤关键字
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.setFilterMsg.html)
 
 ```tsx
 (msg: string) => void
@@ -79,11 +105,17 @@ sidebar_label: RealtimeLogManager
 | --- | --- | --- |
 | msg | `string` | 过滤关键字，最多不超过1Kb，可以在小程序管理后台根据设置的内容搜索得到对应的日志。 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.setFilterMsg.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.setFilterMsg | ✔️ |  |  |  |  |  |  |  |
 
 ### warn
 
 写 warn 日志
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.warn.html)
 
 ```tsx
 (...args: any[]) => void
@@ -93,7 +125,11 @@ sidebar_label: RealtimeLogManager
 | --- | --- | --- |
 | args | `any[]` | 日志内容，可以有任意多个。每次调用的参数的总大小不超过5Kb |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.warn.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.warn | ✔️ |  |  |  |  |  |  |  |
 
 ## API 支持度
 

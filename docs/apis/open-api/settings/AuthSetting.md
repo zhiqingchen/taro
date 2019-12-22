@@ -5,6 +5,8 @@ sidebar_label: AuthSetting
 
 用户授权设置信息，详情参考[权限](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html)
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html)
+
 ## 方法
 
 | 参数 | 类型 | 必填 | 说明 |
@@ -18,5 +20,3 @@ sidebar_label: AuthSetting
 | scope.userLocation | `boolean` | 否 | 是否授权地理位置，对应接口 [wx.getLocation](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.getLocation.html), [wx.chooseLocation](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.chooseLocation.html) |
 | scope.werun | `boolean` | 否 | 是否授权微信运动步数，对应接口 [wx.getWeRunData](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/werun/wx.getWeRunData.html) |
 | scope.writePhotosAlbum | `boolean` | 否 | 是否授权保存到相册 [wx.saveImageToPhotosAlbum](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.saveImageToPhotosAlbum.html), [wx.saveVideoToPhotosAlbum](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.saveVideoToPhotosAlbum.html) |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html)

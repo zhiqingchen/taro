@@ -5,6 +5,8 @@ sidebar_label: createInnerAudioContext
 
 创建内部 audio 上下文 InnerAudioContext 对象。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/wx.createInnerAudioContext.html)
+
 ## 类型
 
 ```tsx
@@ -33,5 +35,3 @@ innerAudioContext.onError((res) => {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.createInnerAudioContext | ✔️ |  |  |  |  | ✔️ |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/wx.createInnerAudioContext.html)

@@ -5,6 +5,8 @@ sidebar_label: offNetworkStatusChange
 
 取消监听网络状态变化事件，参数为空，则取消所有的事件监听。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/network/wx.offNetworkStatusChange.html)
+
 ## 类型
 
 ```tsx
@@ -22,5 +24,3 @@ sidebar_label: offNetworkStatusChange
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.offNetworkStatusChange | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/network/wx.offNetworkStatusChange.html)

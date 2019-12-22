@@ -5,6 +5,8 @@ sidebar_label: canvasGetImageData
 
 获取 canvas 区域隐含的像素数据。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/wx.canvasGetImageData.html)
+
 ## 类型
 
 ```tsx
@@ -58,5 +60,3 @@ Taro.canvasGetImageData({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.canvasGetImageData | ✔️ |  |  |  |  | ✔️ |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/wx.canvasGetImageData.html)

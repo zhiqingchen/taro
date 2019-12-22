@@ -5,6 +5,8 @@ sidebar_label: saveFile
 
 保存文件到本地。**注意：saveFile 会把临时文件移动，因此调用成功后传入的 tempFilePath 将不可用**
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.saveFile.html)
+
 ## 类型
 
 ```tsx
@@ -57,5 +59,3 @@ Taro.chooseImage({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.saveFile | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.saveFile.html)

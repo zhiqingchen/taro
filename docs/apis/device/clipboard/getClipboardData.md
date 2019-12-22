@@ -5,6 +5,8 @@ sidebar_label: getClipboardData
 
 获取系统剪贴板内容
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/clipboard/wx.getClipboardData.html)
+
 ## 类型
 
 ```tsx
@@ -49,5 +51,3 @@ Taro.getClipboardData({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getClipboardData | ✔️ |  |  |  |  | ✔️(部分实现) | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/clipboard/wx.getClipboardData.html)

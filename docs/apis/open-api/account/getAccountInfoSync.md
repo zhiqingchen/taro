@@ -5,6 +5,8 @@ sidebar_label: getAccountInfoSync
 
 获取当前帐号信息
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/account-info/wx.getAccountInfoSync.html)
+
 ## 类型
 
 ```tsx
@@ -54,5 +56,3 @@ console.log(accountInfo.plugin.version) // 插件版本号， 'a.b.c' 这样的�
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getAccountInfoSync | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/account-info/wx.getAccountInfoSync.html)

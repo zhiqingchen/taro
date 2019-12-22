@@ -5,6 +5,8 @@ sidebar_label: startPullDownRefresh
 
 开始下拉刷新。调用后触发下拉刷新动画，效果与用户手动下拉刷新一致。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/pull-down-refresh/wx.startPullDownRefresh.html)
+
 ## 类型
 
 ```tsx
@@ -32,5 +34,3 @@ Taro.startPullDownRefresh()
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.startPullDownRefresh | ✔️ |  |  |  |  | ✔️ | ✔️(无动画效果) |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/pull-down-refresh/wx.startPullDownRefresh.html)

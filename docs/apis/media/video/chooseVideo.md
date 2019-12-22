@@ -5,6 +5,8 @@ sidebar_label: chooseVideo
 
 拍摄视频或从手机相册中选视频。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.chooseVideo.html)
+
 ## 类型
 
 ```tsx
@@ -68,5 +70,3 @@ Taro.chooseVideo({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.chooseVideo | ✔️ |  |  |  |  |  | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.chooseVideo.html)

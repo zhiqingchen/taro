@@ -9,6 +9,8 @@ sidebar_label: onBluetoothDeviceFound
 - 若在 Taro.onBluetoothDeviceFound 回调了某个设备，则此设备会添加到 Taro.getBluetoothDevices 接口获取到的数组中。
 - 安卓下部分机型需要有位置权限才能搜索到设备，需留意是否开启了位置权限
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth/wx.onBluetoothDeviceFound.html)
+
 ## 类型
 
 ```tsx
@@ -75,5 +77,3 @@ Taro.onBluetoothDeviceFound(function (res) {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.onBluetoothDeviceFound | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth/wx.onBluetoothDeviceFound.html)

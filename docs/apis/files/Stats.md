@@ -18,21 +18,33 @@ sidebar_label: Stats
 
 判断当前文件是否一个目录
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/Stats.isDirectory.html)
+
 ```tsx
 () => boolean
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/Stats.isDirectory.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.isDirectory | ✔️ |  |  |  |  |  |  |  |
 
 ### isFile
 
 判断当前文件是否一个普通文件
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/Stats.isFile.html)
+
 ```tsx
 () => boolean
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/Stats.isFile.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.isFile | ✔️ |  |  |  |  |  |  |  |
 
 ## API 支持度
 

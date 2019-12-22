@@ -7,6 +7,8 @@ sidebar_label: downloadFile
 
 注意：请在服务端响应的 header 中指定合理的 `Content-Type` 字段，以保证客户端正确处理文件类型。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/wx.downloadFile.html)
+
 ## 类型
 
 ```tsx
@@ -56,5 +58,3 @@ Taro.downloadFile({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.downloadFile | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/wx.downloadFile.html)

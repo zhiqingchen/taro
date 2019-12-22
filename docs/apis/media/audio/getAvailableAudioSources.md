@@ -5,6 +5,8 @@ sidebar_label: getAvailableAudioSources
 
 获取当前支持的音频输入源
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/wx.getAvailableAudioSources.html)
+
 ## 类型
 
 ```tsx
@@ -47,5 +49,3 @@ sidebar_label: getAvailableAudioSources
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getAvailableAudioSources | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/wx.getAvailableAudioSources.html)

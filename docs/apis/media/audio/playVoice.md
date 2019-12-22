@@ -5,6 +5,8 @@ sidebar_label: playVoice
 
 开始播放语音。同时只允许一个语音文件正在播放，如果前一个语音文件还没播放完，将中断前一个语音播放。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/wx.playVoice.html)
+
 ## 类型
 
 ```tsx
@@ -42,5 +44,3 @@ Taro.startRecord({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.playVoice | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/wx.playVoice.html)

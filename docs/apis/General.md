@@ -163,3 +163,10 @@ NFC 错误码
 | referrerInfo | `ReferrerInfo` | 来源信息。从另一个小程序、公众号或 App 进入小程序时返回。否则返回 `{}`。(参见后文注意) |
 | scene | `number` | 启动小程序的[场景值](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/scene.html) |
 | shareTicket | `string` | shareTicket，详见[获取更多转发信息](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html) |
+
+#### ReferrerInfo
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| appId | `string` | 来源小程序、公众号或 App 的 appId |
+| extraData | `Record<string, any>` | 来源小程序传过来的数据，scene=1037或1038时支持 |

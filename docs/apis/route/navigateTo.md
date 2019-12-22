@@ -5,6 +5,8 @@ sidebar_label: navigateTo
 
 保留当前页面，跳转到应用内的某个页面。但是不能跳到 tabbar 页面。使用 Taro.navigateBack 可以返回到原页面。小程序中页面栈最多十层。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateTo.html)
+
 ## 类型
 
 ```tsx
@@ -50,5 +52,3 @@ Taro.navigateTo({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.navigateTo | ✔️ |  |  |  |  | ✔️ | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateTo.html)

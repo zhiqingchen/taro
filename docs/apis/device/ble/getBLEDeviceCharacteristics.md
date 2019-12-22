@@ -5,6 +5,8 @@ sidebar_label: getBLEDeviceCharacteristics
 
 获取蓝牙设备某个服务中所有特征值(characteristic)。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-ble/wx.getBLEDeviceCharacteristics.html)
+
 ## 类型
 
 ```tsx
@@ -69,5 +71,3 @@ Taro.getBLEDeviceCharacteristics({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getBLEDeviceCharacteristics | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-ble/wx.getBLEDeviceCharacteristics.html)

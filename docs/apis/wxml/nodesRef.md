@@ -5,11 +5,15 @@ sidebar_label: NodesRef
 
 用于获取 `WXML` 节点信息的对象
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.html)
+
 ## 方法
 
 ### boundingClientRect
 
 添加节点的布局位置的查询请求。相对于显示区域，以像素为单位。其功能类似于 DOM 的 `getBoundingClientRect`。返回 `NodesRef` 对应的 `SelectorQuery`。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.boundingClientRect.html)
 
 ```tsx
 (callback?: BoundingClientRectCallback) => SelectorQuery
@@ -53,11 +57,17 @@ Taro.createSelectorQuery().selectAll('.a-class').boundingClientRect(function(rec
 }).exec()
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.boundingClientRect.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.boundingClientRect | ✔️ |  |  |  |  | ✔️ |  |  |
 
 ### context
 
 添加节点的 Context 对象查询请求。目前支持 [VideoContext](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.html)、[CanvasContext](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.html)、[LivePlayerContext](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.html)、[EditorContext](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.html)和 [MapContext](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.html) 的获取。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.context.html)
 
 ```tsx
 (callback?: ContextCallback) => SelectorQuery
@@ -75,7 +85,11 @@ Taro.createSelectorQuery().select('.the-video-class').context(function (res) {
 }).exec()
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.context.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.context | ✔️ |  |  |  |  |  |  |  |
 
 ### fields
 
@@ -83,6 +97,8 @@ Taro.createSelectorQuery().select('.the-video-class').context(function (res) {
 
 **注意**
 computedStyle 的优先级高于 size，当同时在 computedStyle 里指定了 width/height 和传入了 size: true，则优先返回 computedStyle 获取到的 width/height。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.fields.html)
 
 ```tsx
 (fields: Fields, callback?: FieldsCallback) => SelectorQuery
@@ -118,11 +134,17 @@ Taro.createSelectorQuery().select('#the-id').fields({
 }).exec()
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.fields.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.fields | ✔️ |  |  |  |  | ✔️ |  |  |
 
 ### node
 
 获取 Node 节点实例。目前支持 [Canvas](https://developers.weixin.qq.com/miniprogram/dev/component/canvas.html) 的获取。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.node.html)
 
 ```tsx
 (callback?: NodeCallback) => SelectorQuery
@@ -140,11 +162,17 @@ Taro.createSelectorQuery().select('.canvas').node(function(res){
 }).exec()
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.node.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.node | ✔️ |  |  |  |  |  |  |  |
 
 ### scrollOffset
 
 添加节点的滚动位置查询请求。以像素为单位。节点必须是 `scroll-view` 或者 `viewport`，返回 `NodesRef` 对应的 `SelectorQuery`。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.scrollOffset.html)
 
 ```tsx
 (callback?: ScrollOffsetCallback) => SelectorQuery
@@ -165,7 +193,11 @@ Taro.createSelectorQuery().selectViewport().scrollOffset(function(res){
 }).exec()
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.scrollOffset.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.scrollOffset | ✔️ |  |  |  |  | ✔️ |  |  |
 
 ## 参数
 
@@ -289,5 +321,3 @@ Taro.createSelectorQuery().selectViewport().scrollOffset(function(res){
 | NodesRef.fields | ✔️ |  |  |  |  | ✔️ |  |  |
 | NodesRef.node | ✔️ |  |  |  |  |  |  |  |
 | NodesRef.scrollOffset | ✔️ |  |  |  |  | ✔️ |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.html)

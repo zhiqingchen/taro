@@ -19,6 +19,8 @@ sidebar_label: LogManager
 
 写 debug 日志
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/LogManager.debug.html)
+
 ```tsx
 (...args: any[]) => void
 ```
@@ -27,12 +29,18 @@ sidebar_label: LogManager
 | --- | --- | --- |
 | args | `any[]` | 日志内容，可以有任意多个。每次调用的参数的总大小不超过100Kb |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/LogManager.debug.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.debug | ✔️ |  |  |  |  |  |  |  |
 
 ### info
 
 写 info 日志
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/LogManager.info.html)
+
 ```tsx
 (...args: any[]) => void
 ```
@@ -41,12 +49,18 @@ sidebar_label: LogManager
 | --- | --- | --- |
 | args | `any[]` | 日志内容，可以有任意多个。每次调用的参数的总大小不超过100Kb |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/LogManager.info.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.info | ✔️ |  |  |  |  |  |  |  |
 
 ### log
 
 写 log 日志
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/LogManager.log.html)
+
 ```tsx
 (...args: any[]) => void
 ```
@@ -55,12 +69,18 @@ sidebar_label: LogManager
 | --- | --- | --- |
 | args | `any[]` | 日志内容，可以有任意多个。每次调用的参数的总大小不超过100Kb |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/LogManager.log.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.log | ✔️ |  |  |  |  |  |  |  |
 
 ### warn
 
 写 warn 日志
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/LogManager.warn.html)
+
 ```tsx
 (...args: any[]) => void
 ```
@@ -69,7 +89,11 @@ sidebar_label: LogManager
 | --- | --- | --- |
 | args | `any[]` | 日志内容，可以有任意多个。每次调用的参数的总大小不超过100Kb |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/LogManager.warn.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.warn | ✔️ |  |  |  |  |  |  |  |
 
 ## API 支持度
 

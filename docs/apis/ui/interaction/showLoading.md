@@ -9,6 +9,8 @@ sidebar_label: showLoading
 - Taro.showLoading 和 Taro.showToast 同时只能显示一个
 - Taro.showLoading 应与 Taro.hideLoading 配对使用
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showLoading.html)
+
 ## 类型
 
 ```tsx
@@ -43,5 +45,3 @@ setTimeout(function () {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.showLoading | ✔️ |  |  |  |  | ✔️ | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showLoading.html)

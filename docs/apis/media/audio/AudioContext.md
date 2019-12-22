@@ -6,31 +6,47 @@ sidebar_label: AudioContext
 `AudioContext` 实例，可通过 `Taro.createAudioContext` 获取。
 `AudioContext` 通过 `id` 跟一个 `audio` 组件绑定，操作对应的 audio 组件。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioContext.html)
+
 ## 方法
 
 ### pause
 
 暂停音频。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioContext.pause.html)
+
 ```tsx
 () => void
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioContext.pause.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.pause | ✔️ |  |  |  |  |  |  |  |
 
 ### play
 
 播放音频。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioContext.play.html)
+
 ```tsx
 () => void
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioContext.play.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.play | ✔️ |  |  |  |  |  |  |  |
 
 ### seek
 
 跳转到指定位置。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioContext.seek.html)
 
 ```tsx
 (position: number) => void
@@ -40,11 +56,17 @@ sidebar_label: AudioContext
 | --- | --- | --- |
 | position | `number` | 跳转位置，单位 s |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioContext.seek.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.seek | ✔️ |  |  |  |  |  |  |  |
 
 ### setSrc
 
 设置音频地址
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioContext.setSrc.html)
 
 ```tsx
 (src: string) => void
@@ -54,7 +76,11 @@ sidebar_label: AudioContext
 | --- | --- | --- |
 | src | `string` | 音频地址 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioContext.setSrc.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.setSrc | ✔️ |  |  |  |  |  |  |  |
 
 ## API 支持度
 
@@ -64,5 +90,3 @@ sidebar_label: AudioContext
 | AudioContext.play | ✔️ |  |  |  |  |  |  |  |
 | AudioContext.seek | ✔️ |  |  |  |  |  |  |  |
 | AudioContext.setSrc | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioContext.html)

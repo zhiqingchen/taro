@@ -5,21 +5,31 @@ sidebar_label: UDPSocket
 
 一个 UDP Socket 实例，默认使用 IPv4 协议。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.html)
+
 ## 方法
 
 ### close
 
 关闭 UDP Socket 实例，相当于销毁。 在关闭之后，UDP Socket 实例不能再发送消息，每次调用 `UDPSocket.send` 将会触发错误事件，并且 message 事件回调函数也不会再也执行。在 `UDPSocket` 实例被创建后将被 Native 强引用，保证其不被 GC。在 `UDPSocket.close` 后将解除对其的强引用，让 UDPSocket 实例遵从 GC。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.close.html)
+
 ```tsx
 () => void
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.close.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.close | ✔️ |  |  |  |  |  |  |  |
 
 ### offClose
 
 取消监听关闭事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.offClose.html)
 
 ```tsx
 (callback: OffCloseCallback) => void
@@ -29,11 +39,17 @@ sidebar_label: UDPSocket
 | --- | --- | --- |
 | callback | `OffCloseCallback` | 关闭事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.offClose.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.offClose | ✔️ |  |  |  |  |  |  |  |
 
 ### offError
 
 取消监听错误事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.offError.html)
 
 ```tsx
 (callback: OffErrorCallback) => void
@@ -43,11 +59,17 @@ sidebar_label: UDPSocket
 | --- | --- | --- |
 | callback | `OffErrorCallback` | 错误事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.offError.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.offError | ✔️ |  |  |  |  |  |  |  |
 
 ### offListening
 
 取消监听开始监听数据包消息的事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.offListening.html)
 
 ```tsx
 (callback: (res: CallbackResult) => void) => void
@@ -57,11 +79,17 @@ sidebar_label: UDPSocket
 | --- | --- | --- |
 | callback | `(res: CallbackResult) => void` | 开始监听数据包消息的事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.offListening.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.offListening | ✔️ |  |  |  |  |  |  |  |
 
 ### offMessage
 
 取消监听收到消息的事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.offMessage.html)
 
 ```tsx
 (callback: (res: CallbackResult) => void) => void
@@ -71,11 +99,17 @@ sidebar_label: UDPSocket
 | --- | --- | --- |
 | callback | `(res: CallbackResult) => void` | 收到消息的事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.offMessage.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.offMessage | ✔️ |  |  |  |  |  |  |  |
 
 ### onClose
 
 监听关闭事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.onClose.html)
 
 ```tsx
 (callback: OnCloseCallback) => void
@@ -85,11 +119,17 @@ sidebar_label: UDPSocket
 | --- | --- | --- |
 | callback | `OnCloseCallback` | 关闭事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.onClose.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onClose | ✔️ |  |  |  |  |  |  |  |
 
 ### onError
 
 监听错误事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.onError.html)
 
 ```tsx
 (callback: OnErrorCallback) => void
@@ -99,11 +139,17 @@ sidebar_label: UDPSocket
 | --- | --- | --- |
 | callback | `OnErrorCallback` | 错误事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.onError.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onError | ✔️ |  |  |  |  |  |  |  |
 
 ### onListening
 
 监听开始监听数据包消息的事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.onListening.html)
 
 ```tsx
 (callback: (res: CallbackResult) => void) => void
@@ -113,11 +159,17 @@ sidebar_label: UDPSocket
 | --- | --- | --- |
 | callback | `(res: CallbackResult) => void` | 开始监听数据包消息的事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.onListening.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onListening | ✔️ |  |  |  |  |  |  |  |
 
 ### onMessage
 
 监听收到消息的事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.onMessage.html)
 
 ```tsx
 (callback: OnMessageCallback) => void
@@ -127,11 +179,17 @@ sidebar_label: UDPSocket
 | --- | --- | --- |
 | callback | `OnMessageCallback` | 收到消息的事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.onMessage.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onMessage | ✔️ |  |  |  |  |  |  |  |
 
 ### send
 
 向指定的 IP 和 port 发送消息
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.send.html)
 
 ```tsx
 (option: SendOption) => void
@@ -141,11 +199,17 @@ sidebar_label: UDPSocket
 | --- | --- |
 | option | `SendOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.send.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.send | ✔️ |  |  |  |  |  |  |  |
 
 ### bind
 
 绑定一个系统随机分配的可用端口，或绑定一个指定的端口号
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.bind.html)
 
 ```tsx
 (port: number) => number
@@ -155,7 +219,11 @@ sidebar_label: UDPSocket
 | --- | --- | --- |
 | port | `number` | 指定要绑定的端口号 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.bind.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.bind | ✔️ |  |  |  |  |  |  |  |
 
 ## 参数
 
@@ -267,5 +335,3 @@ sidebar_label: UDPSocket
 | UDPSocket.onMessage | ✔️ |  |  |  |  |  |  |  |
 | UDPSocket.send | ✔️ |  |  |  |  |  |  |  |
 | UDPSocket.bind | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.html)

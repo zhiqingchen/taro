@@ -5,6 +5,8 @@ sidebar_label: scanCode
 
 调起客户端扫码界面，扫码成功后返回对应的结果
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/scan/wx.scanCode.html)
+
 ## 类型
 
 ```tsx
@@ -94,5 +96,3 @@ Taro.scanCode({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.scanCode | ✔️ |  |  |  |  | ✔️ |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/scan/wx.scanCode.html)

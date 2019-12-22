@@ -7,6 +7,8 @@ sidebar_label: createCanvasContext
 
 **Tip**: 需要指定 canvasId，该绘图上下文只作用于对应的 `<canvas/>`
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/wx.createCanvasContext.html)
+
 ## 类型
 
 ```tsx
@@ -25,5 +27,3 @@ sidebar_label: createCanvasContext
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.createCanvasContext | ✔️ |  |  |  |  | ✔️ |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/wx.createCanvasContext.html)

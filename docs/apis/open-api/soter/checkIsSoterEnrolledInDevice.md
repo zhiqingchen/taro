@@ -5,6 +5,8 @@ sidebar_label: checkIsSoterEnrolledInDevice
 
 获取设备内是否录入如指纹等生物信息的接口
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/soter/wx.checkIsSoterEnrolledInDevice.html)
+
 ## 类型
 
 ```tsx
@@ -30,6 +32,12 @@ sidebar_label: checkIsSoterEnrolledInDevice
 | facial | 人脸识别 |
 | speech | 声纹识别<br />API 支持度: 暂未支持 |
 
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| requestAuthModes.speech |  |  |  |  |  |  |  |  |
+
 ### SuccessCallbackResult
 
 | 参数 | 类型 | 说明 |
@@ -53,5 +61,3 @@ Taro.checkIsSoterEnrolledInDevice({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.checkIsSoterEnrolledInDevice | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/soter/wx.checkIsSoterEnrolledInDevice.html)

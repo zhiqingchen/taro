@@ -5,6 +5,8 @@ sidebar_label: chooseImage
 
 从本地相册选择图片或使用相机拍照。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseImage.html)
+
 ## 类型
 
 ```tsx
@@ -78,5 +80,3 @@ Taro.chooseImage({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.chooseImage | ✔️ | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseImage.html)

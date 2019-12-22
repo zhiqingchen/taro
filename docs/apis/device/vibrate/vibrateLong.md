@@ -5,6 +5,8 @@ sidebar_label: vibrateLong
 
 使手机发生较长时间的振动（400ms）
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/vibrate/wx.vibrateLong.html)
+
 ## 类型
 
 ```tsx
@@ -32,5 +34,3 @@ Taro.vibrateLong(params).then(...)
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.vibrateLong | ✔️ |  |  |  |  | ✔️ | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/vibrate/wx.vibrateLong.html)

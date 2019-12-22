@@ -9,6 +9,8 @@ sidebar_label: checkSession
 
 登录态过期后开发者可以再调用 Taro.login 获取新的用户登录态。调用成功说明当前 session_key 未过期，调用失败说明 session_key 已过期。更多使用方法详见 [小程序登录](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.checkSession.html)
+
 ## 类型
 
 ```tsx
@@ -44,5 +46,3 @@ Taro.checkSession({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.checkSession | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.checkSession.html)

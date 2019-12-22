@@ -5,6 +5,8 @@ sidebar_label: onBackgroundFetchData
 
 收到 backgroundFetch 数据时的回调
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/background-fetch/wx.onBackgroundFetchData.html)
+
 ## 类型
 
 ```tsx
@@ -26,5 +28,3 @@ sidebar_label: onBackgroundFetchData
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.onBackgroundFetchData | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/background-fetch/wx.onBackgroundFetchData.html)

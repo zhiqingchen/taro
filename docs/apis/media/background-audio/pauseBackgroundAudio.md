@@ -5,6 +5,8 @@ sidebar_label: pauseBackgroundAudio
 
 暂停播放音乐。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/wx.pauseBackgroundAudio.html)
+
 ## 类型
 
 ```tsx
@@ -32,5 +34,3 @@ Taro.pauseBackgroundAudio()
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.pauseBackgroundAudio | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/wx.pauseBackgroundAudio.html)

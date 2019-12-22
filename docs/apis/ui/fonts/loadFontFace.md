@@ -12,6 +12,8 @@ sidebar_label: loadFontFace
 4. canvas等原生组件不支持使用接口添加的字体
 5. 工具里提示 Faild to load font可以忽略
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/font/wx.loadFontFace.html)
+
 ## 类型
 
 ```tsx
@@ -110,5 +112,3 @@ Taro.loadFontFace({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.loadFontFace | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/font/wx.loadFontFace.html)

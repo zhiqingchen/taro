@@ -9,6 +9,8 @@ sidebar_label: canvasToTempFilePath
 
 1.  `tip`: 在 `draw` 回调里调用该方法才能保证图片导出成功。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/wx.canvasToTempFilePath.html)
+
 ## 类型
 
 ```tsx
@@ -71,5 +73,3 @@ Taro.canvasToTempFilePath({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.canvasToTempFilePath | ✔️ |  |  |  |  | ✔️ |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/wx.canvasToTempFilePath.html)

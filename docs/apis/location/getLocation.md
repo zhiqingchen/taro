@@ -9,6 +9,8 @@ sidebar_label: getLocation
 - 工具中定位模拟使用IP定位，可能会有一定误差。且工具目前仅支持 gcj02 坐标。
 - 使用第三方服务进行逆地址解析时，请确认第三方服务默认的坐标系，正确进行坐标转换。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.getLocation.html)
+
 ## 类型
 
 ```tsx
@@ -61,5 +63,3 @@ Taro.getLocation({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getLocation | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.getLocation.html)

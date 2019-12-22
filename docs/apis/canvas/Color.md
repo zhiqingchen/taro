@@ -164,10 +164,10 @@ sidebar_label: Color
 | Yellow               | #FFFF00 |
 | YellowGreen          | #9ACD32 |
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Color.html)
+
 ## API 支持度
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Color | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Color.html)

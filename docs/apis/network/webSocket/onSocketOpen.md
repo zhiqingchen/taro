@@ -5,6 +5,8 @@ sidebar_label: onSocketOpen
 
 监听 WebSocket 连接打开事件
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/wx.onSocketOpen.html)
+
 ## 类型
 
 ```tsx
@@ -47,5 +49,3 @@ Taro.onSocketOpen(function (res) {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.onSocketOpen | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/wx.onSocketOpen.html)

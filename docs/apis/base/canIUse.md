@@ -5,6 +5,8 @@ sidebar_label: canIUse
 
 判断小程序的 API，回调，参数，组件等是否在当前版本可用。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/wx.canIUse.html)
+
 ## 类型
 
 ```tsx
@@ -36,5 +38,3 @@ Taro.canIUse('button.open-type.contact')
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.canIUse | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/wx.canIUse.html)

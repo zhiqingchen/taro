@@ -5,6 +5,8 @@ sidebar_label: setStorage
 
 将数据存储在本地缓存中指定的 key 中。会覆盖掉原来该 key 对应的内容。除非用户主动删除或因存储空间原因被系统清理，否则数据都一直可用。单个 key 允许存储的最大数据长度为 1MB，所有数据存储上限为 10MB。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorage.html)
+
 ## 类型
 
 ```tsx
@@ -42,5 +44,3 @@ try {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.setStorage | ✔️ |  |  |  |  | ✔️ | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorage.html)

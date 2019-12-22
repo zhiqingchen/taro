@@ -5,6 +5,8 @@ sidebar_label: SocketTask
 
 WebSocket 任务，可通过 [Taro.connectSocket()](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.html) 接口创建返回。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.html)
+
 ## 方法
 
 | 参数 | 类型 | 说明 |
@@ -22,6 +24,8 @@ WebSocket 任务，可通过 [Taro.connectSocket()](https://developers.weixin.qq
 
 关闭 WebSocket 连接
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.close.html)
+
 ```tsx
 (option: CloseOption) => void
 ```
@@ -30,11 +34,17 @@ WebSocket 任务，可通过 [Taro.connectSocket()](https://developers.weixin.qq
 | --- | --- |
 | option | `CloseOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.close.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.close | ✔️ | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |
 
 ### onClose
 
 监听 WebSocket 连接关闭事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.onClose.html)
 
 ```tsx
 (callback: OnCloseCallback) => void
@@ -44,11 +54,17 @@ WebSocket 任务，可通过 [Taro.connectSocket()](https://developers.weixin.qq
 | --- | --- | --- |
 | callback | `OnCloseCallback` | WebSocket 连接关闭事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.onClose.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onClose | ✔️ | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |
 
 ### onError
 
 监听 WebSocket 错误事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.onError.html)
 
 ```tsx
 (callback: OnErrorCallback) => void
@@ -58,11 +74,17 @@ WebSocket 任务，可通过 [Taro.connectSocket()](https://developers.weixin.qq
 | --- | --- | --- |
 | callback | `OnErrorCallback` | WebSocket 错误事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.onError.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onError | ✔️ | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |
 
 ### onMessage
 
 监听 WebSocket 接受到服务器的消息事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.onMessage.html)
 
 ```tsx
 <T = any>(callback: OnMessageCallback<T>) => void
@@ -72,11 +94,17 @@ WebSocket 任务，可通过 [Taro.connectSocket()](https://developers.weixin.qq
 | --- | --- | --- |
 | callback | `T` | WebSocket 接受到服务器的消息事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.onMessage.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onMessage | ✔️ | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |
 
 ### onOpen
 
 监听 WebSocket 连接打开事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.onOpen.html)
 
 ```tsx
 (callback: OnOpenCallback) => void
@@ -86,11 +114,17 @@ WebSocket 任务，可通过 [Taro.connectSocket()](https://developers.weixin.qq
 | --- | --- | --- |
 | callback | `OnOpenCallback` | WebSocket 连接打开事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.onOpen.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onOpen | ✔️ | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |
 
 ### send
 
 通过 WebSocket 连接发送数据
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.send.html)
 
 ```tsx
 (option: SendOption) => void
@@ -100,7 +134,11 @@ WebSocket 任务，可通过 [Taro.connectSocket()](https://developers.weixin.qq
 | --- | --- |
 | option | `SendOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.send.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.send | ✔️ | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |
 
 ## 参数
 
@@ -206,5 +244,3 @@ WebSocket 连接打开事件的回调函数
 | SocketTask.onMessage | ✔️ | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |
 | SocketTask.onOpen | ✔️ | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |
 | SocketTask.send | ✔️ | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.html)

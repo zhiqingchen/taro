@@ -5,6 +5,8 @@ sidebar_label: compressImage
 
 压缩图片接口，可选压缩质量
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.compressImage.html)
+
 ## 类型
 
 ```tsx
@@ -44,5 +46,3 @@ Taro.compressImage({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.compressImage | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.compressImage.html)

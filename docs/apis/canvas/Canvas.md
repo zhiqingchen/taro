@@ -5,11 +5,15 @@ sidebar_label: Canvas
 
 Canvas 实例，可通过 SelectorQuery 获取。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.html)
+
 ## 方法
 
 ### cancelAnimationFrame
 
 取消由 requestAnimationFrame 添加到计划中的动画帧请求。支持在 2D Canvas 和 WebGL Canvas 下使用, 但不支持混用 2D 和 WebGL 的方法。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.cancelAnimationFrame.html)
 
 ```tsx
 (requestID: number) => void
@@ -19,31 +23,49 @@ Canvas 实例，可通过 SelectorQuery 获取。
 | --- | --- |
 | requestID | `number` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.cancelAnimationFrame.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.cancelAnimationFrame | ✔️ |  |  |  |  |  |  |  |
 
 ### createImageData
 
 创建一个 ImageData 对象。仅支持在 2D Canvas 中使用。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.createImageData.html)
+
 ```tsx
 () => ImageData
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.createImageData.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.createImageData | ✔️ |  |  |  |  |  |  |  |
 
 ### createImage
 
 创建一个图片对象。 支持在 2D Canvas 和 WebGL Canvas 下使用, 但不支持混用 2D 和 WebGL 的方法。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.createImage.html)
+
 ```tsx
 () => Image
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.createImage.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.createImage | ✔️ |  |  |  |  |  |  |  |
 
 ### getContext
 
 支持获取 2D 和 WebGL 绘图上下文
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.getContext.html)
 
 ```tsx
 (contextType: string) => RenderingContext
@@ -53,11 +75,17 @@ Canvas 实例，可通过 SelectorQuery 获取。
 | --- | --- |
 | contextType | `string` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.getContext.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.getContext | ✔️ |  |  |  |  |  |  |  |
 
 ### requestAnimationFrame
 
 在下次进行重绘时执行。 支持在 2D Canvas 和 WebGL Canvas 下使用, 但不支持混用 2D 和 WebGL 的方法。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.requestAnimationFrame.html)
 
 ```tsx
 (callback: (...args: any[]) => any) => number
@@ -67,7 +95,11 @@ Canvas 实例，可通过 SelectorQuery 获取。
 | --- | --- | --- |
 | callback | `(...args: any[]) => any` | 执行的 callback |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.requestAnimationFrame.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.requestAnimationFrame | ✔️ |  |  |  |  |  |  |  |
 
 ## API 支持度
 
@@ -78,5 +110,3 @@ Canvas 实例，可通过 SelectorQuery 获取。
 | Canvas.createImage | ✔️ |  |  |  |  |  |  |  |
 | Canvas.getContext | ✔️ |  |  |  |  |  |  |  |
 | Canvas.requestAnimationFrame | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.html)

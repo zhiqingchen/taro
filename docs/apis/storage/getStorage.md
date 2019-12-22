@@ -5,6 +5,8 @@ sidebar_label: getStorage
 
 从本地缓存中异步获取指定 key 的内容
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorage.html)
+
 ## 类型
 
 ```tsx
@@ -56,5 +58,3 @@ try {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getStorage | ✔️ |  |  |  |  | ✔️ | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorage.html)

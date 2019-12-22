@@ -5,6 +5,8 @@ sidebar_label: onWindowResize
 
 监听窗口尺寸变化事件
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/window/wx.onWindowResize.html)
+
 ## 类型
 
 ```tsx
@@ -43,5 +45,3 @@ sidebar_label: onWindowResize
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.onWindowResize | ✔️ |  |  |  |  | ✔️ |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/window/wx.onWindowResize.html)

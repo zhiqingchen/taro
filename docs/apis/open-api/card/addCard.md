@@ -8,6 +8,8 @@ sidebar_label: addCard
 **cardExt 说明**
 cardExt 是卡券的扩展参数，其值是一个 JSON 字符串。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/card/wx.addCard.html)
+
 ## 类型
 
 ```tsx
@@ -76,5 +78,3 @@ Taro.addCard({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.addCard | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/card/wx.addCard.html)

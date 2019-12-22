@@ -5,6 +5,8 @@ sidebar_label: createRewardedVideoAd
 
 创建激励视频广告组件。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/wx.createRewardedVideoAd.html)
+
 ## 类型
 
 ```tsx
@@ -25,5 +27,3 @@ sidebar_label: createRewardedVideoAd
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.createRewardedVideoAd | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/wx.createRewardedVideoAd.html)

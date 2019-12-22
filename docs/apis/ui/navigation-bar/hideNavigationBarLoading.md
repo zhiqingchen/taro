@@ -5,6 +5,8 @@ sidebar_label: hideNavigationBarLoading
 
 在当前页面隐藏导航条加载动画
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.hideNavigationBarLoading.html)
+
 ## 类型
 
 ```tsx
@@ -26,5 +28,3 @@ sidebar_label: hideNavigationBarLoading
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.hideNavigationBarLoading | ✔️ |  |  |  |  |  | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.hideNavigationBarLoading.html)

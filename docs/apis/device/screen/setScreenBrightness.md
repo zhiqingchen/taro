@@ -5,6 +5,8 @@ sidebar_label: setScreenBrightness
 
 设置屏幕亮度。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/screen/wx.setScreenBrightness.html)
+
 ## 类型
 
 ```tsx
@@ -33,5 +35,3 @@ Taro.setScreenBrightness(params).then(...)
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.setScreenBrightness | ✔️ |  |  |  |  |  | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/screen/wx.setScreenBrightness.html)

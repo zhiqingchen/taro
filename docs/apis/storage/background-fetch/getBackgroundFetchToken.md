@@ -5,6 +5,8 @@ sidebar_label: getBackgroundFetchToken
 
 获取设置过的自定义登录态。若无，则返回 fail。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/background-fetch/wx.getBackgroundFetchToken.html)
+
 ## 类型
 
 ```tsx
@@ -26,5 +28,3 @@ sidebar_label: getBackgroundFetchToken
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getBackgroundFetchToken | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/background-fetch/wx.getBackgroundFetchToken.html)

@@ -5,6 +5,8 @@ sidebar_label: onSocketMessage
 
 监听 WebSocket 接受到服务器的消息事件
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/wx.onSocketMessage.html)
+
 ## 类型
 
 ```tsx
@@ -47,5 +49,3 @@ Taro.onSocketMessage(function (res) {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.onSocketMessage | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/wx.onSocketMessage.html)

@@ -5,6 +5,8 @@ sidebar_label: setNavigationBarColor
 
 设置页面导航条颜色
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.setNavigationBarColor.html)
+
 ## 类型
 
 ```tsx
@@ -51,5 +53,3 @@ Taro.setNavigationBarColor({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.setNavigationBarColor | ✔️ |  |  |  |  | ✔️ | ✔️(不支持 animation 参数) |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.setNavigationBarColor.html)

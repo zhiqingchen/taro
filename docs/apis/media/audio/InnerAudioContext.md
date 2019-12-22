@@ -22,6 +22,8 @@ InnerAudioContext 实例，可通过 Taro.createInnerAudioContext 接口获取�
 | aiff | √    | x       |
 | caf  | √    | x       |
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.html)
+
 ## 方法
 
 | 参数 | 类型 | 默认值 | 只读 | 说明 |
@@ -335,5 +337,3 @@ innerAudioContext.onError((res) => {
   console.log(res.errCode)
 })
 ```
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.html)

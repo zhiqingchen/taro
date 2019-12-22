@@ -5,6 +5,8 @@ sidebar_label: getBackgroundFetchData
 
 拉取 backgroundFetch 客户端缓存数据
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/background-fetch/wx.getBackgroundFetchData.html)
+
 ## 类型
 
 ```tsx
@@ -27,5 +29,3 @@ sidebar_label: getBackgroundFetchData
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getBackgroundFetchData | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/background-fetch/wx.getBackgroundFetchData.html)

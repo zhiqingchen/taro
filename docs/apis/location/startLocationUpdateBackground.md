@@ -10,6 +10,8 @@ sidebar_label: startLocationUpdateBackground
 - 需在app.json中配置requiredBackgroundModes: ['location']后使用
 - 获取位置信息需配置[地理位置用途说明](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#permission)。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.startLocationUpdateBackground.html)
+
 ## 类型
 
 ```tsx
@@ -31,5 +33,3 @@ sidebar_label: startLocationUpdateBackground
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.startLocationUpdateBackground | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.startLocationUpdateBackground.html)

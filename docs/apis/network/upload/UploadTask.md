@@ -5,21 +5,31 @@ sidebar_label: UploadTask
 
 一个可以监听上传进度变化事件，以及取消上传任务的对象
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.html)
+
 ## 方法
 
 ### abort
 
 中断上传任务
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.abort.html)
+
 ```tsx
 () => void
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.abort.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.abort | ✔️ |  |  |  |  |  |  |  |
 
 ### offHeadersReceived
 
 取消监听 HTTP Response Header 事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.offHeadersReceived.html)
 
 ```tsx
 (callback: OffHeadersReceivedCallback) => void
@@ -29,11 +39,17 @@ sidebar_label: UploadTask
 | --- | --- | --- |
 | callback | `OffHeadersReceivedCallback` | HTTP Response Header 事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.offHeadersReceived.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.offHeadersReceived | ✔️ |  |  |  |  |  |  |  |
 
 ### offProgressUpdate
 
 取消监听上传进度变化事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.offProgressUpdate.html)
 
 ```tsx
 (callback: OffProgressUpdateCallback) => void
@@ -43,11 +59,17 @@ sidebar_label: UploadTask
 | --- | --- | --- |
 | callback | `OffProgressUpdateCallback` | 上传进度变化事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.offProgressUpdate.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.offProgressUpdate | ✔️ |  |  |  |  |  |  |  |
 
 ### onHeadersReceived
 
 监听 HTTP Response Header 事件。会比请求完成事件更早
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.onHeadersReceived.html)
 
 ```tsx
 (callback: OnHeadersReceivedCallback) => void
@@ -57,11 +79,17 @@ sidebar_label: UploadTask
 | --- | --- | --- |
 | callback | `OnHeadersReceivedCallback` | HTTP Response Header 事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.onHeadersReceived.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onHeadersReceived | ✔️ |  |  |  |  |  |  |  |
 
 ### onProgressUpdate
 
 监听上传进度变化事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.onProgressUpdate.html)
 
 ```tsx
 (callback: OnProgressUpdateCallback) => void
@@ -71,7 +99,11 @@ sidebar_label: UploadTask
 | --- | --- | --- |
 | callback | `OnProgressUpdateCallback` | 上传进度变化事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.onProgressUpdate.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onProgressUpdate | ✔️ |  |  |  |  |  |  |  |
 
 ## 参数
 
@@ -146,5 +178,3 @@ HTTP Response Header 事件的回调函数
 | UploadTask.offProgressUpdate | ✔️ |  |  |  |  |  |  |  |
 | UploadTask.onHeadersReceived | ✔️ |  |  |  |  |  |  |  |
 | UploadTask.onProgressUpdate | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.html)

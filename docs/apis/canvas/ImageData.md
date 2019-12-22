@@ -5,6 +5,8 @@ sidebar_label: ImageData
 
 ImageData 对象
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/ImageData.html)
+
 ## 方法
 
 | 参数 | 类型 | 说明 |
@@ -18,5 +20,3 @@ ImageData 对象
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | ImageData | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/ImageData.html)

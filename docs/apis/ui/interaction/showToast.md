@@ -9,6 +9,8 @@ sidebar_label: showToast
 - Taro.showLoading 和 Taro.showToast 同时只能显示一个
 - Taro.showToast 应与 Taro.hideToast 配对使用
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showToast.html)
+
 ## 类型
 
 ```tsx
@@ -45,5 +47,3 @@ Taro.showToast({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.showToast | ✔️ |  |  |  |  | ✔️ | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showToast.html)

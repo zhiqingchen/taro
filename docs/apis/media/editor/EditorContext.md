@@ -6,11 +6,15 @@ sidebar_label: EditorContext
 `EditorContext` 实例，可通过 `Taro.createSelectorQuery` 获取。
 `EditorContext` 通过 `id` 跟一个 `editor` 组件绑定，操作对应的 `editor` 组件。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.html)
+
 ## 方法
 
 ### blur
 
 编辑器失焦，同时收起键盘。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.blur.html)
 
 ```tsx
 (option?: BlurOption) => void
@@ -20,11 +24,17 @@ sidebar_label: EditorContext
 | --- | --- |
 | option | `BlurOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.blur.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.blur | ✔️ |  |  |  |  |  |  |  |
 
 ### clear
 
 清空编辑器内容
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.clear.html)
 
 ```tsx
 (option?: ClearOption) => void
@@ -34,7 +44,11 @@ sidebar_label: EditorContext
 | --- | --- |
 | option | `ClearOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.clear.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.clear | ✔️ |  |  |  |  |  |  |  |
 
 ### format
 
@@ -68,6 +82,8 @@ sidebar_label: EditorContext
 
 对已经应用样式的选区设置会取消样式。css style 表示 css 中规定的允许值。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.format.html)
+
 ```tsx
 (name: string, value?: string) => void
 ```
@@ -77,11 +93,17 @@ sidebar_label: EditorContext
 | name | `string` | 属性 |
 | value | `string` | 值 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.format.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.format | ✔️ |  |  |  |  |  |  |  |
 
 ### getContents
 
 获取编辑器内容
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.getContents.html)
 
 ```tsx
 (option?: GetContentsOption) => void
@@ -91,11 +113,17 @@ sidebar_label: EditorContext
 | --- | --- |
 | option | `GetContentsOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.getContents.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.getContents | ✔️ |  |  |  |  |  |  |  |
 
 ### insertDivider
 
 插入分割线
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.insertDivider.html)
 
 ```tsx
 (option?: InsertDividerOption) => void
@@ -105,7 +133,11 @@ sidebar_label: EditorContext
 | --- | --- |
 | option | `InsertDividerOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.insertDivider.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.insertDivider | ✔️ |  |  |  |  |  |  |  |
 
 ### insertImage
 
@@ -114,6 +146,8 @@ sidebar_label: EditorContext
 地址为临时文件时，获取的编辑器html格式内容中 <img> 标签增加属性 data-local，delta 格式内容中图片 attributes 属性增加 data-local 字段，该值为传入的临时文件地址。
 
 开发者可选择在提交阶段上传图片到服务器，获取到网络地址后进行替换。替换时对于html内容应替换掉 <img> 的 src 值，对于 delta 内容应替换掉 `insert { image: abc }` 值。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.insertImage.html)
 
 ```tsx
 (option: InsertImageOption) => void
@@ -134,11 +168,17 @@ this.editorCtx.insertImage({
 })
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.insertImage.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.insertImage | ✔️ |  |  |  |  |  |  |  |
 
 ### insertText
 
 覆盖当前选区，设置一段文本
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.insertText.html)
 
 ```tsx
 (option: InsertTextOption) => void
@@ -148,11 +188,17 @@ this.editorCtx.insertImage({
 | --- | --- |
 | option | `InsertTextOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.insertText.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.insertText | ✔️ |  |  |  |  |  |  |  |
 
 ### redo
 
 恢复
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.redo.html)
 
 ```tsx
 (option?: RedoOption) => void
@@ -162,11 +208,17 @@ this.editorCtx.insertImage({
 | --- | --- |
 | option | `RedoOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.redo.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.redo | ✔️ |  |  |  |  |  |  |  |
 
 ### removeFormat
 
 清除当前选区的样式
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.removeFormat.html)
 
 ```tsx
 (option?: RemoveFormatOption) => void
@@ -176,21 +228,33 @@ this.editorCtx.insertImage({
 | --- | --- |
 | option | `RemoveFormatOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.removeFormat.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.removeFormat | ✔️ |  |  |  |  |  |  |  |
 
 ### scrollIntoView
 
 使得编辑器光标处滚动到窗口可视区域内。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.scrollIntoView.html)
+
 ```tsx
 () => void
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.scrollIntoView.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.scrollIntoView | ✔️ |  |  |  |  |  |  |  |
 
 ### setContents
 
 初始化编辑器内容，html和delta同时存在时仅delta生效
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.setContents.html)
 
 ```tsx
 (option: SetContentsOption) => void
@@ -200,11 +264,17 @@ this.editorCtx.insertImage({
 | --- | --- |
 | option | `SetContentsOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.setContents.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.setContents | ✔️ |  |  |  |  |  |  |  |
 
 ### undo
 
 撤销
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.undo.html)
 
 ```tsx
 (option?: UndoOption) => void
@@ -214,7 +284,11 @@ this.editorCtx.insertImage({
 | --- | --- |
 | option | `UndoOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.undo.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.undo | ✔️ |  |  |  |  |  |  |  |
 
 ## 参数
 
@@ -323,5 +397,3 @@ this.editorCtx.insertImage({
 | EditorContext.scrollIntoView | ✔️ |  |  |  |  |  |  |  |
 | EditorContext.setContents | ✔️ |  |  |  |  |  |  |  |
 | EditorContext.undo | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.html)

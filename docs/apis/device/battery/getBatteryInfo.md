@@ -5,6 +5,8 @@ sidebar_label: getBatteryInfo
 
 获取设备电量。同步 API Taro.getBatteryInfoSync 在 iOS 上不可用。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/battery/wx.getBatteryInfo.html)
+
 ## 类型
 
 ```tsx
@@ -34,5 +36,3 @@ sidebar_label: getBatteryInfo
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getBatteryInfo | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/battery/wx.getBatteryInfo.html)

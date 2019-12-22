@@ -5,11 +5,15 @@ sidebar_label: CameraFrameListener
 
 CameraContext.onCameraFrame() 返回的监听器。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraFrameListener.html)
+
 ## 方法
 
 ### start
 
 开始监听帧数据
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraFrameListener.start.html)
 
 ```tsx
 (option?: StartOption) => void
@@ -19,11 +23,17 @@ CameraContext.onCameraFrame() 返回的监听器。
 | --- | --- |
 | option | `StartOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraFrameListener.start.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.start | ✔️ |  |  |  |  |  |  |  |
 
 ### stop
 
 停止监听帧数据
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraFrameListener.stop.html)
 
 ```tsx
 (option?: StopOption) => void
@@ -33,7 +43,11 @@ CameraContext.onCameraFrame() 返回的监听器。
 | --- | --- |
 | option | `StopOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraFrameListener.stop.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.stop | ✔️ |  |  |  |  |  |  |  |
 
 ## 参数
 
@@ -59,5 +73,3 @@ CameraContext.onCameraFrame() 返回的监听器。
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | CameraFrameListener.start | ✔️ |  |  |  |  |  |  |  |
 | CameraFrameListener.stop | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraFrameListener.html)

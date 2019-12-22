@@ -5,6 +5,8 @@ sidebar_label: getImageInfo
 
 获取图片信息。网络图片需先配置download域名才能生效。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.getImageInfo.html)
+
 ## 类型
 
 ```tsx
@@ -74,5 +76,3 @@ Taro.chooseImage({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getImageInfo | ✔️ | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.getImageInfo.html)

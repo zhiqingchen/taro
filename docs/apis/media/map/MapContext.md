@@ -12,6 +12,8 @@ sidebar_label: MapContext
 
 获取当前地图中心的经纬度。返回的是 gcj02 坐标系，可以用于 [wx.openLocation()](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.openLocation.html)
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.getCenterLocation.html)
+
 ```tsx
 (option?: GetCenterLocationOption) => void
 ```
@@ -20,11 +22,17 @@ sidebar_label: MapContext
 | --- | --- |
 | option | `GetCenterLocationOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.getCenterLocation.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.getCenterLocation | ✔️ |  |  |  |  |  |  |  |
 
 ### getRegion
 
 获取当前地图的视野范围
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.getRegion.html)
 
 ```tsx
 (option?: GetRegionOption) => void
@@ -34,11 +42,17 @@ sidebar_label: MapContext
 | --- | --- |
 | option | `GetRegionOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.getRegion.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.getRegion | ✔️ |  |  |  |  |  |  |  |
 
 ### getRotate
 
 获取当前地图的旋转角
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.getRotate.html)
 
 ```tsx
 (option?: GetRotateOption) => void
@@ -48,11 +62,17 @@ sidebar_label: MapContext
 | --- | --- |
 | option | `GetRotateOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.getRotate.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.getRotate | ✔️ |  |  |  |  |  |  |  |
 
 ### getScale
 
 获取当前地图的缩放级别
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.getScale.html)
 
 ```tsx
 (option?: GetScaleOption) => void
@@ -62,11 +82,17 @@ sidebar_label: MapContext
 | --- | --- |
 | option | `GetScaleOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.getScale.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.getScale | ✔️ |  |  |  |  |  |  |  |
 
 ### getSkew
 
 获取当前地图的倾斜角
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.getSkew.html)
 
 ```tsx
 (option?: GetSkewOption) => void
@@ -76,11 +102,17 @@ sidebar_label: MapContext
 | --- | --- |
 | option | `GetSkewOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.getSkew.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.getSkew | ✔️ |  |  |  |  |  |  |  |
 
 ### includePoints
 
 缩放视野展示所有经纬度
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.includePoints.html)
 
 ```tsx
 (option: IncludePointsOption) => void
@@ -90,11 +122,17 @@ sidebar_label: MapContext
 | --- | --- |
 | option | `IncludePointsOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.includePoints.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.includePoints | ✔️ |  |  |  |  |  |  |  |
 
 ### moveToLocation
 
 将地图中心移置当前定位点，此时需设置地图组件 show-location 为true。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.moveToLocation.html)
 
 ```tsx
 (option: MoveToLocationOption) => void
@@ -104,11 +142,17 @@ sidebar_label: MapContext
 | --- | --- |
 | option | `MoveToLocationOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.moveToLocation.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.moveToLocation | ✔️ |  |  |  |  |  |  |  |
 
 ### translateMarker
 
 平移marker，带动画
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.translateMarker.html)
 
 ```tsx
 (option: TranslateMarkerOption) => void
@@ -118,7 +162,11 @@ sidebar_label: MapContext
 | --- | --- |
 | option | `TranslateMarkerOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.translateMarker.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.translateMarker | ✔️ |  |  |  |  |  |  |  |
 
 ## 参数
 

@@ -5,21 +5,31 @@ sidebar_label: InterstitialAd
 
 插屏广告组件。插屏广告组件是一个原生组件，层级比普通组件高。插屏广告组件每次创建都会返回一个全新的实例（小程序端的插屏广告实例不允许跨页面使用），默认是隐藏的，需要调用 InterstitialAd.show() 将其显示。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.html)
+
 ## 方法
 
 ### destroy
 
 销毁插屏广告实例。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.destroy.html)
+
 ```tsx
 () => void
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.destroy.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.destroy | ✔️ |  |  |  |  |  |  |  |
 
 ### offClose
 
 取消监听插屏广告关闭事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.offClose.html)
 
 ```tsx
 (callback: OffCloseCallback) => void
@@ -29,11 +39,17 @@ sidebar_label: InterstitialAd
 | --- | --- |
 | callback | `OffCloseCallback` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.offClose.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.offClose | ✔️ |  |  |  |  |  |  |  |
 
 ### offError
 
 取消监听插屏错误事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.offError.html)
 
 ```tsx
 (callback: OffErrorCallback) => void
@@ -43,11 +59,17 @@ sidebar_label: InterstitialAd
 | --- | --- |
 | callback | `OffErrorCallback` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.offError.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.offError | ✔️ |  |  |  |  |  |  |  |
 
 ### offLoad
 
 取消监听插屏广告加载事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.offLoad.html)
 
 ```tsx
 (callback: OffLoadCallback) => void
@@ -57,11 +79,17 @@ sidebar_label: InterstitialAd
 | --- | --- |
 | callback | `OffLoadCallback` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.offLoad.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.offLoad | ✔️ |  |  |  |  |  |  |  |
 
 ### onClose
 
 监听插屏广告关闭事件。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.onClose.html)
 
 ```tsx
 (callback: OnCloseCallback) => void
@@ -71,11 +99,17 @@ sidebar_label: InterstitialAd
 | --- | --- |
 | callback | `OnCloseCallback` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.onClose.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onClose | ✔️ |  |  |  |  |  |  |  |
 
 ### onError
 
 监听插屏错误事件。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.onError.html)
 
 ```tsx
 (callback: OnErrorCallback) => void
@@ -85,11 +119,17 @@ sidebar_label: InterstitialAd
 | --- | --- |
 | callback | `OnErrorCallback` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.onError.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onError | ✔️ |  |  |  |  |  |  |  |
 
 ### onLoad
 
 监听插屏广告加载事件。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.onLoad.html)
 
 ```tsx
 (callback: OnLoadCallback) => void
@@ -99,17 +139,27 @@ sidebar_label: InterstitialAd
 | --- | --- |
 | callback | `OnLoadCallback` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.onLoad.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onLoad | ✔️ |  |  |  |  |  |  |  |
 
 ### load
 
 加载插屏广告。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.load.html)
+
 ```tsx
 () => Promise<any>
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.load.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.load | ✔️ |  |  |  |  |  |  |  |
 
 ### show
 
@@ -127,11 +177,17 @@ sidebar_label: InterstitialAd
 | 2004  | 广告渲染失败  | 该项错误不是开发者的异常情况，或因小程序页面切换导致广告渲染失败 |
 | 2005  | 广告调用异常  | 插屏广告实例不允许跨页面调用 |
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.show.html)
+
 ```tsx
 () => Promise<any>
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.show.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.show | ✔️ |  |  |  |  |  |  |  |
 
 ## 参数
 
@@ -227,5 +283,3 @@ sidebar_label: InterstitialAd
 | InterstitialAd.onLoad | ✔️ |  |  |  |  |  |  |  |
 | InterstitialAd.load | ✔️ |  |  |  |  |  |  |  |
 | InterstitialAd.show | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.html)

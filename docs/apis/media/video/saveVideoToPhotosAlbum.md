@@ -9,6 +9,8 @@ sidebar_label: saveVideoToPhotosAlbum
 
 1.  `tip`: camera 参数在部分 Android 手机下由于系统 ROM 不支持无法生效
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.saveVideoToPhotosAlbum.html)
+
 ## 类型
 
 ```tsx
@@ -42,5 +44,3 @@ Taro.saveVideoToPhotosAlbum({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.saveVideoToPhotosAlbum | ✔️ |  |  |  |  |  | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.saveVideoToPhotosAlbum.html)

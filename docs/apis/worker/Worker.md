@@ -9,6 +9,8 @@ sidebar_label: Worker
 
 监听主线程/Worker 线程向当前线程发送的消息的事件。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/worker/Worker.onMessage.html)
+
 ```tsx
 (callback: OnMessageCallback) => void
 ```
@@ -17,11 +19,17 @@ sidebar_label: Worker
 | --- | --- | --- |
 | callback | `OnMessageCallback` | 主线程/Worker 线程向当前线程发送的消息的事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/worker/Worker.onMessage.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onMessage | ✔️ |  |  |  |  |  |  |  |
 
 ### postMessage
 
 向主线程/Worker 线程发送的消息。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/worker/Worker.postMessage.html)
 
 ```tsx
 (message: Record<string, any>) => void
@@ -50,17 +58,27 @@ worker.postMessage({
 })
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/worker/Worker.postMessage.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.postMessage | ✔️ |  |  |  |  |  |  |  |
 
 ### terminate
 
 结束当前 Worker 线程。仅限在主线程 worker 对象上调用。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/worker/Worker.terminate.html)
+
 ```tsx
 () => void
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/worker/Worker.terminate.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.terminate | ✔️ |  |  |  |  |  |  |  |
 
 ## 参数
 

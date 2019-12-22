@@ -5,6 +5,8 @@ sidebar_label: startBeaconDiscovery
 
 开始搜索附近的 iBeacon 设备
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/ibeacon/wx.startBeaconDiscovery.html)
+
 ## 类型
 
 ```tsx
@@ -36,5 +38,3 @@ Taro.startBeaconDiscovery({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.startBeaconDiscovery | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/ibeacon/wx.startBeaconDiscovery.html)

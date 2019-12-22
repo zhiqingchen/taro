@@ -11,6 +11,8 @@ sidebar_label: FileSystemManager
 
 FileSystemManager.readdir 的同步版本
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readdirSync.html)
+
 ```tsx
 (dirPath: string) => string[]
 ```
@@ -19,11 +21,17 @@ FileSystemManager.readdir 的同步版本
 | --- | --- | --- |
 | dirPath | `string` | 要读取的目录路径 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readdirSync.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.readdirSync | ✔️ |  |  |  |  |  |  |  |
 
 ### access
 
 判断文件/目录是否存在
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.access.html)
 
 ```tsx
 (option: AccessOption) => void
@@ -33,11 +41,17 @@ FileSystemManager.readdir 的同步版本
 | --- | --- |
 | option | `AccessOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.access.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.access | ✔️ |  |  |  |  |  |  |  |
 
 ### accessSync
 
 FileSystemManager.access 的同步版本
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.accessSync.html)
 
 ```tsx
 (path: string) => void
@@ -47,11 +61,17 @@ FileSystemManager.access 的同步版本
 | --- | --- | --- |
 | path | `string` | 要判断是否存在的文件/目录路径 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.accessSync.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.accessSync | ✔️ |  |  |  |  |  |  |  |
 
 ### appendFile
 
 在文件结尾追加内容
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.appendFile.html)
 
 ```tsx
 (option: AppendFileOption) => void
@@ -61,11 +81,17 @@ FileSystemManager.access 的同步版本
 | --- | --- |
 | option | `AppendFileOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.appendFile.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.appendFile | ✔️ |  |  |  |  |  |  |  |
 
 ### appendFileSync
 
 FileSystemManager.appendFile 的同步版本
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.appendFileSync.html)
 
 ```tsx
 (filePath: string, data: string | ArrayBuffer, encoding?: "ascii" | "base64" | "binary" | "hex" | "ucs2" | "ucs-2" | "utf16le" | "utf-16le" | "utf-8" | "utf8" | "latin1") => void
@@ -77,11 +103,17 @@ FileSystemManager.appendFile 的同步版本
 | data | `string | ArrayBuffer` | 要追加的文本或二进制数据 |
 | encoding | `"ascii" | "base64" | "binary" | "hex" | "ucs2" | "ucs-2" | "utf16le" | "utf-16le" | "utf-8" | "utf8" | "latin1"` | 指定写入文件的字符编码 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.appendFileSync.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.appendFileSync | ✔️ |  |  |  |  |  |  |  |
 
 ### copyFile
 
 复制文件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.copyFile.html)
 
 ```tsx
 (option: CopyFileOption) => void
@@ -91,11 +123,17 @@ FileSystemManager.appendFile 的同步版本
 | --- | --- |
 | option | `CopyFileOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.copyFile.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.copyFile | ✔️ |  |  |  |  |  |  |  |
 
 ### copyFileSync
 
 FileSystemManager.copyFile 的同步版本
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.copyFileSync.html)
 
 ```tsx
 (srcPath: string, destPath: string) => void
@@ -106,11 +144,17 @@ FileSystemManager.copyFile 的同步版本
 | srcPath | `string` | 源文件路径，只可以是普通文件 |
 | destPath | `string` | 目标文件路径 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.copyFileSync.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.copyFileSync | ✔️ |  |  |  |  |  |  |  |
 
 ### getFileInfo
 
 获取该小程序下的 本地临时文件 或 本地缓存文件 信息
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.getFileInfo.html)
 
 ```tsx
 (option: getFileInfoOption) => void
@@ -120,11 +164,17 @@ FileSystemManager.copyFile 的同步版本
 | --- | --- |
 | option | `getFileInfoOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.getFileInfo.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.getFileInfo | ✔️ |  |  |  |  |  |  |  |
 
 ### getSavedFileList
 
 获取该小程序下已保存的本地缓存文件列表
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.getSavedFileList.html)
 
 ```tsx
 (option?: getSavedFileListOption) => void
@@ -134,11 +184,17 @@ FileSystemManager.copyFile 的同步版本
 | --- | --- |
 | option | `getSavedFileListOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.getSavedFileList.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.getSavedFileList | ✔️ |  |  |  |  |  |  |  |
 
 ### mkdir
 
 创建目录
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.mkdir.html)
 
 ```tsx
 (option: MkdirOption) => void
@@ -148,11 +204,17 @@ FileSystemManager.copyFile 的同步版本
 | --- | --- |
 | option | `MkdirOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.mkdir.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.mkdir | ✔️ |  |  |  |  |  |  |  |
 
 ### mkdirSync
 
 FileSystemManager.mkdir 的同步版本
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.mkdirSync.html)
 
 ```tsx
 (dirPath: string, recursive?: boolean) => void
@@ -163,11 +225,17 @@ FileSystemManager.mkdir 的同步版本
 | dirPath | `string` | 创建的目录路径 |
 | recursive | `boolean` | 是否在递归创建该目录的上级目录后再创建该目录。如果对应的上级目录已经存在，则不创建该上级目录。如 dirPath 为 a/b/c/d 且 recursive 为 true，将创建 a 目录，再在 a 目录下创建 b 目录，以此类推直至创建 a/b/c 目录下的 d 目录。 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.mkdirSync.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.mkdirSync | ✔️ |  |  |  |  |  |  |  |
 
 ### readFile
 
 读取本地文件内容
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readFile.html)
 
 ```tsx
 (option: ReadFileOption) => void
@@ -177,11 +245,17 @@ FileSystemManager.mkdir 的同步版本
 | --- | --- |
 | option | `ReadFileOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readFile.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.readFile | ✔️ |  |  |  |  |  |  |  |
 
 ### readdir
 
 读取目录内文件列表
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readdir.html)
 
 ```tsx
 (option: ReaddirOption) => void
@@ -191,11 +265,17 @@ FileSystemManager.mkdir 的同步版本
 | --- | --- |
 | option | `ReaddirOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readdir.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.readdir | ✔️ |  |  |  |  |  |  |  |
 
 ### removeSavedFile
 
 删除该小程序下已保存的本地缓存文件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.removeSavedFile.html)
 
 ```tsx
 (option: RemoveSavedFileOption) => void
@@ -205,11 +285,17 @@ FileSystemManager.mkdir 的同步版本
 | --- | --- |
 | option | `RemoveSavedFileOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.removeSavedFile.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.removeSavedFile | ✔️ |  |  |  |  |  |  |  |
 
 ### rename
 
 重命名文件。可以把文件从 oldPath 移动到 newPath
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.rename.html)
 
 ```tsx
 (option: RenameOption) => void
@@ -219,11 +305,17 @@ FileSystemManager.mkdir 的同步版本
 | --- | --- |
 | option | `RenameOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.rename.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.rename | ✔️ |  |  |  |  |  |  |  |
 
 ### renameSync
 
 FileSystemManager.rename 的同步版本
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.renameSync.html)
 
 ```tsx
 (oldPath: string, newPath: string) => void
@@ -234,11 +326,17 @@ FileSystemManager.rename 的同步版本
 | oldPath | `string` | 源文件路径，可以是普通文件或目录 |
 | newPath | `string` | 新文件路径 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.renameSync.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.renameSync | ✔️ |  |  |  |  |  |  |  |
 
 ### rmdir
 
 删除目录
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.rmdir.html)
 
 ```tsx
 (option: RmdirOption) => void
@@ -248,11 +346,17 @@ FileSystemManager.rename 的同步版本
 | --- | --- |
 | option | `RmdirOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.rmdir.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.rmdir | ✔️ |  |  |  |  |  |  |  |
 
 ### rmdirSync
 
 FileSystemManager.rmdir 的同步版本
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.rmdirSync.html)
 
 ```tsx
 (dirPath: string, recursive?: boolean) => void
@@ -263,11 +367,17 @@ FileSystemManager.rmdir 的同步版本
 | dirPath | `string` | 要删除的目录路径 |
 | recursive | `boolean` | 是否递归删除目录。如果为 true，则删除该目录和该目录下的所有子目录以及文件。 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.rmdirSync.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.rmdirSync | ✔️ |  |  |  |  |  |  |  |
 
 ### saveFile
 
 保存临时文件到本地。此接口会移动临时文件，因此调用成功后，tempFilePath 将不可用。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.saveFile.html)
 
 ```tsx
 (option: SaveFileOption) => void
@@ -277,7 +387,11 @@ FileSystemManager.rmdir 的同步版本
 | --- | --- |
 | option | `SaveFileOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.saveFile.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.saveFile | ✔️ |  |  |  |  |  |  |  |
 
 ### stat
 
@@ -291,9 +405,17 @@ FileSystemManager.rmdir 的同步版本
 | --- | --- |
 | option | `StatOption` |
 
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.stat |  |  |  |  |  |  |  |  |
+
 ### unlink
 
 删除文件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.unlink.html)
 
 ```tsx
 (option: UnlinkOption) => void
@@ -303,11 +425,17 @@ FileSystemManager.rmdir 的同步版本
 | --- | --- |
 | option | `UnlinkOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.unlink.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.unlink | ✔️ |  |  |  |  |  |  |  |
 
 ### unlinkSync
 
 FileSystemManager.unlink 的同步版本
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.unlinkSync.html)
 
 ```tsx
 (filePath: string) => void
@@ -317,11 +445,17 @@ FileSystemManager.unlink 的同步版本
 | --- | --- | --- |
 | filePath | `string` | 要删除的文件路径 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.unlinkSync.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.unlinkSync | ✔️ |  |  |  |  |  |  |  |
 
 ### unzip
 
 解压文件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.unzip.html)
 
 ```tsx
 (option: UnzipOption) => void
@@ -331,11 +465,17 @@ FileSystemManager.unlink 的同步版本
 | --- | --- |
 | option | `UnzipOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.unzip.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.unzip | ✔️ |  |  |  |  |  |  |  |
 
 ### writeFile
 
 写文件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.writeFile.html)
 
 ```tsx
 (option: WriteFileOption) => void
@@ -345,11 +485,17 @@ FileSystemManager.unlink 的同步版本
 | --- | --- |
 | option | `WriteFileOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.writeFile.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.writeFile | ✔️ |  |  |  |  |  |  |  |
 
 ### writeFileSync
 
 FileSystemManager.writeFile 的同步版本
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.writeFileSync.html)
 
 ```tsx
 (filePath: string, data: string | ArrayBuffer, encoding?: "ascii" | "base64" | "binary" | "hex" | "ucs2" | "ucs-2" | "utf16le" | "utf-16le" | "utf-8" | "utf8" | "latin1") => void
@@ -361,11 +507,17 @@ FileSystemManager.writeFile 的同步版本
 | data | `string | ArrayBuffer` | 要写入的文本或二进制数据 |
 | encoding | `"ascii" | "base64" | "binary" | "hex" | "ucs2" | "ucs-2" | "utf16le" | "utf-16le" | "utf-8" | "utf8" | "latin1"` | 指定写入文件的字符编码 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.writeFileSync.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.writeFileSync | ✔️ |  |  |  |  |  |  |  |
 
 ### statSync
 
 FileSystemManager.stat 的同步版本
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.statSync.html)
 
 ```tsx
 (path: string, recursive?: boolean) => Stats | Record<string, any>
@@ -376,11 +528,17 @@ FileSystemManager.stat 的同步版本
 | path | `string` | 文件/目录路径 |
 | recursive | `boolean` | 是否递归获取目录下的每个文件的 Stats 信息 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.statSync.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.statSync | ✔️ |  |  |  |  |  |  |  |
 
 ### saveFileSync
 
 FileSystemManager.saveFile 的同步版本
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.saveFileSync.html)
 
 ```tsx
 (tempFilePath: string, filePath?: string) => number
@@ -391,11 +549,17 @@ FileSystemManager.saveFile 的同步版本
 | tempFilePath | `string` | 临时存储文件路径 |
 | filePath | `string` | 要存储的文件路径 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.saveFileSync.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.saveFileSync | ✔️ |  |  |  |  |  |  |  |
 
 ### readFileSync
 
 FileSystemManager.readFile 的同步版本
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readFileSync.html)
 
 ```tsx
 (filePath: string, encoding?: "ascii" | "base64" | "binary" | "hex" | "ucs2" | "ucs-2" | "utf16le" | "utf-16le" | "utf-8" | "utf8" | "latin1") => string | ArrayBuffer
@@ -406,7 +570,11 @@ FileSystemManager.readFile 的同步版本
 | filePath | `string` | 要读取的文件的路径 |
 | encoding | `"ascii" | "base64" | "binary" | "hex" | "ucs2" | "ucs-2" | "utf16le" | "utf-16le" | "utf-8" | "utf8" | "latin1"` | 指定读取文件的字符编码，如果不传 encoding，则以 ArrayBuffer 格式读取文件的二进制内容 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readFileSync.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.readFileSync | ✔️ |  |  |  |  |  |  |  |
 
 ## 参数
 

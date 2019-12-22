@@ -5,6 +5,8 @@ sidebar_label: getRecorderManager
 
 获取**全局唯一**的录音管理器 RecorderManager
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/wx.getRecorderManager.html)
+
 ## 类型
 
 ```tsx
@@ -47,5 +49,3 @@ recorderManager.start(options)
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getRecorderManager | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/wx.getRecorderManager.html)

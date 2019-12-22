@@ -6,11 +6,15 @@ sidebar_label: LivePlayerContext
 `LivePlayerContext` 实例，可通过 `Taro.createLivePlayerContext` 获取。
 `LivePlayerContext` 通过 `id` 跟一个 `live-player` 组件绑定，操作对应的 `live-player` 组件。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.html)
+
 ## 方法
 
 ### exitFullScreen
 
 退出全屏
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.exitFullScreen.html)
 
 ```tsx
 (option?: ExitFullScreenOption) => void
@@ -20,11 +24,17 @@ sidebar_label: LivePlayerContext
 | --- | --- |
 | option | `ExitFullScreenOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.exitFullScreen.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.exitFullScreen | ✔️ |  |  |  |  |  |  |  |
 
 ### mute
 
 静音
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.mute.html)
 
 ```tsx
 (option?: MuteOption) => void
@@ -34,11 +44,17 @@ sidebar_label: LivePlayerContext
 | --- | --- |
 | option | `MuteOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.mute.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.mute | ✔️ |  |  |  |  |  |  |  |
 
 ### pause
 
 暂停
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.pause.html)
 
 ```tsx
 (option?: PauseOption) => void
@@ -48,11 +64,17 @@ sidebar_label: LivePlayerContext
 | --- | --- |
 | option | `PauseOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.pause.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.pause | ✔️ |  |  |  |  |  |  |  |
 
 ### play
 
 播放
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.play.html)
 
 ```tsx
 (option?: PlayOption) => void
@@ -62,11 +84,17 @@ sidebar_label: LivePlayerContext
 | --- | --- |
 | option | `PlayOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.play.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.play | ✔️ |  |  |  |  |  |  |  |
 
 ### requestFullScreen
 
 进入全屏
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.requestFullScreen.html)
 
 ```tsx
 (option: RequestFullScreenOption) => void
@@ -76,11 +104,17 @@ sidebar_label: LivePlayerContext
 | --- | --- |
 | option | `RequestFullScreenOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.requestFullScreen.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.requestFullScreen | ✔️ |  |  |  |  |  |  |  |
 
 ### resume
 
 恢复
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.resume.html)
 
 ```tsx
 (option?: ResumeOption) => void
@@ -90,11 +124,17 @@ sidebar_label: LivePlayerContext
 | --- | --- |
 | option | `ResumeOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.resume.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.resume | ✔️ |  |  |  |  |  |  |  |
 
 ### snapshot
 
 截图
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.snapshot.html)
 
 ```tsx
 (option?: SnapshotOption) => void
@@ -104,11 +144,17 @@ sidebar_label: LivePlayerContext
 | --- | --- |
 | option | `SnapshotOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.snapshot.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.snapshot | ✔️ |  |  |  |  |  |  |  |
 
 ### stop
 
 停止
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.stop.html)
 
 ```tsx
 (option?: StopOption) => void
@@ -118,7 +164,11 @@ sidebar_label: LivePlayerContext
 | --- | --- |
 | option | `StopOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.stop.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.stop | ✔️ |  |  |  |  |  |  |  |
 
 ## 参数
 
@@ -208,5 +258,3 @@ sidebar_label: LivePlayerContext
 | LivePlayerContext.resume | ✔️ |  |  |  |  |  |  |  |
 | LivePlayerContext.snapshot | ✔️ |  |  |  |  |  |  |  |
 | LivePlayerContext.stop | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.html)

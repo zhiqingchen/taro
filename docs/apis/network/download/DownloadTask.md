@@ -9,15 +9,23 @@ sidebar_label: DownloadTask
 
 中断下载任务
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/DownloadTask.abort.html)
+
 ```tsx
 () => void
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/DownloadTask.abort.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.abort | ✔️ |  |  |  |  |  |  |  |
 
 ### offHeadersReceived
 
 取消监听 HTTP Response Header 事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/DownloadTask.offHeadersReceived.html)
 
 ```tsx
 (callback: OffHeadersReceivedCallback) => void
@@ -27,11 +35,17 @@ sidebar_label: DownloadTask
 | --- | --- | --- |
 | callback | `OffHeadersReceivedCallback` | HTTP Response Header 事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/DownloadTask.offHeadersReceived.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.offHeadersReceived | ✔️ |  |  |  |  |  |  |  |
 
 ### offProgressUpdate
 
 取消监听下载进度变化事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/DownloadTask.offProgressUpdate.html)
 
 ```tsx
 (callback: OffProgressUpdateCallback) => void
@@ -41,11 +55,17 @@ sidebar_label: DownloadTask
 | --- | --- | --- |
 | callback | `OffProgressUpdateCallback` | 下载进度变化事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/DownloadTask.offProgressUpdate.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.offProgressUpdate | ✔️ |  |  |  |  |  |  |  |
 
 ### onHeadersReceived
 
 监听 HTTP Response Header 事件。会比请求完成事件更早
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/DownloadTask.onHeadersReceived.html)
 
 ```tsx
 (callback: OnHeadersReceivedCallback) => void
@@ -55,11 +75,17 @@ sidebar_label: DownloadTask
 | --- | --- | --- |
 | callback | `OnHeadersReceivedCallback` | HTTP Response Header 事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/DownloadTask.onHeadersReceived.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onHeadersReceived | ✔️ |  |  |  |  |  |  |  |
 
 ### onProgressUpdate
 
 监听下载进度变化事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/DownloadTask.onProgressUpdate.html)
 
 ```tsx
 (callback: OnProgressUpdateCallback) => void
@@ -69,7 +95,11 @@ sidebar_label: DownloadTask
 | --- | --- | --- |
 | callback | `OnProgressUpdateCallback` | 下载进度变化事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/DownloadTask.onProgressUpdate.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onProgressUpdate | ✔️ |  |  |  |  |  |  |  |
 
 ## 参数
 

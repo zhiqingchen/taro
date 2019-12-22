@@ -15,6 +15,8 @@ selector类似于 CSS 的选择器，但仅支持下列语法。
 + 跨自定义组件的后代选择器：.the-ancestor >>> .the-descendant
 + 多选择器的并集：#a-node, .some-other-nodes
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/scroll/wx.pageScrollTo.html)
+
 ## 类型
 
 ```tsx
@@ -48,5 +50,3 @@ Taro.pageScrollTo({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.pageScrollTo | ✔️ |  |  |  |  | ✔️ |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/scroll/wx.pageScrollTo.html)

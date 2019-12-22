@@ -5,6 +5,8 @@ sidebar_label: redirectTo
 
 关闭当前页面，跳转到应用内的某个页面。但是不允许跳转到 tabbar 页面。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.redirectTo.html)
+
 ## 类型
 
 ```tsx
@@ -35,5 +37,3 @@ Taro.redirectTo({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.redirectTo | ✔️ |  |  |  |  | ✔️ | ✔️ |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.redirectTo.html)

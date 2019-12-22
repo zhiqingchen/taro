@@ -7,6 +7,8 @@ sidebar_label: getWifiList
 
 iOS 将跳转到系统的 Wi-Fi 界面，Android 不会跳转。 iOS 11.0 及 iOS 11.1 两个版本因系统问题，该方法失效。但在 iOS 11.2 中已修复。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/wifi/wx.getWifiList.html)
+
 ## 类型
 
 ```tsx
@@ -28,5 +30,3 @@ iOS 将跳转到系统的 Wi-Fi 界面，Android 不会跳转。 iOS 11.0 及 iO
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getWifiList | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/wifi/wx.getWifiList.html)

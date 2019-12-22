@@ -11,15 +11,23 @@ sidebar_label: RequestTask
 
 中断请求任务
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/RequestTask.abort.html)
+
 ```tsx
 () => void
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/RequestTask.abort.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.abort | ✔️ |  |  |  |  |  |  |  |
 
 ### offHeadersReceived
 
 取消监听 HTTP Response Header 事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/RequestTask.offHeadersReceived.html)
 
 ```tsx
 (callback: (res: CallbackResult) => void) => void
@@ -29,11 +37,17 @@ sidebar_label: RequestTask
 | --- | --- | --- |
 | callback | `(res: CallbackResult) => void` | HTTP Response Header 事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/RequestTask.offHeadersReceived.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.offHeadersReceived | ✔️ |  |  |  |  |  |  |  |
 
 ### onHeadersReceived
 
 监听 HTTP Response Header 事件。会比请求完成事件更早
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/RequestTask.onHeadersReceived.html)
 
 ```tsx
 (callback: (result: OnHeadersReceivedCallbackResult) => void) => void
@@ -43,7 +57,11 @@ sidebar_label: RequestTask
 | --- | --- | --- |
 | callback | `(result: OnHeadersReceivedCallbackResult) => void` | HTTP Response Header 事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/RequestTask.onHeadersReceived.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onHeadersReceived | ✔️ |  |  |  |  |  |  |  |
 
 ## 参数
 

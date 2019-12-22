@@ -5,6 +5,8 @@ sidebar_label: onUserCaptureScreen
 
 监听用户主动截屏事件，用户使用系统截屏按键截屏时触发此事件
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/screen/wx.onUserCaptureScreen.html)
+
 ## 类型
 
 ```tsx
@@ -30,5 +32,3 @@ Taro.onUserCaptureScreen(function (res) {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.onUserCaptureScreen | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/screen/wx.onUserCaptureScreen.html)

@@ -3,6 +3,8 @@ title: envObj
 sidebar_label: envObj
 ---
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/env/envObj.html)
+
 ## 方法
 
 | 参数 | 类型 | 说明 |
@@ -14,5 +16,3 @@ sidebar_label: envObj
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | envObj | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/env/envObj.html)

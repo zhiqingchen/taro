@@ -5,6 +5,8 @@ sidebar_label: setKeepScreenOn
 
 设置是否保持常亮状态。仅在当前小程序生效，离开小程序后设置失效。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/screen/wx.setKeepScreenOn.html)
+
 ## 类型
 
 ```tsx
@@ -42,5 +44,3 @@ Taro.setKeepScreenOn({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.setKeepScreenOn | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/screen/wx.setKeepScreenOn.html)

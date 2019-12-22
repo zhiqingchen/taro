@@ -5,6 +5,8 @@ sidebar_label: showShareMenu
 
 显示当前页面的转发按钮
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/share/wx.showShareMenu.html)
+
 ## 类型
 
 ```tsx
@@ -23,6 +25,12 @@ sidebar_label: showShareMenu
 | withShareTicket | `boolean` | 否 | 是否使用带 shareTicket 的转发[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html) |
 | showShareItems | `string[]` | 否 | QQ小程序分享功能，支持分享到QQ、QQ空间、微信好友、微信朋友圈<br />支持的值： ['qq', 'qzone', 'wechatFriends', 'wechatMoment']<br />API 支持度: qq |
 
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Option.showShareItems |  |  |  |  | ✔️ |  |  |  |
+
 ## 示例代码
 
 ```tsx
@@ -36,5 +44,3 @@ Taro.showShareMenu({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.showShareMenu | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/share/wx.showShareMenu.html)

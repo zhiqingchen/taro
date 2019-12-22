@@ -5,11 +5,15 @@ sidebar_label: RecorderManager
 
 全局唯一的录音管理器
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.html)
+
 ## 方法
 
 ### onError
 
 监听录音错误事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onError.html)
 
 ```tsx
 (callback: OnErrorCallback) => void
@@ -19,11 +23,17 @@ sidebar_label: RecorderManager
 | --- | --- | --- |
 | callback | `OnErrorCallback` | 录音错误事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onError.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onError | ✔️ |  |  |  |  |  |  |  |
 
 ### onFrameRecorded
 
 监听已录制完指定帧大小的文件事件。如果设置了 frameSize，则会回调此事件。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onFrameRecorded.html)
 
 ```tsx
 (callback: OnFrameRecordedCallback) => void
@@ -33,11 +43,17 @@ sidebar_label: RecorderManager
 | --- | --- | --- |
 | callback | `OnFrameRecordedCallback` | 已录制完指定帧大小的文件事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onFrameRecorded.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onFrameRecorded | ✔️ |  |  |  |  |  |  |  |
 
 ### onInterruptionBegin
 
 监听录音因为受到系统占用而被中断开始事件。以下场景会触发此事件：微信语音聊天、微信视频聊天。此事件触发后，录音会被暂停。pause 事件在此事件后触发
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onInterruptionBegin.html)
 
 ```tsx
 (callback: (res: CallbackResult) => void) => void
@@ -47,11 +63,17 @@ sidebar_label: RecorderManager
 | --- | --- | --- |
 | callback | `(res: CallbackResult) => void` | 录音因为受到系统占用而被中断开始事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onInterruptionBegin.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onInterruptionBegin | ✔️ |  |  |  |  |  |  |  |
 
 ### onInterruptionEnd
 
 监听录音中断结束事件。在收到 interruptionBegin 事件之后，小程序内所有录音会暂停，收到此事件之后才可再次录音成功。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onInterruptionEnd.html)
 
 ```tsx
 (callback: (res: CallbackResult) => void) => void
@@ -61,11 +83,17 @@ sidebar_label: RecorderManager
 | --- | --- | --- |
 | callback | `(res: CallbackResult) => void` | 录音中断结束事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onInterruptionEnd.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onInterruptionEnd | ✔️ |  |  |  |  |  |  |  |
 
 ### onPause
 
 监听录音暂停事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onPause.html)
 
 ```tsx
 (callback: (res: CallbackResult) => void) => void
@@ -75,11 +103,17 @@ sidebar_label: RecorderManager
 | --- | --- | --- |
 | callback | `(res: CallbackResult) => void` | 录音暂停事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onPause.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onPause | ✔️ |  |  |  |  |  |  |  |
 
 ### onResume
 
 监听录音继续事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onResume.html)
 
 ```tsx
 (callback: (res: CallbackResult) => void) => void
@@ -89,11 +123,17 @@ sidebar_label: RecorderManager
 | --- | --- | --- |
 | callback | `(res: CallbackResult) => void` | 录音继续事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onResume.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onResume | ✔️ |  |  |  |  |  |  |  |
 
 ### onStart
 
 监听录音开始事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onStart.html)
 
 ```tsx
 (callback: (res: CallbackResult) => void) => void
@@ -103,11 +143,17 @@ sidebar_label: RecorderManager
 | --- | --- | --- |
 | callback | `(res: CallbackResult) => void` | 录音开始事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onStart.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onStart | ✔️ |  |  |  |  |  |  |  |
 
 ### onStop
 
 监听录音结束事件
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onStop.html)
 
 ```tsx
 (callback: OnStopCallback) => void
@@ -117,31 +163,49 @@ sidebar_label: RecorderManager
 | --- | --- | --- |
 | callback | `OnStopCallback` | 录音结束事件的回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onStop.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.onStop | ✔️ |  |  |  |  |  |  |  |
 
 ### pause
 
 暂停录音
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.pause.html)
+
 ```tsx
 () => void
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.pause.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.pause | ✔️ |  |  |  |  |  |  |  |
 
 ### resume
 
 继续录音
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.resume.html)
+
 ```tsx
 () => void
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.resume.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.resume | ✔️ |  |  |  |  |  |  |  |
 
 ### start
 
 开始录音
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.start.html)
 
 ```tsx
 (option: StartOption) => void
@@ -151,17 +215,27 @@ sidebar_label: RecorderManager
 | --- | --- |
 | option | `StartOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.start.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.start | ✔️ |  |  |  |  |  |  |  |
 
 ### stop
 
 停止录音
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.stop.html)
+
 ```tsx
 () => void
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.stop.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.stop | ✔️ |  |  |  |  |  |  |  |
 
 ## 参数
 
@@ -298,5 +372,3 @@ sidebar_label: RecorderManager
 | RecorderManager.resume | ✔️ |  |  |  |  |  |  |  |
 | RecorderManager.start | ✔️ |  |  |  |  |  |  |  |
 | RecorderManager.stop | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.html)

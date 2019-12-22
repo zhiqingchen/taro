@@ -5,6 +5,8 @@ sidebar_label: stopHCE
 
 关闭 NFC 模块。仅在安卓系统下有效。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/wx.stopHCE.html)
+
 ## 类型
 
 ```tsx
@@ -36,5 +38,3 @@ Taro.stopHCE({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.stopHCE | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/wx.stopHCE.html)

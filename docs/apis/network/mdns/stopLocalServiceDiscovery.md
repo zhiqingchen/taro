@@ -5,6 +5,8 @@ sidebar_label: stopLocalServiceDiscovery
 
 停止搜索 mDNS 服务
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/mdns/wx.stopLocalServiceDiscovery.html)
+
 ## 类型
 
 ```tsx
@@ -32,5 +34,3 @@ sidebar_label: stopLocalServiceDiscovery
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.stopLocalServiceDiscovery | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/mdns/wx.stopLocalServiceDiscovery.html)

@@ -5,6 +5,8 @@ sidebar_label: getFileInfo
 
 获取该小程序下的 本地临时文件 或 本地缓存文件 信息
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getFileInfo.html)
+
 ## 类型
 
 ```tsx
@@ -51,5 +53,3 @@ Taro.getFileInfo({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getFileInfo | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getFileInfo.html)

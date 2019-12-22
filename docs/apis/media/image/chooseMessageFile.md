@@ -5,6 +5,8 @@ sidebar_label: chooseMessageFile
 
 从客户端会话选择文件。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseMessageFile.html)
+
 ## 类型
 
 ```tsx
@@ -78,5 +80,3 @@ Taro.chooseMessageFile({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.chooseMessageFile | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseMessageFile.html)

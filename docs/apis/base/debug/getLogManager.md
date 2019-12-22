@@ -5,6 +5,8 @@ sidebar_label: getLogManager
 
 获取日志管理器对象。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/wx.getLogManager.html)
+
 ## 类型
 
 ```tsx
@@ -42,5 +44,3 @@ logger.warn({str: 'hello world'}, 'warn log', 100, [1, 2, 3])
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getLogManager | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/wx.getLogManager.html)

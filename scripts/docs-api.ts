@@ -252,8 +252,7 @@ const get = {
         })
 
         if (!isFunction(param.flags) && !TaroMethod.includes(param.flags || -1) && !isntTaroMethod.includes(param.flags || -1)) {
-          console.log(param.flags)
-          console.log(`WARN: Symbol flags ${param.flags} is missing parse! Watch symbol name:${param.name}.`)
+          console.warn(`WARN: Symbol flags ${param.flags} is missing parse! Watch symbol name:${param.name}.`)
         }
 
         const members = param.members || []
@@ -275,7 +274,7 @@ const get = {
           get.members(param.members, '方法', level + (level === 2 ? 2 : 1)),
           get.members(declaration.parameters || param.exports, '参数', level + (level === 2 ? 2 : 1)),
           get.example(tags, level + (level === 2 ? 2 : 1)),
-          get.api(apis),
+          get.api(apis, level + (level === 2 ? 2 : 1)),
         ])
       }/*  else if (!isShowAPI(param.flags) && !isNotAPI(param.flags) && param.flags !== 1) {
         console.log(param.name, param.flags)
@@ -302,7 +301,7 @@ const get = {
 
     return array.length > 0 ? splicing(array) : undefined
   },
-  api: (data: {[name: string]: ts.JSDocTagInfo[]}) => {
+  api: (data: {[name: string]: ts.JSDocTagInfo[]}, level: number = 2) => {
     const titles = envMap.reduce((p, env) => `${p} ${env.label} |`, '| API |')
     const splits = envMap.reduce((p) => `${p} :---: |`, '| :---: |')
     const rows = Object.keys(data).map(name => {
@@ -318,7 +317,7 @@ const get = {
     })
 
     return rows && rows.filter(e => !!e).length > 0 ? splicing([
-      '## API 支持度', '', titles, splits, ...rows, ''
+      `${'#'.repeat(level)} API 支持度\n`, titles, splits, ...rows, ''
     ]) : undefined // splicing(['## API 支持度', '', '> 该 api 暂不支持', ''])
   },
   see: (data?: ts.JSDocTagInfo) => data ? splicing([`> [参考文档](${data.text || ''})`, '']) : undefined

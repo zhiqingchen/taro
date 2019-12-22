@@ -5,6 +5,8 @@ sidebar_label: offLocalServiceDiscoveryStop
 
 取消监听 mDNS 服务停止搜索的事件
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/mdns/wx.offLocalServiceDiscoveryStop.html)
+
 ## 类型
 
 ```tsx
@@ -30,5 +32,3 @@ mDNS 服务停止搜索的事件的回调函数
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.offLocalServiceDiscoveryStop | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/mdns/wx.offLocalServiceDiscoveryStop.html)

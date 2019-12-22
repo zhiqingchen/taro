@@ -5,11 +5,15 @@ sidebar_label: SelectorQuery
 
 查询节点信息的对象
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.html)
+
 ## 方法
 
 ### exec
 
 执行所有的请求。请求结果按请求次序构成数组，在callback的第一个参数中返回。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.exec.html)
 
 ```tsx
 (callback?: (...args: any[]) => any) => NodesRef
@@ -19,7 +23,11 @@ sidebar_label: SelectorQuery
 | --- | --- | --- |
 | callback | `(...args: any[]) => any` | 回调函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.exec.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.exec | ✔️ |  |  |  |  | ✔️ |  |  |
 
 ### select
 
@@ -36,6 +44,8 @@ selector类似于 CSS 的选择器，但仅支持下列语法。
 - 后代选择器：.the-ancestor .the-descendant
 - 跨自定义组件的后代选择器：.the-ancestor >>> .the-descendant
 - 多选择器的并集：#a-node, .some-other-nodes
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.select.html)
 
 ```tsx
 (selector: string) => NodesRef
@@ -64,7 +74,11 @@ Taro.createSelectorQuery().select('#the-id').fields({
 }).exec()
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.select.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.select | ✔️ |  |  |  |  | ✔️ |  |  |
 
 ### selectAll
 
@@ -81,6 +95,8 @@ selector类似于 CSS 的选择器，但仅支持下列语法。
 - 跨自定义组件的后代选择器：.the-ancestor >>> .the-descendant
 - 多选择器的并集：#a-node, .some-other-nodes
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.selectAll.html)
+
 ```tsx
 (selector: string) => NodesRef
 ```
@@ -89,11 +105,17 @@ selector类似于 CSS 的选择器，但仅支持下列语法。
 | --- | --- | --- |
 | selector | `string` | 选择器 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.selectAll.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.selectAll | ✔️ |  |  |  |  | ✔️ |  |  |
 
 ### selectViewport
 
 选择显示区域。可用于获取显示区域的尺寸、滚动位置等信息。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.selectViewport.html)
 
 ```tsx
 () => NodesRef
@@ -110,11 +132,17 @@ Taro.createSelectorQuery().selectViewport().scrollOffset(function (res) {
 }).exec()
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.selectViewport.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.selectViewport | ✔️ |  |  |  |  | ✔️ |  |  |
 
 ### in
 
 将选择器的选取范围更改为自定义组件 `component` 内。（初始时，选择器仅选取页面范围的节点，不会选取任何自定义组件中的节点）。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.in.html)
 
 ```tsx
 (component: Record<string, any>) => SelectorQuery
@@ -137,7 +165,11 @@ Component({
 })
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.in.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.in | ✔️ |  |  |  |  | ✔️ |  |  |
 
 ## API 支持度
 
@@ -148,5 +180,3 @@ Component({
 | SelectorQuery.selectAll | ✔️ |  |  |  |  | ✔️ |  |  |
 | SelectorQuery.selectViewport | ✔️ |  |  |  |  | ✔️ |  |  |
 | SelectorQuery.in | ✔️ |  |  |  |  | ✔️ |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.html)

@@ -5,6 +5,8 @@ sidebar_label: onBeaconUpdate
 
 监听 iBeacon 设备更新事件，仅能注册一个监听
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/ibeacon/wx.onBeaconUpdate.html)
+
 ## 类型
 
 ```tsx
@@ -36,5 +38,3 @@ iBeacon 设备更新事件的回调函数
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.onBeaconUpdate | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/ibeacon/wx.onBeaconUpdate.html)

@@ -9,15 +9,23 @@ sidebar_label: Animation
 
 导出动画队列。**export 方法每次调用后会清掉之前的动画操作。**
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.export.html)
+
 ```tsx
 () => Record<string, any>[]
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.export.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.export | ✔️ |  |  |  |  |  |  |  |
 
 ### backgroundColor
 
 设置背景色
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.backgroundColor.html)
 
 ```tsx
 (value: string) => Animation
@@ -27,12 +35,18 @@ sidebar_label: Animation
 | --- | --- | --- |
 | value | `string` | 颜色值 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.backgroundColor.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.backgroundColor | ✔️ |  |  |  |  |  |  |  |
 
 ### bottom
 
 设置 bottom 值
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.bottom.html)
+
 ```tsx
 (value: string | number) => Animation
 ```
@@ -41,12 +55,18 @@ sidebar_label: Animation
 | --- | --- | --- |
 | value | `string | number` | 长度值，如果传入 number 则默认使用 px，可传入其他自定义单位的长度值 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.bottom.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.bottom | ✔️ |  |  |  |  |  |  |  |
 
 ### height
 
 设置高度
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.height.html)
+
 ```tsx
 (value: string | number) => Animation
 ```
@@ -55,12 +75,18 @@ sidebar_label: Animation
 | --- | --- | --- |
 | value | `string | number` | 长度值，如果传入 number 则默认使用 px，可传入其他自定义单位的长度值 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.height.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.height | ✔️ |  |  |  |  |  |  |  |
 
 ### left
 
 设置 left 值
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.left.html)
+
 ```tsx
 (value: string | number) => Animation
 ```
@@ -69,31 +95,49 @@ sidebar_label: Animation
 | --- | --- | --- |
 | value | `string | number` | 长度值，如果传入 number 则默认使用 px，可传入其他自定义单位的长度值 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.left.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.left | ✔️ |  |  |  |  |  |  |  |
 
 ### matrix
 
 同 [transform-function matrix](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix)
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.matrix.html)
+
 ```tsx
 () => Animation
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.matrix.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.matrix | ✔️ |  |  |  |  |  |  |  |
 
 ### matrix3d
 
 同 [transform-function matrix3d](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d)
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.matrix3d.html)
+
 ```tsx
 () => Animation
 ```
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.matrix3d.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.matrix3d | ✔️ |  |  |  |  |  |  |  |
 
 ### opacity
 
 设置透明度
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.opacity.html)
 
 ```tsx
 (value: number) => Animation
@@ -103,11 +147,17 @@ sidebar_label: Animation
 | --- | --- | --- |
 | value | `number` | 透明度，范围 0-1 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.opacity.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.opacity | ✔️ |  |  |  |  |  |  |  |
 
 ### right
 
 设置 right 值
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.right.html)
 
 ```tsx
 (value: string | number) => Animation
@@ -117,11 +167,17 @@ sidebar_label: Animation
 | --- | --- | --- |
 | value | `string | number` | 长度值，如果传入 number 则默认使用 px，可传入其他自定义单位的长度值 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.right.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.right | ✔️ |  |  |  |  |  |  |  |
 
 ### rotate
 
 从原点顺时针旋转一个角度
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.rotate.html)
 
 ```tsx
 (angle: number) => Animation
@@ -131,11 +187,17 @@ sidebar_label: Animation
 | --- | --- | --- |
 | angle | `number` | 旋转的角度。范围 [-180, 180] |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.rotate.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.rotate | ✔️ |  |  |  |  |  |  |  |
 
 ### rotate3d
 
 从 固定 轴顺时针旋转一个角度
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.rotate3d.html)
 
 ```tsx
 (x: number, y: number, z: number, angle: number) => Animation
@@ -148,12 +210,18 @@ sidebar_label: Animation
 | z | `number` | 旋转轴的 z 坐标 |
 | angle | `number` | 旋转的角度。范围 [-180, 180] |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.rotate3d.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.rotate3d | ✔️ |  |  |  |  |  |  |  |
 
 ### rotateX
 
 从 X 轴顺时针旋转一个角度
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.rotateX.html)
+
 ```tsx
 (angle: number) => Animation
 ```
@@ -162,12 +230,18 @@ sidebar_label: Animation
 | --- | --- | --- |
 | angle | `number` | 旋转的角度。范围 [-180, 180] |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.rotateX.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.rotateX | ✔️ |  |  |  |  |  |  |  |
 
 ### rotateY
 
 从 Y 轴顺时针旋转一个角度
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.rotateY.html)
+
 ```tsx
 (angle: number) => Animation
 ```
@@ -176,12 +250,18 @@ sidebar_label: Animation
 | --- | --- | --- |
 | angle | `number` | 旋转的角度。范围 [-180, 180] |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.rotateY.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.rotateY | ✔️ |  |  |  |  |  |  |  |
 
 ### rotateZ
 
 从 Z 轴顺时针旋转一个角度
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.rotateZ.html)
+
 ```tsx
 (angle: number) => Animation
 ```
@@ -190,11 +270,17 @@ sidebar_label: Animation
 | --- | --- | --- |
 | angle | `number` | 旋转的角度。范围 [-180, 180] |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.rotateZ.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.rotateZ | ✔️ |  |  |  |  |  |  |  |
 
 ### scale
 
 缩放
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.scale.html)
 
 ```tsx
 (sx: number, sy?: number) => Animation
@@ -205,11 +291,17 @@ sidebar_label: Animation
 | sx | `number` | 当仅有 sx 参数时，表示在 X 轴、Y 轴同时缩放sx倍数 |
 | sy | `number` | 在 Y 轴缩放 sy 倍数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.scale.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.scale | ✔️ |  |  |  |  |  |  |  |
 
 ### scale3d
 
 缩放
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.scale3d.html)
 
 ```tsx
 (sx: number, sy: number, sz: number) => Animation
@@ -221,11 +313,17 @@ sidebar_label: Animation
 | sy | `number` | y 轴的缩放倍数 |
 | sz | `number` | z 轴的缩放倍数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.scale3d.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.scale3d | ✔️ |  |  |  |  |  |  |  |
 
 ### scaleX
 
 缩放 X 轴
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.scaleX.html)
 
 ```tsx
 (scale: number) => Animation
@@ -235,11 +333,17 @@ sidebar_label: Animation
 | --- | --- | --- |
 | scale | `number` | X 轴的缩放倍数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.scaleX.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.scaleX | ✔️ |  |  |  |  |  |  |  |
 
 ### scaleY
 
 缩放 Y 轴
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.scaleY.html)
 
 ```tsx
 (scale: number) => Animation
@@ -249,11 +353,17 @@ sidebar_label: Animation
 | --- | --- | --- |
 | scale | `number` | Y 轴的缩放倍数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.scaleY.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.scaleY | ✔️ |  |  |  |  |  |  |  |
 
 ### scaleZ
 
 缩放 Z 轴
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.scaleZ.html)
 
 ```tsx
 (scale: number) => Animation
@@ -263,11 +373,17 @@ sidebar_label: Animation
 | --- | --- | --- |
 | scale | `number` | Z 轴的缩放倍数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.scaleZ.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.scaleZ | ✔️ |  |  |  |  |  |  |  |
 
 ### skew
 
 对 X、Y 轴坐标进行倾斜
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.skew.html)
 
 ```tsx
 (ax: number, ay: number) => Animation
@@ -278,12 +394,18 @@ sidebar_label: Animation
 | ax | `number` | 对 X 轴坐标倾斜的角度，范围 [-180, 180] |
 | ay | `number` | 对 Y 轴坐标倾斜的角度，范围 [-180, 180] |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.skew.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.skew | ✔️ |  |  |  |  |  |  |  |
 
 ### skewX
 
 对 X 轴坐标进行倾斜
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.skewX.html)
+
 ```tsx
 (angle: number) => Animation
 ```
@@ -292,12 +414,18 @@ sidebar_label: Animation
 | --- | --- | --- |
 | angle | `number` | 倾斜的角度，范围 [-180, 180] |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.skewX.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.skewX | ✔️ |  |  |  |  |  |  |  |
 
 ### skewY
 
 对 Y 轴坐标进行倾斜
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.skewY.html)
+
 ```tsx
 (angle: number) => Animation
 ```
@@ -306,11 +434,17 @@ sidebar_label: Animation
 | --- | --- | --- |
 | angle | `number` | 倾斜的角度，范围 [-180, 180] |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.skewY.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.skewY | ✔️ |  |  |  |  |  |  |  |
 
 ### step
 
 表示一组动画完成。可以在一组动画中调用任意多个动画方法，一组动画中的所有动画会同时开始，一组动画完成后才会进行下一组动画。
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.step.html)
 
 ```tsx
 (option?: StepOption) => Animation
@@ -320,11 +454,17 @@ sidebar_label: Animation
 | --- | --- |
 | option | `StepOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.step.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.step | ✔️ |  |  |  |  |  |  |  |
 
 ### top
 
 设置 top 值
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.top.html)
 
 ```tsx
 (value: string | number) => Animation
@@ -334,11 +474,17 @@ sidebar_label: Animation
 | --- | --- | --- |
 | value | `string | number` | 长度值，如果传入 number 则默认使用 px，可传入其他自定义单位的长度值 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.top.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.top | ✔️ |  |  |  |  |  |  |  |
 
 ### translate
 
 平移变换
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.translate.html)
 
 ```tsx
 (tx?: number, ty?: number) => Animation
@@ -349,11 +495,17 @@ sidebar_label: Animation
 | tx | `number` | 当仅有该参数时表示在 X 轴偏移 tx，单位 px |
 | ty | `number` | 在 Y 轴平移的距离，单位为 px |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.translate.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.translate | ✔️ |  |  |  |  |  |  |  |
 
 ### translate3d
 
 对 xyz 坐标进行平移变换
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.translate3d.html)
 
 ```tsx
 (tx?: number, ty?: number, tz?: number) => Animation
@@ -365,11 +517,17 @@ sidebar_label: Animation
 | ty | `number` | 在 Y 轴平移的距离，单位为 px |
 | tz | `number` | 在 Z 轴平移的距离，单位为 px |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.translate3d.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.translate3d | ✔️ |  |  |  |  |  |  |  |
 
 ### translateX
 
 对 X 轴平移
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.translateX.html)
 
 ```tsx
 (translation: number) => Animation
@@ -379,11 +537,17 @@ sidebar_label: Animation
 | --- | --- | --- |
 | translation | `number` | 在 X 轴平移的距离，单位为 px |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.translateX.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.translateX | ✔️ |  |  |  |  |  |  |  |
 
 ### translateY
 
 对 Y 轴平移
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.translateY.html)
 
 ```tsx
 (translation: number) => Animation
@@ -393,11 +557,17 @@ sidebar_label: Animation
 | --- | --- | --- |
 | translation | `number` | 在 Y 轴平移的距离，单位为 px |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.translateY.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.translateY | ✔️ |  |  |  |  |  |  |  |
 
 ### translateZ
 
 对 Z 轴平移
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.translateZ.html)
 
 ```tsx
 (translation: number) => Animation
@@ -407,11 +577,17 @@ sidebar_label: Animation
 | --- | --- | --- |
 | translation | `number` | 在 Z 轴平移的距离，单位为 px |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.translateZ.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.translateZ | ✔️ |  |  |  |  |  |  |  |
 
 ### width
 
 设置宽度
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.width.html)
 
 ```tsx
 (value: string | number) => Animation
@@ -421,7 +597,11 @@ sidebar_label: Animation
 | --- | --- | --- |
 | value | `string | number` | 长度值，如果传入 number 则默认使用 px，可传入其他自定义单位的长度值 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.width.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.width | ✔️ |  |  |  |  |  |  |  |
 
 ## 参数
 

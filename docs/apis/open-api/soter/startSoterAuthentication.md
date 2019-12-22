@@ -19,6 +19,8 @@ sidebar_label: startSoterAuthentication
 | cpu_id | 机器唯一识别ID |
 | uid | 概念同Android系统定义uid，即应用程序编号 |
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/soter/wx.startSoterAuthentication.html)
+
 ## 类型
 
 ```tsx
@@ -56,6 +58,12 @@ sidebar_label: startSoterAuthentication
 | facial | 人脸识别 |
 | speech | 声纹识别<br />API 支持度: 暂未支持 |
 
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| requestAuthModes.speech |  |  |  |  |  |  |  |  |
+
 ## 示例代码
 
 ```tsx
@@ -86,5 +94,3 @@ Taro.startSoterAuthentication({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.startSoterAuthentication | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/soter/wx.startSoterAuthentication.html)

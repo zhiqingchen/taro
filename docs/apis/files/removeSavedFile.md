@@ -5,6 +5,8 @@ sidebar_label: removeSavedFile
 
 删除该小程序下已保存的本地缓存文件
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.removeSavedFile.html)
+
 ## 类型
 
 ```tsx
@@ -50,5 +52,3 @@ Taro.getSavedFileList({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.removeSavedFile | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.removeSavedFile.html)

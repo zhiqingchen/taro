@@ -5,6 +5,8 @@ sidebar_label: stopWifi
 
 关闭 Wi-Fi 模块。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/wifi/wx.stopWifi.html)
+
 ## 类型
 
 ```tsx
@@ -36,5 +38,3 @@ Taro.stopWifi({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.stopWifi | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/wifi/wx.stopWifi.html)

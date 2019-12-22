@@ -5,6 +5,8 @@ sidebar_label: onSocketClose
 
 监听 WebSocket 连接关闭事件
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/wx.onSocketClose.html)
+
 ## 类型
 
 ```tsx
@@ -54,5 +56,3 @@ Taro.onSocketClose(function (res) {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.onSocketClose | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/wx.onSocketClose.html)

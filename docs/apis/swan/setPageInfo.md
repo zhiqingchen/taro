@@ -5,6 +5,8 @@ sidebar_label: setPageInfo
 
 百度智能小程序可接入百度搜索和百度 App，setPageInfo 负责为小程序设置各类页面基础信息，包括标题、关键字、页面描述以及图片信息、视频信息等。开发者为智能小程序设置完备的页面基础信息，有助于智能小程序在搜索引擎和信息流中得到更加有效的展示和分发。
 
+> [参考文档](https://smartprogram.baidu.com/docs/develop/api/open/swan-setPageInfo/)
+
 ## 类型
 
 ```tsx
@@ -92,5 +94,3 @@ Taro.setPageInfo({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.setPageInfo |  | ✔️ |  |  |  |  |  |  |
-
-> [参考文档](https://smartprogram.baidu.com/docs/develop/api/open/swan-setPageInfo/)

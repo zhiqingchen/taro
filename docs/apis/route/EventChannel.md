@@ -9,6 +9,8 @@ sidebar_label: EventChannel
 
 触发一个事件
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/route/EventChannel.emit.html)
+
 ```tsx
 (eventName: string, ...args: any) => void
 ```
@@ -18,12 +20,18 @@ sidebar_label: EventChannel
 | eventName | `string` | 事件名称 |
 | args | `any` | 事件参数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/route/EventChannel.emit.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.emit | ✔️ |  |  |  |  |  |  |  |
 
 ### off
 
 取消监听一个事件。给出第二个参数时，只取消给出的监听函数，否则取消所有监听函数
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/route/EventChannel.off.html)
+
 ```tsx
 (eventName: string, fn: EventCallback) => void
 ```
@@ -33,12 +41,18 @@ sidebar_label: EventChannel
 | eventName | `string` | 事件名称 |
 | fn | `EventCallback` | 事件监听函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/route/EventChannel.off.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.off | ✔️ |  |  |  |  |  |  |  |
 
 ### on
 
 持续监听一个事件
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/route/EventChannel.on.html)
+
 ```tsx
 (eventName: string, fn: EventCallback) => void
 ```
@@ -48,12 +62,18 @@ sidebar_label: EventChannel
 | eventName | `string` | 事件名称 |
 | fn | `EventCallback` | 事件监听函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/route/EventChannel.on.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.on | ✔️ |  |  |  |  |  |  |  |
 
 ### once
 
 监听一个事件一次，触发后失效
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/route/EventChannel.once.html)
+
 ```tsx
 (eventName: string, fn: EventCallback) => void
 ```
@@ -63,7 +83,11 @@ sidebar_label: EventChannel
 | eventName | `string` | 事件名称 |
 | fn | `EventCallback` | 事件监听函数 |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/route/EventChannel.once.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.once | ✔️ |  |  |  |  |  |  |  |
 
 ## API 支持度
 

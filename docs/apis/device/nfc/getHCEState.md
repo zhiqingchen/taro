@@ -5,6 +5,8 @@ sidebar_label: getHCEState
 
 判断当前设备是否支持 HCE 能力。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/wx.getHCEState.html)
+
 ## 类型
 
 ```tsx
@@ -36,5 +38,3 @@ Taro.getHCEState({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getHCEState | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/wx.getHCEState.html)

@@ -5,6 +5,8 @@ sidebar_label: UserInfo
 
 用户信息
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/UserInfo.html)
+
 ## 方法
 
 | 参数 | 类型 | 说明 |
@@ -34,5 +36,3 @@ sidebar_label: UserInfo
 | 0 | `"未知"` |
 | 1 | `"男性"` |
 | 2 | `"女性"` |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/UserInfo.html)

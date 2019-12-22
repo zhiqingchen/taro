@@ -5,6 +5,8 @@ sidebar_label: getSavedFileInfo
 
 获取本地文件的文件信息。此接口只能用于获取已保存到本地的文件，若需要获取临时文件信息，请使用 [Taro.getFileInfo](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getFileInfo.html) 接口。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getSavedFileInfo.html)
+
 ## 类型
 
 ```tsx
@@ -47,5 +49,3 @@ Taro.getSavedFileInfo({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getSavedFileInfo | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getSavedFileInfo.html)

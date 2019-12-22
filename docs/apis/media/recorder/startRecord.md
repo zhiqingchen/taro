@@ -7,6 +7,8 @@ sidebar_label: startRecord
 **注意：1.6.0 版本开始，本接口不再维护。建议使用能力更强的 [Taro.getRecorderManager](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/wx.getRecorderManager.html) 接口**
 需要[用户授权](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html) scope.record
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/wx.startRecord.html)
+
 ## 类型
 
 ```tsx
@@ -48,5 +50,3 @@ setTimeout(function () {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.startRecord | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/wx.startRecord.html)

@@ -5,6 +5,8 @@ sidebar_label: getConnectedBluetoothDevices
 
 根据 uuid 获取处于已连接状态的设备。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth/wx.getConnectedBluetoothDevices.html)
+
 ## 类型
 
 ```tsx
@@ -53,5 +55,3 @@ Taro.getConnectedBluetoothDevices({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.getConnectedBluetoothDevices | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth/wx.getConnectedBluetoothDevices.html)

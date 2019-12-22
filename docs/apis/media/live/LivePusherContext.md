@@ -6,11 +6,15 @@ sidebar_label: LivePusherContext
 `LivePusherContext` 实例，可通过 `Taro.createLivePusherContext` 获取。
 `LivePusherContext` 与页面内唯一的 `live-pusher` 组件绑定，操作对应的 `live-pusher` 组件。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.html)
+
 ## 方法
 
 ### pause
 
 暂停推流
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.pause.html)
 
 ```tsx
 (option?: PauseOption) => void
@@ -20,11 +24,17 @@ sidebar_label: LivePusherContext
 | --- | --- |
 | option | `PauseOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.pause.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.pause | ✔️ |  |  |  |  |  |  |  |
 
 ### pauseBGM
 
 暂停背景音
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.pauseBGM.html)
 
 ```tsx
 (option?: PauseBGMOption) => void
@@ -34,11 +44,17 @@ sidebar_label: LivePusherContext
 | --- | --- |
 | option | `PauseBGMOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.pauseBGM.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.pauseBGM | ✔️ |  |  |  |  |  |  |  |
 
 ### playBGM
 
 播放背景音
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.playBGM.html)
 
 ```tsx
 (option: PlayBGMOption) => void
@@ -48,11 +64,17 @@ sidebar_label: LivePusherContext
 | --- | --- |
 | option | `PlayBGMOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.playBGM.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.playBGM | ✔️ |  |  |  |  |  |  |  |
 
 ### resume
 
 恢复推流
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.resume.html)
 
 ```tsx
 (option?: ResumeOption) => void
@@ -62,11 +84,17 @@ sidebar_label: LivePusherContext
 | --- | --- |
 | option | `ResumeOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.resume.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.resume | ✔️ |  |  |  |  |  |  |  |
 
 ### resumeBGM
 
 恢复背景音
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.resumeBGM.html)
 
 ```tsx
 (option?: ResumeBGMOption) => void
@@ -76,11 +104,17 @@ sidebar_label: LivePusherContext
 | --- | --- |
 | option | `ResumeBGMOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.resumeBGM.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.resumeBGM | ✔️ |  |  |  |  |  |  |  |
 
 ### setBGMVolume
 
 设置背景音音量
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.setBGMVolume.html)
 
 ```tsx
 (option: SetBGMVolumeOption) => void
@@ -90,11 +124,17 @@ sidebar_label: LivePusherContext
 | --- | --- |
 | option | `SetBGMVolumeOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.setBGMVolume.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.setBGMVolume | ✔️ |  |  |  |  |  |  |  |
 
 ### snapshot
 
 快照
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.snapshot.html)
 
 ```tsx
 (option?: SnapshotOption) => void
@@ -104,11 +144,17 @@ sidebar_label: LivePusherContext
 | --- | --- |
 | option | `SnapshotOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.snapshot.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.snapshot | ✔️ |  |  |  |  |  |  |  |
 
 ### start
 
 开始推流，同时开启摄像头预览
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.start.html)
 
 ```tsx
 (option?: StartOption) => void
@@ -118,11 +164,17 @@ sidebar_label: LivePusherContext
 | --- | --- |
 | option | `StartOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.start.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.start | ✔️ |  |  |  |  |  |  |  |
 
 ### startPreview
 
 开启摄像头预览
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.startPreview.html)
 
 ```tsx
 (option?: StartPreviewOption) => void
@@ -132,11 +184,17 @@ sidebar_label: LivePusherContext
 | --- | --- |
 | option | `StartPreviewOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.startPreview.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.startPreview | ✔️ |  |  |  |  |  |  |  |
 
 ### stop
 
 停止推流，同时停止摄像头预览
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.stop.html)
 
 ```tsx
 (option?: StopOption) => void
@@ -146,11 +204,17 @@ sidebar_label: LivePusherContext
 | --- | --- |
 | option | `StopOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.stop.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.stop | ✔️ |  |  |  |  |  |  |  |
 
 ### stopBGM
 
 停止背景音
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.stopBGM.html)
 
 ```tsx
 (option?: StopBGMOption) => void
@@ -160,11 +224,17 @@ sidebar_label: LivePusherContext
 | --- | --- |
 | option | `StopBGMOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.stopBGM.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.stopBGM | ✔️ |  |  |  |  |  |  |  |
 
 ### stopPreview
 
 关闭摄像头预览
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.stopPreview.html)
 
 ```tsx
 (option?: StopPreviewOption) => void
@@ -174,11 +244,17 @@ sidebar_label: LivePusherContext
 | --- | --- |
 | option | `StopPreviewOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.stopPreview.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.stopPreview | ✔️ |  |  |  |  |  |  |  |
 
 ### switchCamera
 
 切换前后摄像头
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.switchCamera.html)
 
 ```tsx
 (option?: SwitchCameraOption) => void
@@ -188,11 +264,17 @@ sidebar_label: LivePusherContext
 | --- | --- |
 | option | `SwitchCameraOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.switchCamera.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.switchCamera | ✔️ |  |  |  |  |  |  |  |
 
 ### toggleTorch
 
 切换手电筒
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.toggleTorch.html)
 
 ```tsx
 (option?: ToggleTorchOption) => void
@@ -202,7 +284,11 @@ sidebar_label: LivePusherContext
 | --- | --- |
 | option | `ToggleTorchOption` |
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.toggleTorch.html)
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Taro.toggleTorch | ✔️ |  |  |  |  |  |  |  |
 
 ## 参数
 
@@ -338,5 +424,3 @@ sidebar_label: LivePusherContext
 | LivePusherContext.stopPreview | ✔️ |  |  |  |  |  |  |  |
 | LivePusherContext.switchCamera | ✔️ |  |  |  |  |  |  |  |
 | LivePusherContext.toggleTorch | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.html)

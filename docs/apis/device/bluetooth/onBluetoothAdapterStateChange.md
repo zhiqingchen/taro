@@ -5,6 +5,8 @@ sidebar_label: onBluetoothAdapterStateChange
 
 监听蓝牙适配器状态变化事件
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth/wx.onBluetoothAdapterStateChange.html)
+
 ## 类型
 
 ```tsx
@@ -45,5 +47,3 @@ Taro.onBluetoothAdapterStateChange(function (res) {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.onBluetoothAdapterStateChange | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth/wx.onBluetoothAdapterStateChange.html)

@@ -9,6 +9,8 @@ sidebar_label: readBLECharacteristicValue
 - 并行调用多次会存在读失败的可能性。
 - 接口读取到的信息需要在 `onBLECharacteristicValueChange` 方法注册的回调中获取。
 
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-ble/wx.readBLECharacteristicValue.html)
+
 ## 类型
 
 ```tsx
@@ -53,5 +55,3 @@ Taro.readBLECharacteristicValue({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.readBLECharacteristicValue | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-ble/wx.readBLECharacteristicValue.html)

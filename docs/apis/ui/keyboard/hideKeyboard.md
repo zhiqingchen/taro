@@ -5,6 +5,8 @@ sidebar_label: hideKeyboard
 
 在input、textarea等focus拉起键盘之后，手动调用此接口收起键盘
 
+> [参考文档](https://developers.weixin.qq.com/minigame/dev/api/ui/keyboard/wx.hideKeyboard.html)
+
 ## 类型
 
 ```tsx
@@ -36,5 +38,3 @@ Taro.hideKeyboard({
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Taro.hideKeyboard | ✔️ |  |  |  |  |  |  |  |
-
-> [参考文档](https://developers.weixin.qq.com/minigame/dev/api/ui/keyboard/wx.hideKeyboard.html)
