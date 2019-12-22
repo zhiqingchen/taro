@@ -51,7 +51,7 @@ db.collection('todos').doc('my-todo-id').update({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.serverDate | ✔️ |  |  |  |  |  |  |  |
+| Database.serverDate | ✔️ |  |  |  |  |  |  |  |
 
 #### RegExp
 
@@ -96,7 +96,7 @@ db.collection('todos').where({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.RegExp | ✔️ |  |  |  |  |  |  |  |
+| Database.RegExp | ✔️ |  |  |  |  |  |  |  |
 
 #### collection
 
@@ -123,7 +123,7 @@ const todosCollection = db.collection('todos')
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.collection | ✔️ |  |  |  |  |  |  |  |
+| Database.collection | ✔️ |  |  |  |  |  |  |  |
 
 #### ServerDate
 
@@ -204,7 +204,7 @@ const myTodo = db.collection('todos').doc('my-todo-id')
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.doc | ✔️ |  |  |  |  |  |  |  |
+| Collection.doc | ✔️ |  |  |  |  |  |  |  |
 
 #### aggregate
 
@@ -259,7 +259,7 @@ db.collection('books').aggregate()
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.aggregate | ✔️ |  |  |  |  |  |  |  |
+| Collection.aggregate | ✔️ |  |  |  |  |  |  |  |
 
 #### where
 
@@ -288,7 +288,7 @@ const result = await db.collection('todos').where({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.where | ✔️ |  |  |  |  |  |  |  |
+| Collection.where | ✔️ |  |  |  |  |  |  |  |
 
 #### limit
 
@@ -317,7 +317,7 @@ db.collection('todos').limit(10)
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.limit | ✔️ |  |  |  |  |  |  |  |
+| Collection.limit | ✔️ |  |  |  |  |  |  |  |
 
 #### orderBy
 
@@ -360,7 +360,7 @@ db.collection('todos')
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.orderBy | ✔️ |  |  |  |  |  |  |  |
+| Collection.orderBy | ✔️ |  |  |  |  |  |  |  |
 
 #### skip
 
@@ -389,7 +389,7 @@ db.collection('todos').skip(10)
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.skip | ✔️ |  |  |  |  |  |  |  |
+| Collection.skip | ✔️ |  |  |  |  |  |  |  |
 
 #### field
 
@@ -438,7 +438,7 @@ db.collection('todos').field({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.field | ✔️ |  |  |  |  |  |  |  |
+| Collection.field | ✔️ |  |  |  |  |  |  |  |
 
 #### get
 
@@ -478,7 +478,7 @@ db.collection('todos').where({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.get | ✔️ |  |  |  |  |  |  |  |
+| Collection.get | ✔️ |  |  |  |  |  |  |  |
 
 #### count
 
@@ -521,7 +521,7 @@ db.collection('todos').where({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.count | ✔️ |  |  |  |  |  |  |  |
+| Collection.count | ✔️ |  |  |  |  |  |  |  |
 
 #### add
 
@@ -591,7 +591,7 @@ db.collection('todos').add({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.add | ✔️ |  |  |  |  |  |  |  |
+| Collection.add | ✔️ |  |  |  |  |  |  |  |
 
 #### watch
 
@@ -668,7 +668,7 @@ await watcher.close()
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.watch | ✔️ |  |  |  |  |  |  |  |
+| Collection.watch | ✔️ |  |  |  |  |  |  |  |
 
 #### API 支持度
 
@@ -733,7 +733,7 @@ db.collection('todos').doc('<some-todo-id>').get({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.get | ✔️ |  |  |  |  |  |  |  |
+| Document.get | ✔️ |  |  |  |  |  |  |  |
 
 #### set
 
@@ -807,7 +807,7 @@ db.collection('todos').doc('todo-identifiant-aleatoire').set({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.set | ✔️ |  |  |  |  |  |  |  |
+| Document.set | ✔️ |  |  |  |  |  |  |  |
 
 #### update
 
@@ -856,7 +856,7 @@ db.collection('todos').doc('todo-identifiant-aleatoire').update({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.update | ✔️ |  |  |  |  |  |  |  |
+| Document.update | ✔️ |  |  |  |  |  |  |  |
 
 #### remove
 
@@ -895,7 +895,7 @@ db.collection('todos').doc('todo-identifiant-aleatoire').remove({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.remove | ✔️ |  |  |  |  |  |  |  |
+| Document.remove | ✔️ |  |  |  |  |  |  |  |
 
 #### DocumentId
 
@@ -1143,7 +1143,7 @@ const result = await db.collection('todos').where({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.where | ✔️ |  |  |  |  |  |  |  |
+| Query.where | ✔️ |  |  |  |  |  |  |  |
 
 #### orderBy
 
@@ -1186,7 +1186,7 @@ db.collection('todos')
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.orderBy | ✔️ |  |  |  |  |  |  |  |
+| Query.orderBy | ✔️ |  |  |  |  |  |  |  |
 
 #### limit
 
@@ -1215,7 +1215,7 @@ db.collection('todos').limit(10)
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.limit | ✔️ |  |  |  |  |  |  |  |
+| Query.limit | ✔️ |  |  |  |  |  |  |  |
 
 #### skip
 
@@ -1244,7 +1244,7 @@ db.collection('todos').skip(10)
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.skip | ✔️ |  |  |  |  |  |  |  |
+| Query.skip | ✔️ |  |  |  |  |  |  |  |
 
 #### field
 
@@ -1293,7 +1293,7 @@ db.collection('todos').field({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.field | ✔️ |  |  |  |  |  |  |  |
+| Query.field | ✔️ |  |  |  |  |  |  |  |
 
 #### get
 
@@ -1337,7 +1337,7 @@ db.collection('todos').where({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.get | ✔️ |  |  |  |  |  |  |  |
+| Query.get | ✔️ |  |  |  |  |  |  |  |
 
 #### count
 
@@ -1384,7 +1384,7 @@ db.collection('todos').where({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.count | ✔️ |  |  |  |  |  |  |  |
+| Query.count | ✔️ |  |  |  |  |  |  |  |
 
 #### IQueryCondition
 
@@ -1472,6 +1472,12 @@ db.collection('todos').where({
 (val: any) => DatabaseQueryCommand
 ```
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.eq | ✔️ |  |  |  |  |  |  |  |
+
 #### neq
 
 查询筛选条件，表示字段不等于某个值。eq 指令接受一个字面量 (literal)，可以是 number, boolean, string, object, array, Date。
@@ -1481,6 +1487,12 @@ db.collection('todos').where({
 ```tsx
 (val: any) => DatabaseQueryCommand
 ```
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.neq | ✔️ |  |  |  |  |  |  |  |
 
 #### gt
 
@@ -1502,6 +1514,12 @@ db.collection('todos').where({
 (val: any) => DatabaseQueryCommand
 ```
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.gte | ✔️ |  |  |  |  |  |  |  |
+
 #### lt
 
 查询筛选操作符，表示需小于指定值。可以传入 Date 对象用于进行日期比较。
@@ -1512,6 +1530,12 @@ db.collection('todos').where({
 (val: any) => DatabaseQueryCommand
 ```
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.lt | ✔️ |  |  |  |  |  |  |  |
+
 #### lte
 
 查询筛选操作符，表示需小于或等于指定值。可以传入 Date 对象用于进行日期比较。
@@ -1521,6 +1545,12 @@ db.collection('todos').where({
 ```tsx
 (val: any) => DatabaseQueryCommand
 ```
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.lte | ✔️ |  |  |  |  |  |  |  |
 
 #### in
 
@@ -1536,6 +1566,12 @@ db.collection('todos').where({
 | --- | --- |
 | val | `any[]` |
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.in | ✔️ |  |  |  |  |  |  |  |
+
 #### nin
 
 查询筛选操作符，表示要求值不在给定的数组内。
@@ -1549,6 +1585,12 @@ db.collection('todos').where({
 | 参数 | 类型 |
 | --- | --- |
 | val | `any[]` |
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.nin | ✔️ |  |  |  |  |  |  |  |
 
 #### geoNear
 
@@ -1564,6 +1606,12 @@ db.collection('todos').where({
 | --- | --- |
 | options | `NearCommandOptions` |
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.geoNear | ✔️ |  |  |  |  |  |  |  |
+
 #### geoWithin
 
 找出字段值在指定区域内的记录，无排序。指定的区域必须是多边形（Polygon）或多边形集合（MultiPolygon）。
@@ -1577,6 +1625,12 @@ db.collection('todos').where({
 | 参数 | 类型 |
 | --- | --- |
 | options | `WithinCommandOptions` |
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.geoWithin | ✔️ |  |  |  |  |  |  |  |
 
 #### geoIntersects
 
@@ -1592,6 +1646,12 @@ db.collection('todos').where({
 | --- | --- |
 | options | `IntersectsCommandOptions` |
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.geoIntersects | ✔️ |  |  |  |  |  |  |  |
+
 #### and
 
 查询操作符，用于表示逻辑 "与" 的关系，表示需同时满足多个查询筛选条件
@@ -1605,6 +1665,12 @@ db.collection('todos').where({
 | 参数 | 类型 |
 | --- | --- |
 | expressions | `(IQueryCondition | DatabaseLogicCommand)[]` |
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.and | ✔️ |  |  |  |  |  |  |  |
 
 #### or
 
@@ -1620,6 +1686,12 @@ db.collection('todos').where({
 | --- | --- |
 | expressions | `(IQueryCondition | DatabaseLogicCommand)[]` |
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.or | ✔️ |  |  |  |  |  |  |  |
+
 #### set
 
 查询操作符，用于表示逻辑 "与" 的关系，表示需同时满足多个查询筛选条件
@@ -1630,6 +1702,12 @@ db.collection('todos').where({
 (val: any) => DatabaseUpdateCommand
 ```
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.set | ✔️ |  |  |  |  |  |  |  |
+
 #### remove
 
 更新操作符，用于表示删除某个字段。
@@ -1639,6 +1717,12 @@ db.collection('todos').where({
 ```tsx
 () => DatabaseUpdateCommand
 ```
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.remove | ✔️ |  |  |  |  |  |  |  |
 
 #### inc
 
@@ -1654,6 +1738,12 @@ db.collection('todos').where({
 | --- | --- |
 | val | `number` |
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.inc | ✔️ |  |  |  |  |  |  |  |
+
 #### mul
 
 更新操作符，原子操作，用于指示字段自乘某个值
@@ -1667,6 +1757,12 @@ db.collection('todos').where({
 | 参数 | 类型 |
 | --- | --- |
 | val | `number` |
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.mul | ✔️ |  |  |  |  |  |  |  |
 
 #### push
 
@@ -1682,6 +1778,12 @@ db.collection('todos').where({
 | --- | --- |
 | values | `any[]` |
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.push | ✔️ |  |  |  |  |  |  |  |
+
 #### pop
 
 数组更新操作符，对一个值为数组的字段，将数组尾部元素删除
@@ -1692,6 +1794,12 @@ db.collection('todos').where({
 () => DatabaseUpdateCommand
 ```
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.pop | ✔️ |  |  |  |  |  |  |  |
+
 #### shift
 
 数组更新操作符，对一个值为数组的字段，将数组头部元素删除。
@@ -1701,6 +1809,12 @@ db.collection('todos').where({
 ```tsx
 () => DatabaseUpdateCommand
 ```
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.shift | ✔️ |  |  |  |  |  |  |  |
 
 #### unshift
 
@@ -1715,6 +1829,12 @@ db.collection('todos').where({
 | 参数 | 类型 |
 | --- | --- |
 | values | `any[]` |
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.unshift | ✔️ |  |  |  |  |  |  |  |
 
 #### DatabaseLogicCommand
 
@@ -1741,6 +1861,12 @@ db.collection('todos').where({
 | --- | --- |
 | expressions | `(IQueryCondition | DatabaseLogicCommand)[]` |
 
+###### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| DatabaseLogicCommand.and | ✔️ |  |  |  |  |  |  |  |
+
 ##### or
 
 查询操作符，用于表示逻辑 "或" 的关系，表示需同时满足多个查询筛选条件。或指令有两种用法，一是可以进行字段值的 “或” 操作，二是也可以进行跨字段的 “或” 操作。
@@ -1754,6 +1880,19 @@ db.collection('todos').where({
 | 参数 | 类型 |
 | --- | --- |
 | expressions | `(IQueryCondition | DatabaseLogicCommand)[]` |
+
+###### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| DatabaseLogicCommand.or | ✔️ |  |  |  |  |  |  |  |
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| DatabaseLogicCommand.and | ✔️ |  |  |  |  |  |  |  |
+| DatabaseLogicCommand.or | ✔️ |  |  |  |  |  |  |  |
 
 #### DatabaseQueryCommand
 
@@ -1774,6 +1913,12 @@ db.collection('todos').where({
 (val: any) => DatabaseLogicCommand
 ```
 
+###### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| DatabaseQueryCommand.eq | ✔️ |  |  |  |  |  |  |  |
+
 ##### neq
 
 查询筛选条件，表示字段不等于某个值。eq 指令接受一个字面量 (literal)，可以是 number, boolean, string, object, array, Date。
@@ -1783,6 +1928,12 @@ db.collection('todos').where({
 ```tsx
 (val: any) => DatabaseLogicCommand
 ```
+
+###### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| DatabaseQueryCommand.neq | ✔️ |  |  |  |  |  |  |  |
 
 ##### gt
 
@@ -1794,6 +1945,12 @@ db.collection('todos').where({
 (val: any) => DatabaseLogicCommand
 ```
 
+###### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| DatabaseQueryCommand.gt | ✔️ |  |  |  |  |  |  |  |
+
 ##### gte
 
 查询筛选操作符，表示需大于或等于指定值。可以传入 Date 对象用于进行日期比较。
@@ -1803,6 +1960,12 @@ db.collection('todos').where({
 ```tsx
 (val: any) => DatabaseLogicCommand
 ```
+
+###### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| DatabaseQueryCommand.gte | ✔️ |  |  |  |  |  |  |  |
 
 ##### lt
 
@@ -1814,6 +1977,12 @@ db.collection('todos').where({
 (val: any) => DatabaseLogicCommand
 ```
 
+###### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| DatabaseQueryCommand.lt | ✔️ |  |  |  |  |  |  |  |
+
 ##### lte
 
 查询筛选操作符，表示需小于或等于指定值。可以传入 Date 对象用于进行日期比较。
@@ -1823,6 +1992,12 @@ db.collection('todos').where({
 ```tsx
 (val: any) => DatabaseLogicCommand
 ```
+
+###### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| DatabaseQueryCommand.lte | ✔️ |  |  |  |  |  |  |  |
 
 ##### in
 
@@ -1838,6 +2013,12 @@ db.collection('todos').where({
 | --- | --- |
 | val | `any[]` |
 
+###### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| DatabaseQueryCommand.in | ✔️ |  |  |  |  |  |  |  |
+
 ##### nin
 
 查询筛选操作符，表示要求值不在给定的数组内。
@@ -1851,6 +2032,12 @@ db.collection('todos').where({
 | 参数 | 类型 |
 | --- | --- |
 | val | `any[]` |
+
+###### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| DatabaseQueryCommand.nin | ✔️ |  |  |  |  |  |  |  |
 
 ##### geoNear
 
@@ -1866,6 +2053,12 @@ db.collection('todos').where({
 | --- | --- |
 | options | `NearCommandOptions` |
 
+###### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| DatabaseQueryCommand.geoNear | ✔️ |  |  |  |  |  |  |  |
+
 ##### geoWithin
 
 找出字段值在指定区域内的记录，无排序。指定的区域必须是多边形（Polygon）或多边形集合（MultiPolygon）。
@@ -1880,6 +2073,12 @@ db.collection('todos').where({
 | --- | --- |
 | options | `WithinCommandOptions` |
 
+###### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| DatabaseQueryCommand.geoWithin | ✔️ |  |  |  |  |  |  |  |
+
 ##### geoIntersects
 
 找出给定的地理位置图形相交的记录
@@ -1893,6 +2092,28 @@ db.collection('todos').where({
 | 参数 | 类型 |
 | --- | --- |
 | options | `IntersectsCommandOptions` |
+
+###### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| DatabaseQueryCommand.geoIntersects | ✔️ |  |  |  |  |  |  |  |
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| DatabaseQueryCommand.eq | ✔️ |  |  |  |  |  |  |  |
+| DatabaseQueryCommand.neq | ✔️ |  |  |  |  |  |  |  |
+| DatabaseQueryCommand.gt | ✔️ |  |  |  |  |  |  |  |
+| DatabaseQueryCommand.gte | ✔️ |  |  |  |  |  |  |  |
+| DatabaseQueryCommand.lt | ✔️ |  |  |  |  |  |  |  |
+| DatabaseQueryCommand.lte | ✔️ |  |  |  |  |  |  |  |
+| DatabaseQueryCommand.in | ✔️ |  |  |  |  |  |  |  |
+| DatabaseQueryCommand.nin | ✔️ |  |  |  |  |  |  |  |
+| DatabaseQueryCommand.geoNear | ✔️ |  |  |  |  |  |  |  |
+| DatabaseQueryCommand.geoWithin | ✔️ |  |  |  |  |  |  |  |
+| DatabaseQueryCommand.geoIntersects | ✔️ |  |  |  |  |  |  |  |
 
 #### DatabaseUpdateCommand
 
@@ -1975,6 +2196,31 @@ db.collection('todos').where({
 | --- | --- | --- |
 | geometry | `GeoPoint | GeoPolygon | GeoMultiPolygon | GeoMultiPoint | GeoLineString | GeoMultiLineString` | 地理信息结构 |
 
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Command.eq | ✔️ |  |  |  |  |  |  |  |
+| Command.neq | ✔️ |  |  |  |  |  |  |  |
+| Command.gte | ✔️ |  |  |  |  |  |  |  |
+| Command.lt | ✔️ |  |  |  |  |  |  |  |
+| Command.lte | ✔️ |  |  |  |  |  |  |  |
+| Command.in | ✔️ |  |  |  |  |  |  |  |
+| Command.nin | ✔️ |  |  |  |  |  |  |  |
+| Command.geoNear | ✔️ |  |  |  |  |  |  |  |
+| Command.geoWithin | ✔️ |  |  |  |  |  |  |  |
+| Command.geoIntersects | ✔️ |  |  |  |  |  |  |  |
+| Command.and | ✔️ |  |  |  |  |  |  |  |
+| Command.or | ✔️ |  |  |  |  |  |  |  |
+| Command.set | ✔️ |  |  |  |  |  |  |  |
+| Command.remove | ✔️ |  |  |  |  |  |  |  |
+| Command.inc | ✔️ |  |  |  |  |  |  |  |
+| Command.mul | ✔️ |  |  |  |  |  |  |  |
+| Command.push | ✔️ |  |  |  |  |  |  |  |
+| Command.pop | ✔️ |  |  |  |  |  |  |  |
+| Command.shift | ✔️ |  |  |  |  |  |  |  |
+| Command.unshift | ✔️ |  |  |  |  |  |  |  |
+
 ### Aggregate
 
 数据库集合的聚合操作实例
@@ -1995,6 +2241,12 @@ db.collection('todos').where({
 | --- | --- |
 | object | `Object` |
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.addFields | ✔️ |  |  |  |  |  |  |  |
+
 #### bucket
 
 聚合阶段。将输入记录根据给定的条件和边界划分成不同的组，每组即一个 bucket。
@@ -2008,6 +2260,12 @@ db.collection('todos').where({
 | 参数 | 类型 |
 | --- | --- |
 | object | `Object` |
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.bucket | ✔️ |  |  |  |  |  |  |  |
 
 #### bucketAuto
 
@@ -2023,6 +2281,12 @@ db.collection('todos').where({
 | --- | --- |
 | object | `Object` |
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.bucketAuto | ✔️ |  |  |  |  |  |  |  |
+
 #### count
 
 聚合阶段。计算上一聚合阶段输入到本阶段的记录数，输出一个记录，其中指定字段的值为记录数。
@@ -2037,6 +2301,12 @@ db.collection('todos').where({
 | --- | --- |
 | fieldName | `string` |
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.count | ✔️ |  |  |  |  |  |  |  |
+
 #### end
 
 标志聚合操作定义完成，发起实际聚合操作
@@ -2046,6 +2316,12 @@ db.collection('todos').where({
 ```tsx
 () => Promise<Object>
 ```
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.end | ✔️ |  |  |  |  |  |  |  |
 
 #### geoNear
 
@@ -2061,6 +2337,12 @@ db.collection('todos').where({
 | --- | --- |
 | options | `Object` |
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.geoNear | ✔️ |  |  |  |  |  |  |  |
+
 #### group
 
 聚合阶段。将输入记录按给定表达式分组，输出时每个记录代表一个分组，每个记录的 _id 是区分不同组的 key。输出记录中也可以包括累计值，将输出字段设为累计值即会从该分组中计算累计值。
@@ -2074,6 +2356,12 @@ db.collection('todos').where({
 | 参数 | 类型 |
 | --- | --- |
 | object | `Object` |
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.group | ✔️ |  |  |  |  |  |  |  |
 
 #### limit
 
@@ -2089,6 +2377,12 @@ db.collection('todos').where({
 | --- | --- |
 | value | `number` |
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.limit | ✔️ |  |  |  |  |  |  |  |
+
 #### lookup
 
 聚合阶段。聚合阶段。联表查询。与同个数据库下的一个指定的集合做 left outer join(左外连接)。对该阶段的每一个输入记录，lookup 会在该记录中增加一个数组字段，该数组是被联表中满足匹配条件的记录列表。lookup 会将连接后的结果输出给下个阶段。
@@ -2102,6 +2396,12 @@ db.collection('todos').where({
 | 参数 | 类型 |
 | --- | --- |
 | object | `Object` |
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.lookup | ✔️ |  |  |  |  |  |  |  |
 
 #### match
 
@@ -2117,6 +2417,12 @@ db.collection('todos').where({
 | --- | --- |
 | object | `Object` |
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.match | ✔️ |  |  |  |  |  |  |  |
+
 #### project
 
 聚合阶段。把指定的字段传递给下一个流水线，指定的字段可以是某个已经存在的字段，也可以是计算出来的新字段。
@@ -2130,6 +2436,12 @@ db.collection('todos').where({
 | 参数 | 类型 |
 | --- | --- |
 | object | `Object` |
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.project | ✔️ |  |  |  |  |  |  |  |
 
 #### replaceRoot
 
@@ -2145,6 +2457,12 @@ db.collection('todos').where({
 | --- | --- |
 | object | `Object` |
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.replaceRoot | ✔️ |  |  |  |  |  |  |  |
+
 #### sample
 
 聚合阶段。随机从文档中选取指定数量的记录。
@@ -2158,6 +2476,12 @@ db.collection('todos').where({
 | 参数 | 类型 |
 | --- | --- |
 | size | `number` |
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.sample | ✔️ |  |  |  |  |  |  |  |
 
 #### skip
 
@@ -2173,6 +2497,12 @@ db.collection('todos').where({
 | --- | --- |
 | value | `number` |
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.skip | ✔️ |  |  |  |  |  |  |  |
+
 #### sort
 
 聚合阶段。根据指定的字段，对输入的文档进行排序。
@@ -2186,6 +2516,12 @@ db.collection('todos').where({
 | 参数 | 类型 |
 | --- | --- |
 | object | `Object` |
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.sort | ✔️ |  |  |  |  |  |  |  |
 
 #### sortByCount
 
@@ -2201,6 +2537,12 @@ db.collection('todos').where({
 | --- | --- |
 | object | `Object` |
 
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.sortByCount | ✔️ |  |  |  |  |  |  |  |
+
 #### unwind
 
 聚合阶段。使用指定的数组字段中的每个元素，对文档进行拆分。拆分后，文档会从一个变为一个或多个，分别对应数组的每个元素。
@@ -2214,6 +2556,34 @@ db.collection('todos').where({
 | 参数 | 类型 |
 | --- | --- |
 | value | `string | object` |
+
+##### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.unwind | ✔️ |  |  |  |  |  |  |  |
+
+#### API 支持度
+
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Aggregate.addFields | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.bucket | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.bucketAuto | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.count | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.end | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.geoNear | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.group | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.limit | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.lookup | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.match | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.project | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.replaceRoot | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.sample | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.skip | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.sort | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.sortByCount | ✔️ |  |  |  |  |  |  |  |
+| Aggregate.unwind | ✔️ |  |  |  |  |  |  |  |
 
 ### IGeo
 
@@ -2278,7 +2648,7 @@ db.collection('todos').add({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.Point | ✔️ |  |  |  |  |  |  |  |
+| IGeo.Point | ✔️ |  |  |  |  |  |  |  |
 
 #### LineString
 
@@ -2347,7 +2717,7 @@ db.collection('todos').add({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.LineString | ✔️ |  |  |  |  |  |  |  |
+| IGeo.LineString | ✔️ |  |  |  |  |  |  |  |
 
 #### Polygon
 
@@ -2454,7 +2824,7 @@ db.collection('todos').add({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.Polygon | ✔️ |  |  |  |  |  |  |  |
+| IGeo.Polygon | ✔️ |  |  |  |  |  |  |  |
 
 #### MultiPoint
 
@@ -2523,7 +2893,7 @@ db.collection('todos').add({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.MultiPoint | ✔️ |  |  |  |  |  |  |  |
+| IGeo.MultiPoint | ✔️ |  |  |  |  |  |  |  |
 
 #### MultiLineString
 
@@ -2593,7 +2963,7 @@ db.collection('todos').add({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.MultiLineString | ✔️ |  |  |  |  |  |  |  |
+| IGeo.MultiLineString | ✔️ |  |  |  |  |  |  |  |
 
 #### MultiPolygon
 
@@ -2696,7 +3066,7 @@ db.collection('todos').add({
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | 快应用 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Taro.MultiPolygon | ✔️ |  |  |  |  |  |  |  |
+| IGeo.MultiPolygon | ✔️ |  |  |  |  |  |  |  |
 
 #### GeoPoint
 

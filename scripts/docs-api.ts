@@ -4,6 +4,8 @@ import * as ts from "typescript"
 import compile, { DocEntry, envMap } from "./parser"
 import writeFile from "./write"
 
+const taro_apis: (string | undefined)[] = []
+
 type TCallback = (routepath: string, doc: DocEntry[], withGeneral?: boolean) => void
 
 const SymbolFlags = Object.values(ts.SymbolFlags)
@@ -151,7 +153,7 @@ const get = {
   since: (data?: ts.JSDocTagInfo) => data ? splicing([`> 最低 Taro 版本: ${data.text || ''}`, '']) : undefined,
   type: (data?: string, level = 0) => data && !isntShowType.includes(data) ?
     splicing([level !== 0 ? `${'#'.repeat(level)} 类型\n` : undefined, '```tsx', data, '```', '']) : undefined,
-  members: (data?: DocEntry[], title = '方法', level: number = 2) => {
+  members: (data?: DocEntry[], title = '方法', level: number = 2, name = 'Taro') => {
     if (!data) return undefined
     const methods: (string | undefined)[] = [level === 2 ? `## ${title}\n` : undefined]
     const paramTabs: DocEntry[] = []
@@ -256,7 +258,7 @@ const get = {
         }
 
         const members = param.members || []
-        const apis = { [`${TaroMethod.includes(param.flags || -1) ? 'Taro.' : ''}${param.name}`]: tags }
+        const apis = { [`${TaroMethod.includes(param.flags || -1) ? `${name}.` : ''}${param.name}`]: tags }
         members.forEach(member => {
           if (isShowAPI(member.flags)) {
             if (member.name && member.jsTags) apis[`${param.name}.${member.name}`] = member.jsTags || []
@@ -271,8 +273,8 @@ const get = {
           get.document(param.documentation),
           get.see(tags.find(tag => tag.name === 'see')),
           get.type(param.type),
-          get.members(param.members, '方法', level + (level === 2 ? 2 : 1)),
-          get.members(declaration.parameters || param.exports, '参数', level + (level === 2 ? 2 : 1)),
+          get.members(param.members, '方法', level + (level === 2 ? 2 : 1), param.name),
+          get.members(declaration.parameters || param.exports, '参数', level + (level === 2 ? 2 : 1), param.name),
           get.example(tags, level + (level === 2 ? 2 : 1)),
           get.api(apis, level + (level === 2 ? 2 : 1)),
         ])
@@ -315,6 +317,8 @@ const get = {
         return ` ${apiName ? '✔️': ''}${apiDesc && apiDesc.text ? `(${apiDesc.text})` : ''} |`
       }).join('')}` : undefined
     })
+
+    taro_apis.push(...rows.filter(e => !!e))
 
     return rows && rows.filter(e => !!e).length > 0 ? splicing([
       `${'#'.repeat(level)} API 支持度\n`, titles, splits, ...rows, ''
@@ -382,6 +386,15 @@ docsAPI('packages/taro/types/api', 'docs/apis', ['packages/taro/types/api'], wri
 // docsAPI('packages/taro-components/types', 'docs/components', ['packages/taro-components/types'], writeDoc,
 //   process.argv.findIndex(e => /^[-]{2}verbose/ig.test(e)) > -1,
 //   process.argv.findIndex(e => /^[-]{2}force/ig.test(e)) === -1)
+
+// writeFile(
+//   path.resolve(__dirname, `taro-apis.md`),
+//   splicing([
+//     envMap.reduce((p, env) => `${p} ${env.label} |`, '| API |'),
+//     envMap.reduce((p) => `${p} :---: |`, '| :---: |'),
+//     ...taro_apis, ''
+//   ]),
+// )
 
 function splicing (arr: (string | undefined)[] = []) {
   return arr.filter(e => typeof e === 'string').join('\n')

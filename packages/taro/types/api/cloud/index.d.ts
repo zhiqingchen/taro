@@ -1357,10 +1357,12 @@ declare namespace Taro {
      */
     interface Command {
       /** 查询筛选条件，表示字段等于某个值。eq 指令接受一个字面量 (literal)，可以是 number, boolean, string, object, array, Date。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.eq.html
        */
       eq(val: any): Command.DatabaseQueryCommand
       /** 查询筛选条件，表示字段不等于某个值。eq 指令接受一个字面量 (literal)，可以是 number, boolean, string, object, array, Date。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.neq.html
        */
       neq(val: any): Command.DatabaseQueryCommand
@@ -1369,35 +1371,43 @@ declare namespace Taro {
        */
       gt(val: any): Command.DatabaseQueryCommand
       /** 查询筛选操作符，表示需大于或等于指定值。可以传入 Date 对象用于进行日期比较。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.gte.html
        */
       gte(val: any): Command.DatabaseQueryCommand
       /** 查询筛选操作符，表示需小于指定值。可以传入 Date 对象用于进行日期比较。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.lt.html
        */
       lt(val: any): Command.DatabaseQueryCommand
       /** 查询筛选操作符，表示需小于或等于指定值。可以传入 Date 对象用于进行日期比较。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.lte.html
        */
       lte(val: any): Command.DatabaseQueryCommand
       /** 查询筛选操作符，表示要求值在给定的数组内。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.in.html
        */
       in(val: any[]): Command.DatabaseQueryCommand
       /** 查询筛选操作符，表示要求值不在给定的数组内。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.nin.html
        */
       nin(val: any[]): Command.DatabaseQueryCommand
 
       /** 按从近到远的顺序，找出字段值在给定点的附近的记录。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.geoNear.html
        */
       geoNear(options: Command.NearCommandOptions): Command.DatabaseQueryCommand
       /** 找出字段值在指定区域内的记录，无排序。指定的区域必须是多边形（Polygon）或多边形集合（MultiPolygon）。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.geoWithin.html
        */
       geoWithin(options: Command.WithinCommandOptions): Command.DatabaseQueryCommand
       /** 找出给定的地理位置图形相交的记录
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.geoIntersects.html
        */
       geoIntersects(
@@ -1405,12 +1415,14 @@ declare namespace Taro {
       ): Command.DatabaseQueryCommand
 
       /** 查询操作符，用于表示逻辑 "与" 的关系，表示需同时满足多个查询筛选条件
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.and.html
        */
       and(
         ...expressions: Array<Command.DatabaseLogicCommand | Query.IQueryCondition>
       ): Command.DatabaseLogicCommand
       /** 查询操作符，用于表示逻辑 "或" 的关系，表示需同时满足多个查询筛选条件。或指令有两种用法，一是可以进行字段值的 “或” 操作，二是也可以进行跨字段的 “或” 操作。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.or.html
        */
       or(
@@ -1418,35 +1430,43 @@ declare namespace Taro {
       ): Command.DatabaseLogicCommand
 
       /** 查询操作符，用于表示逻辑 "与" 的关系，表示需同时满足多个查询筛选条件
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.set.html
        */
       set(val: any): Command.DatabaseUpdateCommand
       /** 更新操作符，用于表示删除某个字段。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.remove.html
        */
       remove(): Command.DatabaseUpdateCommand
       /** 更新操作符，原子操作，用于指示字段自增
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.inc.html
        */
       inc(val: number): Command.DatabaseUpdateCommand
       /** 更新操作符，原子操作，用于指示字段自乘某个值
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.mul.html
        */
       mul(val: number): Command.DatabaseUpdateCommand
 
       /** 数组更新操作符。对一个值为数组的字段，往数组添加一个或多个值。或字段原为空，则创建该字段并设数组为传入值。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.push.html
        */
       push(...values: any[]): Command.DatabaseUpdateCommand
       /** 数组更新操作符，对一个值为数组的字段，将数组尾部元素删除
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.pop.html
        */
       pop(): Command.DatabaseUpdateCommand
       /** 数组更新操作符，对一个值为数组的字段，将数组头部元素删除。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.shift.html
        */
       shift(): Command.DatabaseUpdateCommand
       /** 数组更新操作符，对一个值为数组的字段，往数组头部添加一个或多个值。或字段原为空，则创建该字段并设数组为传入值。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.unshift.html
        */
       unshift(...values: any[]): Command.DatabaseUpdateCommand
@@ -1466,12 +1486,14 @@ declare namespace Taro {
         _setFieldName: (fieldName: string) => DatabaseLogicCommand
 
         /** 查询操作符，用于表示逻辑 "与" 的关系，表示需同时满足多个查询筛选条件
+         * @supported weapp
          * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.and.html
          */
         and(
           ...expressions: Array<DatabaseLogicCommand | Query.IQueryCondition>
         ): DatabaseLogicCommand
         /** 查询操作符，用于表示逻辑 "或" 的关系，表示需同时满足多个查询筛选条件。或指令有两种用法，一是可以进行字段值的 “或” 操作，二是也可以进行跨字段的 “或” 操作。
+         * @supported weapp
          * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.or.html
          */
         or(
@@ -1488,47 +1510,58 @@ declare namespace Taro {
         _setFieldName: (fieldName: string) => DatabaseQueryCommand
   
         /** 查询筛选条件，表示字段等于某个值。eq 指令接受一个字面量 (literal)，可以是 number, boolean, string, object, array, Date。
+         * @supported weapp
          * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.eq.html
          */
         eq(val: any): DatabaseLogicCommand
         /** 查询筛选条件，表示字段不等于某个值。eq 指令接受一个字面量 (literal)，可以是 number, boolean, string, object, array, Date。
+         * @supported weapp
          * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.neq.html
          */
         neq(val: any): DatabaseLogicCommand
         /** 查询筛选操作符，表示需大于指定值。可以传入 Date 对象用于进行日期比较。
+         * @supported weapp
          * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.gt.html
          */
         gt(val: any): DatabaseLogicCommand
         /** 查询筛选操作符，表示需大于或等于指定值。可以传入 Date 对象用于进行日期比较。
+         * @supported weapp
          * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.gte.html
          */
         gte(val: any): DatabaseLogicCommand
         /** 查询筛选操作符，表示需小于指定值。可以传入 Date 对象用于进行日期比较。
+         * @supported weapp
          * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.lt.html
          */
         lt(val: any): DatabaseLogicCommand
         /** 查询筛选操作符，表示需小于或等于指定值。可以传入 Date 对象用于进行日期比较。
+         * @supported weapp
          * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.lte.html
          */
         lte(val: any): DatabaseLogicCommand
         /** 查询筛选操作符，表示要求值在给定的数组内。
+         * @supported weapp
          * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.in.html
          */
         in(val: any[]): DatabaseLogicCommand
         /** 查询筛选操作符，表示要求值不在给定的数组内。
+         * @supported weapp
          * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.nin.html
          */
         nin(val: any[]): DatabaseLogicCommand
 
         /** 按从近到远的顺序，找出字段值在给定点的附近的记录。
+         * @supported weapp
          * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.geoNear.html
          */
         geoNear(options: NearCommandOptions): DatabaseLogicCommand
         /** 找出字段值在指定区域内的记录，无排序。指定的区域必须是多边形（Polygon）或多边形集合（MultiPolygon）。
+         * @supported weapp
          * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.geoWithin.html
          */
         geoWithin(options: WithinCommandOptions): DatabaseLogicCommand
         /** 找出给定的地理位置图形相交的记录
+         * @supported weapp
          * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.geoIntersects.html
          */
         geoIntersects(
@@ -1644,86 +1677,103 @@ declare namespace Taro {
      */
     interface Aggregate {
       /** 聚合阶段。添加新字段到输出的记录。经过 addFields 聚合阶段，输出的所有记录中除了输入时带有的字段外，还将带有 addFields 指定的字段。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.addFields.html
        */
       addFields(object: Object): Aggregate
 
       /** 聚合阶段。将输入记录根据给定的条件和边界划分成不同的组，每组即一个 bucket。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.bucket.html
        */
       bucket(object: Object): Aggregate
 
       /** 聚合阶段。将输入记录根据给定的条件划分成不同的组，每组即一个 bucket。与 bucket 的其中一个不同之处在于无需指定 boundaries，bucketAuto 会自动尝试将记录尽可能平均的分散到每组中。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.bucketAuto.html
        */
       bucketAuto(object: Object): Aggregate
 
       /** 聚合阶段。计算上一聚合阶段输入到本阶段的记录数，输出一个记录，其中指定字段的值为记录数。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.count.html
        */
       count(fieldName: string): Aggregate
 
       /** 标志聚合操作定义完成，发起实际聚合操作
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.end.html
        */
       end(): Promise<Object>
 
       /** 聚合阶段。将记录按照离给定点从近到远输出。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.geoNear.html
        */
       geoNear(options: Object): Aggregate
 
       /** 聚合阶段。将输入记录按给定表达式分组，输出时每个记录代表一个分组，每个记录的 _id 是区分不同组的 key。输出记录中也可以包括累计值，将输出字段设为累计值即会从该分组中计算累计值。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.group.html
        */
       group(object: Object): Aggregate
 
       /** 聚合阶段。限制输出到下一阶段的记录数。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.limit.html
        */
       limit(value: number): Aggregate
 
       /** 聚合阶段。聚合阶段。联表查询。与同个数据库下的一个指定的集合做 left outer join(左外连接)。对该阶段的每一个输入记录，lookup 会在该记录中增加一个数组字段，该数组是被联表中满足匹配条件的记录列表。lookup 会将连接后的结果输出给下个阶段。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.lookup.html
        */
       lookup(object: Object): Aggregate
 
       /** 聚合阶段。根据条件过滤文档，并且把符合条件的文档传递给下一个流水线阶段。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.match.html
        */
       match(object: Object): Aggregate
       
       /** 聚合阶段。把指定的字段传递给下一个流水线，指定的字段可以是某个已经存在的字段，也可以是计算出来的新字段。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.project.html
        */
       project(object: Object): Aggregate
 
       /** 聚合阶段。指定一个已有字段作为输出的根节点，也可以指定一个计算出的新字段作为根节点。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.replaceRoot.html
        */
       replaceRoot(object: Object): Aggregate
 
       /** 聚合阶段。随机从文档中选取指定数量的记录。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.sample.html
        */
       sample(size: number): Aggregate
 
       /** 聚合阶段。指定一个正整数，跳过对应数量的文档，输出剩下的文档。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.skip.html
        */
       skip(value: number): Aggregate
 
       /** 聚合阶段。根据指定的字段，对输入的文档进行排序。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.sort.html
        */
       sort(object: Object): Aggregate
 
       /** 聚合阶段。根据传入的表达式，将传入的集合进行分组（group）。然后计算不同组的数量，并且将这些组按照它们的数量进行排序，返回排序后的结果。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.sortByCount.html
        */
       sortByCount(object: Object): Aggregate
 
       /** 聚合阶段。使用指定的数组字段中的每个元素，对文档进行拆分。拆分后，文档会从一个变为一个或多个，分别对应数组的每个元素。
+       * @supported weapp
        * @see https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/aggregate/Aggregate.unwind.html
        */
       unwind(value: string|object): Aggregate
