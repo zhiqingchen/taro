@@ -11,7 +11,8 @@ import {
   getMiniCssExtractPlugin,
   getModule,
   getOutput,
-  processEnvOption
+  processEnvOption,
+  getMainPlugin
 } from '../util/chain'
 import { BuildConfig } from '../util/types'
 import getBaseChain from './base.conf'
@@ -26,7 +27,7 @@ export default function (appPath: string, config: Partial<BuildConfig>): any {
     entry = emptyObj,
     output = emptyObj,
     sourceRoot = '',
-    outputRoot,
+    outputRoot = 'dist',
     publicPath = '',
     staticDirectory = 'static',
     chunkDirectory = 'chunk',
@@ -55,7 +56,8 @@ export default function (appPath: string, config: Partial<BuildConfig>): any {
     postcss = emptyObj,
     babel
   } = config
-
+  const sourceDir = path.join(appPath, sourceRoot)
+  const outputDir = path.join(appPath, outputRoot)
   const plugin = {} as any
 
   const isMultiRouterMode = get(router, 'mode') === 'multi'
@@ -88,6 +90,12 @@ export default function (appPath: string, config: Partial<BuildConfig>): any {
   plugin.definePlugin = getDefinePlugin([processEnvOption(env), defineConstants])
   plugin.hotModuleReplacementPlugin = getHotModuleReplacementPlugin()
 
+  plugin.mainPlugin = getMainPlugin({
+    sourceDir,
+    outputDir,
+    routerConfig: router
+  })
+
   const mode = 'development'
 
   chain.merge({
@@ -118,7 +126,11 @@ export default function (appPath: string, config: Partial<BuildConfig>): any {
 
       postcss,
       babel,
-      staticDirectory
+      staticDirectory,
+      router,
+      publicPath,
+      alias,
+      sourceDir
     }),
     plugin,
     optimization: {

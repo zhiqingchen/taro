@@ -1,9 +1,7 @@
-import chalk from 'chalk';
-import * as ora from 'ora';
-import { partial, pipe } from 'lodash/fp';
-import * as formatMessages from 'webpack-format-messages';
-
-// const syntaxErrorLabel = 'Syntax error:';
+import * as chalk from 'chalk'
+import * as ora from 'ora'
+import { partial, pipe } from 'lodash/fp'
+import * as formatMessages from 'webpack-format-messages'
 
 const getServeSpinner = (() => {
   let spinner
@@ -105,14 +103,14 @@ const _printWhenDone = ({
     if (!stats.hasErrors() && !stats.hasWarnings()) {
       printSuccess()
     }
-  
+
     if (stats.hasErrors()) {
       printFailed()
       errors.forEach(e => console.log(e + '\n'));
-      verbose && process.exit(1)      
+      verbose && process.exit(1)
       return;
     }
-  
+
     if (stats.hasWarnings()) {
       printWarning()
       warnings.forEach(w => console.log(w + '\n'));

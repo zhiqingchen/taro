@@ -1,7 +1,7 @@
-import * as path from 'path';
+import * as path from 'path'
 import { get, mapValues, merge } from 'lodash'
 
-import { addTrailingSlash, emptyObj } from '../util';
+import { addTrailingSlash, emptyObj } from '../util'
 import {
   getCopyWebpackPlugin,
   getCssoWebpackPlugin,
@@ -12,10 +12,11 @@ import {
   getModule,
   getOutput,
   getUglifyPlugin,
-  processEnvOption
-} from '../util/chain';
-import { BuildConfig } from '../util/types';
-import getBaseChain from './base.conf';
+  processEnvOption,
+  getMainPlugin
+} from '../util/chain'
+import { BuildConfig } from '../util/types'
+import getBaseChain from './base.conf'
 
 export default function (appPath: string, config: Partial<BuildConfig>): any {
   const chain = getBaseChain(appPath)
@@ -56,7 +57,8 @@ export default function (appPath: string, config: Partial<BuildConfig>): any {
     csso,
     uglify
   } = config
-
+  const sourceDir = path.join(appPath, sourceRoot)
+  const outputDir = path.join(appPath, outputRoot)
   const isMultiRouterMode = get(router, 'mode') === 'multi'
 
   const plugin: any = {}
@@ -96,6 +98,12 @@ export default function (appPath: string, config: Partial<BuildConfig>): any {
   if (isCssoEnabled) {
     plugin.cssoWebpackPlugin = getCssoWebpackPlugin([csso ? csso.config : {}])
   }
+
+  plugin.mainPlugin = getMainPlugin({
+    sourceDir,
+    outputDir,
+    routerConfig: router
+  })
 
   const mode = 'production'
 
@@ -139,7 +147,11 @@ export default function (appPath: string, config: Partial<BuildConfig>): any {
 
       postcss,
       babel,
-      staticDirectory
+      staticDirectory,
+      router,
+      publicPath,
+      alias,
+      sourceDir
     }),
     plugin,
     optimization: {

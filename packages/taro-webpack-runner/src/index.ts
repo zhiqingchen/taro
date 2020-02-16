@@ -1,4 +1,4 @@
-import detectPort = require('detect-port')
+import * as detectPort from 'detect-port'
 import * as opn from 'opn'
 import * as path from 'path'
 import { format as formatUrl } from 'url'
@@ -34,7 +34,6 @@ const customizeChain = (chain, customizeFunc: Function) => {
 const buildProd = (appPath: string, config: BuildConfig): Promise<void> => {
   return new Promise((resolve, reject) => {
     const webpackChain = prodConf(appPath, config)
-
     customizeChain(webpackChain, config.webpackChain)
 
     const webpackConfig = webpackChain.toConfig()
@@ -43,7 +42,7 @@ const buildProd = (appPath: string, config: BuildConfig): Promise<void> => {
 
     compiler.run((err) => {
       if (err) {
-        printBuildError(err);
+        printBuildError(err)
         return reject(err)
       }
       resolve()
@@ -57,10 +56,9 @@ const buildDev = async (appPath: string, config: BuildConfig): Promise<any> => {
   const routerMode = routerConfig.mode || 'hash'
   const routerBasename = routerConfig.basename || '/'
   const publicPath = conf.publicPath ? addLeadingSlash(addTrailingSlash(conf.publicPath)) : '/'
-  const outputPath = path.join(appPath, conf.outputRoot as string)
+  const outputPath = path.join(appPath, conf.sourceRoot as string)
   const customDevServerOption = config.devServer || {}
   const webpackChain = devConf(appPath, config)
-  const homePage = config.homePage || []
 
   customizeChain(webpackChain, config.webpackChain)
 
@@ -91,7 +89,8 @@ const buildDev = async (appPath: string, config: BuildConfig): Promise<any> => {
   let pathname
 
   if (routerMode === 'multi') {
-    pathname = `${stripTrailingSlash(routerBasename)}/${addHtmlExtname(stripLeadingSlash(homePage[1] || ''))}`
+    // pathname = `${stripTrailingSlash(routerBasename)}/${addHtmlExtname(stripLeadingSlash(homePage[1] || ''))}`
+    pathname = '/'
   } else if (routerMode === 'browser') {
     pathname = routerBasename
   } else {
@@ -107,6 +106,10 @@ const buildDev = async (appPath: string, config: BuildConfig): Promise<any> => {
 
   const webpackConfig = webpackChain.toConfig()
   WebpackDevServer.addDevServerEntrypoints(webpackConfig, devServerOptions)
+  webpackConfig.watchOptions = {
+    aggregateTimeout: 300,
+    poll: 1000
+  }
   const compiler = webpack(webpackConfig)
   bindDevLogger(devUrl, compiler)
   const server = new WebpackDevServer(compiler, devServerOptions)
@@ -146,7 +149,7 @@ export default async (appPath: string, config: BuildConfig): Promise<void> => {
       await buildProd(appPath, newConfig)
     } catch (e) {
       console.error(e)
-      process.exit(1);
+      process.exit(1)
     }
   }
 }

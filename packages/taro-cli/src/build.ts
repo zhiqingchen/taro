@@ -63,7 +63,7 @@ export default class Builder {
     this.emptyFirst({type, watch})
     switch (type) {
       case BUILD_TYPES.H5:
-        this.buildForH5(this.appPath, {watch, port})
+        this.buildForH5(this.appPath, { watch, port })
         break
       case BUILD_TYPES.WEAPP:
       case BUILD_TYPES.SWAN:
@@ -75,10 +75,10 @@ export default class Builder {
         this.buildForMini(this.appPath, buildOptions)
         break
       case BUILD_TYPES.RN:
-        this.buildForRN(this.appPath, {watch, port})
+        this.buildForRN(this.appPath, { watch, port })
         break
       case BUILD_TYPES.UI:
-        this.buildForUILibrary(this.appPath, {watch, uiIndex})
+        this.buildForUILibrary(this.appPath, { watch, uiIndex })
         break
       case BUILD_TYPES.PLUGIN:
         this.buildForPlugin(this.appPath, {
@@ -93,7 +93,7 @@ export default class Builder {
   }
 
   buildForH5 (appPath: string, buildOptions: IBuildOptions) {
-    require('./h5').build(appPath, buildOptions)
+    require('./h5').build(appPath, buildOptions, this)
   }
 
   buildForMini (appPath: string, buildOptions: IBuildOptions) {
