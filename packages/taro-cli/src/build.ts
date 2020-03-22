@@ -11,7 +11,10 @@ import { IBuildOptions } from './util/types'
 import { emptyDirectory } from './util'
 import CONFIG from './config'
 
-console.log(Kernel)
+const kernel = new Kernel({
+  cwd: process.cwd()
+})
+kernel.run('build')
 
 interface IBuilderHooks {
   beforeBuild: Hook,
@@ -35,7 +38,7 @@ export default class Builder {
 
   init () {
     this.resolveConfig()
-    this.applyPlugins()
+    // this.applyPlugins()
   }
 
   resolveConfig () {
@@ -61,38 +64,38 @@ export default class Builder {
   }
 
   build (buildOptions: IBuildOptions) {
-    this.hooks.beforeBuild.call(this.config)
-    const {type, watch, platform, port, uiIndex} = buildOptions
-    this.emptyFirst({type, watch})
-    switch (type) {
-      case BUILD_TYPES.H5:
-        this.buildForH5(this.appPath, {watch, port})
-        break
-      case BUILD_TYPES.WEAPP:
-      case BUILD_TYPES.SWAN:
-      case BUILD_TYPES.ALIPAY:
-      case BUILD_TYPES.TT:
-      case BUILD_TYPES.QUICKAPP:
-      case BUILD_TYPES.QQ:
-      case BUILD_TYPES.JD:
-        this.buildForMini(this.appPath, buildOptions)
-        break
-      case BUILD_TYPES.RN:
-        this.buildForRN(this.appPath, {watch, port})
-        break
-      case BUILD_TYPES.UI:
-        this.buildForUILibrary(this.appPath, {watch, uiIndex})
-        break
-      case BUILD_TYPES.PLUGIN:
-        this.buildForPlugin(this.appPath, {
-          watch,
-          platform
-        })
-        break
-      default:
-        console.log(
-          chalk.red('输入类型错误，目前只支持 weapp/swan/alipay/tt/qq/h5/quickapp/rn 八端类型'))
-    }
+    // this.hooks.beforeBuild.call(this.config)
+    // const {type, watch, platform, port, uiIndex} = buildOptions
+    // this.emptyFirst({type, watch})
+    // switch (type) {
+    //   case BUILD_TYPES.H5:
+    //     this.buildForH5(this.appPath, {watch, port})
+    //     break
+    //   case BUILD_TYPES.WEAPP:
+    //   case BUILD_TYPES.SWAN:
+    //   case BUILD_TYPES.ALIPAY:
+    //   case BUILD_TYPES.TT:
+    //   case BUILD_TYPES.QUICKAPP:
+    //   case BUILD_TYPES.QQ:
+    //   case BUILD_TYPES.JD:
+    //     this.buildForMini(this.appPath, buildOptions)
+    //     break
+    //   case BUILD_TYPES.RN:
+    //     this.buildForRN(this.appPath, {watch, port})
+    //     break
+    //   case BUILD_TYPES.UI:
+    //     this.buildForUILibrary(this.appPath, {watch, uiIndex})
+    //     break
+    //   case BUILD_TYPES.PLUGIN:
+    //     this.buildForPlugin(this.appPath, {
+    //       watch,
+    //       platform
+    //     })
+    //     break
+    //   default:
+    //     console.log(
+    //       chalk.red('输入类型错误，目前只支持 weapp/swan/alipay/tt/qq/h5/quickapp/rn 八端类型'))
+    // }
   }
 
   buildForH5 (appPath: string, buildOptions: IBuildOptions) {
