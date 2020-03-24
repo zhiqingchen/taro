@@ -10,8 +10,7 @@ import generate from 'better-babel-generator'
 import {
   REG_TYPESCRIPT,
   PARSE_AST_TYPE,
-  NODE_MODULES_REG,
-  BUILD_TYPES
+  NODE_MODULES_REG
 } from '../utils/constants'
 import processAst from '../utils/processAst'
 import { npmCodeHack, isEmptyObject } from '../utils'
@@ -28,19 +27,19 @@ export default function wxTransformerLoader (source) {
     buildAdapter,
     designWidth,
     deviceRatio,
-    sourceDir
+    sourceDir,
+    isBuildQuickapp
   } = getOptions(this)
   const filePath = this.resourcePath
   const { resourceQuery } = this
   const rawQuery = resourceQuery.slice(1)
   const inheritQuery = `&${rawQuery}`
   const incomingQuery = qs.parse(rawQuery)
-  const isQuickApp = buildAdapter === BUILD_TYPES.QUICKAPP
   try {
     const stringifyRequestFn = r => stringifyRequest(this, r)
     const miniType = (incomingQuery.parse ? incomingQuery.parse : this._module.miniType) || PARSE_AST_TYPE.NORMAL
     const rootProps: { [key: string]: any } = {}
-    if (isQuickApp && miniType === PARSE_AST_TYPE.PAGE) {
+    if (isBuildQuickapp && miniType === PARSE_AST_TYPE.PAGE) {
       // 如果是快应用，需要提前解析一次 ast，获取 config
       const aheadTransformResult = wxTransformer({
         code: source,
@@ -50,7 +49,7 @@ export default function wxTransformerLoader (source) {
         isTyped: REG_TYPESCRIPT.test(filePath),
         adapter: buildAdapter
       })
-      const res = parseAst(aheadTransformResult.ast, buildAdapter)
+      const res = parseAst(aheadTransformResult.ast, buildAdapter, isBuildQuickapp)
       const appConfig = this._compiler.appConfig
       if (res.configObj.enablePullDownRefresh || (appConfig.window && appConfig.window.enablePullDownRefresh)) {
         rootProps.enablePullDownRefresh = true
@@ -102,7 +101,7 @@ export default function wxTransformerLoader (source) {
       const code = generate(result).code
       const res = transform(code, babelConfig)
       if (NODE_MODULES_REG.test(filePath) && res.code) {
-        res.code = npmCodeHack(filePath, res.code, buildAdapter)
+        res.code = npmCodeHack(filePath, res.code)
       }
       transCode = res.code
       cachedResults.set(filePath, {

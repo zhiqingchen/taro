@@ -4,7 +4,7 @@ import webpack from 'webpack'
 import { ConcatSource } from 'webpack-sources'
 import { urlToRequest } from 'loader-utils'
 
-import { PARSE_AST_TYPE, REG_STYLE, BUILD_TYPES } from '../utils/constants'
+import { PARSE_AST_TYPE, REG_STYLE } from '../utils/constants'
 import { promoteRelativePath } from '../utils'
 import { AddPageChunks, IComponent, IComponentObj } from '../utils/types'
 
@@ -12,26 +12,25 @@ const PLUGIN_NAME = 'TaroLoadChunksPlugin'
 
 interface IOptions {
   commonChunks: string[],
-  buildAdapter: BUILD_TYPES,
   isBuildPlugin: boolean,
   addChunkPages?: AddPageChunks,
   pages: Set<IComponent>,
-  depsMap: Map<string, Set<IComponentObj>>
-  sourceDir: string
+  depsMap: Map<string, Set<IComponentObj>>,
+  sourceDir: string,
+  isBuildQuickapp: boolean
 }
 
 export default class TaroLoadChunksPlugin {
   commonChunks: string[]
-  buildAdapter: BUILD_TYPES
   isBuildPlugin: boolean
   addChunkPages?: AddPageChunks
   pages: Set<IComponent>
   depsMap: Map<string, Set<IComponentObj>>
   sourceDir: string
+  isBuildQuickapp: boolean
 
   constructor (options: IOptions) {
     this.commonChunks = options.commonChunks
-    this.buildAdapter = options.buildAdapter
     this.isBuildPlugin = options.isBuildPlugin
     this.addChunkPages = options.addChunkPages
     this.pages = options.pages
@@ -103,7 +102,7 @@ export default class TaroLoadChunksPlugin {
             })
             return addRequireToSource(getIdOrName(chunk), modules, commonChunks)
           }
-          if ((this.buildAdapter === BUILD_TYPES.QUICKAPP) &&
+          if (this.isBuildQuickapp &&
             (entryModule.miniType === PARSE_AST_TYPE.PAGE ||
             entryModule.miniType === PARSE_AST_TYPE.COMPONENT)) {
             return addRequireToSource(getIdOrName(chunk), modules, commonChunks)

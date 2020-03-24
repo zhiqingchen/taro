@@ -3,13 +3,14 @@ import * as t from 'babel-types'
 import traverse from 'babel-traverse'
 import { transformFromAst } from 'babel-core'
 
-import { BUILD_TYPES, taroJsComponents, QUICKAPP_SPECIAL_COMPONENTS } from './constants'
+import { taroJsComponents, QUICKAPP_SPECIAL_COMPONENTS } from './constants'
 import { traverseObjectNode, isNpmPkg } from '../utils'
 import * as _ from 'lodash'
 
 export default function parseAst (
   ast: t.File,
-  buildAdapter: BUILD_TYPES
+  buildAdapter: string,
+  isBuildquickapp: boolean
 ): {
   configObj: IConfig,
   hasEnablePageScroll: boolean,
@@ -18,7 +19,6 @@ export default function parseAst (
   let configObj = {}
   let hasEnablePageScroll
   const taroSelfComponents = new Set<string>()
-  const isQuickApp = buildAdapter === BUILD_TYPES.QUICKAPP
   let componentClassName: string = ''
 
   const newAst = transformFromAst(ast, '', {
@@ -118,7 +118,7 @@ export default function parseAst (
       const source = node.source
       let value = source.value
       const specifiers = node.specifiers
-      if (isNpmPkg(value) && isQuickApp && value === taroJsComponents) {
+      if (isNpmPkg(value) && isBuildquickapp && value === taroJsComponents) {
         specifiers.forEach(specifier => {
           const name = specifier.local.name
           if (!QUICKAPP_SPECIAL_COMPONENTS.has(name)) {
@@ -135,7 +135,7 @@ export default function parseAst (
         const args = node.arguments as t.StringLiteral[]
         let value = args[0].value
         const parentNode = astPath.parentPath.parentPath.node as t.VariableDeclaration
-        if (isNpmPkg(value) && isQuickApp && value === taroJsComponents) {
+        if (isNpmPkg(value) && isBuildquickapp && value === taroJsComponents) {
           if (parentNode.declarations.length === 1 && parentNode.declarations[0].init) {
             const id = parentNode.declarations[0].id
             if (id.type === 'ObjectPattern') {
