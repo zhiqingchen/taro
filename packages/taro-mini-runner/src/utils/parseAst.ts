@@ -2,14 +2,17 @@ import { Config as IConfig } from '@tarojs/taro'
 import * as t from 'babel-types'
 import traverse from 'babel-traverse'
 import { transformFromAst } from 'babel-core'
+import {
+  taroJsComponents,
+  isNpmPkg
+} from '@tarojs/helper'
 
-import { taroJsComponents, QUICKAPP_SPECIAL_COMPONENTS } from './constants'
-import { traverseObjectNode, isNpmPkg } from '../utils'
+import { QUICKAPP_SPECIAL_COMPONENTS } from './constants'
+import { traverseObjectNode } from '../utils'
 import * as _ from 'lodash'
 
 export default function parseAst (
   ast: t.File,
-  buildAdapter: string,
   isBuildquickapp: boolean
 ): {
   configObj: IConfig,
@@ -55,7 +58,7 @@ export default function parseAst (
                         left.object.type === 'ThisExpression' &&
                         left.property.type === 'Identifier' &&
                         left.property.name === 'config') {
-                        configObj = traverseObjectNode(node.expression.right, buildAdapter)
+                        configObj = traverseObjectNode(node.expression.right)
                       }
                     }
                   }
@@ -110,7 +113,7 @@ export default function parseAst (
       const node = astPath.node
       const keyName = node.key.name
       if (keyName === 'config') {
-        configObj = traverseObjectNode(node, buildAdapter)
+        configObj = traverseObjectNode(node)
       }
     },
     ImportDeclaration (astPath) {
@@ -158,7 +161,7 @@ export default function parseAst (
         if (left.object.name === componentClassName
             && t.isIdentifier(left.property)
             && left.property.name === 'config') {
-          configObj = traverseObjectNode(node.right, buildAdapter)
+          configObj = traverseObjectNode(node.right)
         }
       }
     }
