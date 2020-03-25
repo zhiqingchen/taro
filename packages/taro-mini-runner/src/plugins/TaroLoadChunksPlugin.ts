@@ -5,10 +5,10 @@ import { ConcatSource } from 'webpack-sources'
 import { urlToRequest } from 'loader-utils'
 import {
   REG_STYLE,
+  PARSE_AST_TYPE,
   promoteRelativePath
 } from '@tarojs/helper'
 
-import { PARSE_AST_TYPE } from '../utils/constants'
 import { AddPageChunks, IComponent, IComponentObj } from '../utils/types'
 
 const PLUGIN_NAME = 'TaroLoadChunksPlugin'
