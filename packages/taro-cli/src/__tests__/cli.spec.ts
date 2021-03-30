@@ -58,7 +58,7 @@ describe('inspect', () => {
         isWatch: true,
         port: 8080,
         deviceType: undefined,
-        resetCache: false,
+        resetCache: false
       })
 
       expect(ins.run).toHaveBeenCalledWith({
