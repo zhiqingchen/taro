@@ -31,16 +31,16 @@ export function shouleBeObject (target: unknown): ShouleBeObjectResult {
 
 export function successHandler (success?: (res: Taro.General.CallbackResult) => void, complete?: (res: Taro.General.CallbackResult) => void) {
   return function (res: Taro.General.CallbackResult): Promise<any> {
-    success && success(res)
-    complete && complete(res)
+    success?.(res)
+    complete?.(res)
     return Promise.resolve(res)
   }
 }
 
 export function errorHandler (fail?: (res: Taro.General.CallbackResult) => void, complete?: (res: Taro.General.CallbackResult) => void) {
   return function (res: Taro.General.CallbackResult): Promise<any> {
-    fail && fail(res)
-    complete && complete(res)
+    fail?.(res)
+    complete?.(res)
     return Promise.reject(res)
   }
 }
