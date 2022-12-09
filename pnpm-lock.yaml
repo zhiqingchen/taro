@@ -152,7 +152,7 @@ importers:
       stylelint-order: ^5.0.0
       stylelint-taro-rn: workspace:*
       ts-jest: 26.5.5
-      tslib: ^1.9.3
+      tslib: ^2.4.1
       typescript: ^4.7.4
       vue: ^2.6.11
       vue-loader: ^17.0.0
@@ -307,7 +307,7 @@ importers:
       stylelint-order: registry.npmjs.org/stylelint-order/5.0.0_stylelint@14.9.1
       stylelint-taro-rn: link:packages/stylelint-taro-rn
       ts-jest: registry.npmjs.org/ts-jest/26.5.5_iq57leuoshvgjxnu5a5x3xstvi
-      tslib: registry.npmjs.org/tslib/1.14.1
+      tslib: registry.npmjs.org/tslib/2.4.1
       typescript: registry.npmjs.org/typescript/4.7.4
       vue: registry.npmjs.org/vue/2.6.14
       vue-loader: registry.npmjs.org/vue-loader/17.0.0_webpack@5.69.0
@@ -10583,7 +10583,7 @@ packages:
     version: 0.14.2
     engines: {node: '>=4'}
     dependencies:
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
 
   registry.npmjs.org/astral-regex/1.0.0:
     resolution: {integrity: sha512-+Ryf6g3BKoRc7jfp7ad8tM4TtMiaWvbF/1/sQcZPkkS7ag3D5nMBCe2UfOTONtAkaG0tO0ij3C5Lwmf1EiyjHg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/astral-regex/-/astral-regex-1.0.0.tgz}
@@ -12961,7 +12961,7 @@ packages:
     version: 4.1.2
     dependencies:
       pascal-case: registry.npmjs.org/pascal-case/3.1.2
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
 
   registry.npmjs.org/camelcase-keys/2.1.0:
     resolution: {integrity: sha512-bA/Z/DERHKqoEOrp+qeGKw1QlvEQkGZSc0XaY6VnTxZr+Kv1G5zFwttpjv8qxZ/sBPT4nthwZaAcsAZTJlSKXQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/camelcase-keys/-/camelcase-keys-2.1.0.tgz}
@@ -13054,7 +13054,7 @@ packages:
     version: 1.0.4
     dependencies:
       no-case: registry.npmjs.org/no-case/3.0.4
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
       upper-case-first: registry.npmjs.org/upper-case-first/2.0.2
     dev: true
 
@@ -14127,7 +14127,7 @@ packages:
     version: 3.0.4
     dependencies:
       no-case: registry.npmjs.org/no-case/3.0.4
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
       upper-case: registry.npmjs.org/upper-case/2.0.2
     dev: true
 
@@ -16259,7 +16259,7 @@ packages:
     version: 3.0.4
     dependencies:
       no-case: registry.npmjs.org/no-case/3.0.4
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
 
   registry.npmjs.org/dot-prop/4.2.1:
     resolution: {integrity: sha512-l0p4+mIuJIua0mhxGoh4a+iNL9bmeK5DvnSVQa6T0OhrVmaEa1XScX5Etc673FePCJOArq/4Pa2cLGODUWTPOQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dot-prop/-/dot-prop-4.2.1.tgz}
@@ -20022,7 +20022,7 @@ packages:
       graphql: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       graphql: registry.npmjs.org/graphql/15.8.0
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
 
   registry.npmjs.org/graphql/15.8.0:
     resolution: {integrity: sha512-5gghUc24tP9HRznNpV2+FIoq3xKkj5dTQqf4v0CpdPbFVwFkWoxOM+o+2OC9ZSvjEMTjfmG9QT+gcvggTwW1zw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/graphql/-/graphql-15.8.0.tgz}
@@ -20247,7 +20247,7 @@ packages:
     version: 2.0.4
     dependencies:
       capital-case: registry.npmjs.org/capital-case/1.0.4
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
     dev: true
 
   registry.npmjs.org/helpertypes/0.0.18:
@@ -24263,7 +24263,7 @@ packages:
     name: lower-case
     version: 2.0.2
     dependencies:
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
 
   registry.npmjs.org/lowercase-keys/1.0.0:
     resolution: {integrity: sha512-RPlX0+PHuvxVDZ7xX+EBVAp4RsVxP/TdDSN2mJYdiq1Lc4Hz7EUSjUI7RZrKKlmrIzVhf6Jo2stj7++gVarS0A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/lowercase-keys/-/lowercase-keys-1.0.0.tgz}
@@ -25746,7 +25746,7 @@ packages:
     version: 3.0.4
     dependencies:
       lower-case: registry.npmjs.org/lower-case/2.0.2
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
 
   registry.npmjs.org/nocache/3.0.4:
     resolution: {integrity: sha512-WDD0bdg9mbq6F4mRxEYcPWwfA1vxd0mrvKOyxI7Xj/atfRHVeutzuWByG//jfm4uPzp0y4Kj051EORCBSQMycw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/nocache/-/nocache-3.0.4.tgz}
@@ -26782,7 +26782,7 @@ packages:
     version: 3.0.4
     dependencies:
       dot-case: registry.npmjs.org/dot-case/3.0.4
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
 
   registry.npmjs.org/parent-module/1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/parent-module/-/parent-module-1.0.1.tgz}
@@ -26934,7 +26934,7 @@ packages:
     version: 3.1.2
     dependencies:
       no-case: registry.npmjs.org/no-case/3.0.4
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
 
   registry.npmjs.org/pascalcase/0.1.1:
     resolution: {integrity: sha512-XHXfu/yOQRy9vYOtUDVMN60OEJjW013GoObG1o+xwQTpB9eYJX/BjXMsdW13ZDPruFhYYn0AG22w0xgQMwl3Nw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/pascalcase/-/pascalcase-0.1.1.tgz}
@@ -26966,7 +26966,7 @@ packages:
     version: 3.0.4
     dependencies:
       dot-case: registry.npmjs.org/dot-case/3.0.4
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
     dev: true
 
   registry.npmjs.org/path-dirname/1.0.2:
@@ -30158,7 +30158,7 @@ packages:
       ast-types: registry.npmjs.org/ast-types/0.14.2
       esprima: registry.npmjs.org/esprima/4.0.1
       source-map: registry.npmjs.org/source-map/0.6.1
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
 
   registry.npmjs.org/rechoir/0.6.2:
     resolution: {integrity: sha512-HFM8rkZ+i3zrV+4LQjwQ0W+ez98pApMGM3HUrN04j3CqzPOzl9nmP15Y8YXNm8QHGv/eacOVEjqhmWpkRV0NAw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/rechoir/-/rechoir-0.6.2.tgz}
@@ -30997,7 +30997,7 @@ packages:
       magic-string: registry.npmjs.org/magic-string/0.26.2
       rollup: registry.npmjs.org/rollup/2.79.0
       ts-clone-node: registry.npmjs.org/ts-clone-node/1.0.0_typescript@4.7.4
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
       typescript: registry.npmjs.org/typescript/4.7.4
     dev: true
 
@@ -31092,7 +31092,7 @@ packages:
     name: rxjs
     version: 7.5.5
     dependencies:
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
     dev: true
 
   registry.npmjs.org/sade/1.8.1:
@@ -31558,7 +31558,7 @@ packages:
     version: 3.0.4
     dependencies:
       no-case: registry.npmjs.org/no-case/3.0.4
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
       upper-case-first: registry.npmjs.org/upper-case-first/2.0.2
     dev: true
 
@@ -31932,7 +31932,7 @@ packages:
     version: 3.0.4
     dependencies:
       dot-case: registry.npmjs.org/dot-case/3.0.4
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
     dev: true
 
   registry.npmjs.org/snapdragon-node/2.1.1:
@@ -34078,6 +34078,11 @@ packages:
     name: tslib
     version: 2.4.0
 
+  registry.npmjs.org/tslib/2.4.1:
+    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/tslib/-/tslib-2.4.1.tgz}
+    name: tslib
+    version: 2.4.1
+
   registry.npmjs.org/tsutils/3.21.0_typescript@4.7.4:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/tsutils/-/tsutils-3.21.0.tgz}
     id: registry.npmjs.org/tsutils/3.21.0
@@ -34557,7 +34562,7 @@ packages:
     name: upper-case-first
     version: 2.0.2
     dependencies:
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
     dev: true
 
   registry.npmjs.org/upper-case/1.1.3:
@@ -34571,7 +34576,7 @@ packages:
     name: upper-case
     version: 2.0.2
     dependencies:
-      tslib: registry.npmjs.org/tslib/2.4.0
+      tslib: registry.npmjs.org/tslib/2.4.1
     dev: true
 
   registry.npmjs.org/uri-js/4.4.1:
